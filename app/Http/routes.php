@@ -13,3 +13,5 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('home','PagesController@home');
+Route::post('/register','PagesController@SignUp');
+Route::get('/signup','PagesController@register');
