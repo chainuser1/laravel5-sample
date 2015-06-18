@@ -1,6 +1,6 @@
 {
   "name": "laravel5-sample",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/chainuser1/laravel5-sample",
   "authors": [
     "Jayson Rael Ramos <lothlorien654@gmail.com>"
@@ -14,9 +14,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "vendor/bower_components"
   ],
   "dependencies": {
     "bootstrap-sass-official": "~3.3.5"
-  }
+  },
+  "description": "A sample laravel website for MICP discussions.",
+  "main": "index.php"
 }
