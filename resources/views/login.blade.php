@@ -1,5 +1,5 @@
 @extends('home')
-@section
+@section('content')
 <!--login modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -10,14 +10,15 @@
             </div>
             <div class="modal-body">
                 <form class="form col-md-12 center-block">
+<!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
                     <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Email" type="text">
+                        <input class="form-control input-lg" placeholder="Username" type="text" required id="uname">
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Password" type="password">
+                        <input class="form-control input-lg" placeholder="Password" type="password" required id="pword">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+                        <button class="btn btn-primary btn-lg btn-block" id="login">Sign In</button>
                         <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
                     </div>
                 </form>

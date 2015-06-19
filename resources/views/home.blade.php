@@ -6,7 +6,7 @@
             </head>
             <body>
                 <header>
-                    <nav class="navbar costume-box-gradient-1">
+                    <nav class="navbar navbar-default">
                         <div class="container-fluid">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
@@ -53,7 +53,7 @@
                                             <li><a href="#">{{$name}}</a></li>
                                             <li role="separator" class="divider">Logout</li>
                                            @else
-                                            <li><a href="#">Log In</a></li>
+                                            <li><a href="/login">Log In</a></li>
                                            @endif
                                         </ul>
                                     </li>
@@ -63,7 +63,7 @@
                     </nav>
                 </header>
                 <article class="container-fluid">
-
+                    @yield('content')
                 </article>
                 <footer>
 
@@ -73,7 +73,23 @@
                     $.noConflict();
                     !function($){
                        $(function(){
-
+                           $.ajaxSetup({
+                               headers: {
+                                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                               }
+                           });
+                            $(".close").click(function(){$("#loginModal").fadeOut(4000).toggleClass("show",false);});
+                            $("#login").click(function(){
+                                var uname=$("#uname").val();
+                                var uname=$("#pword").val();
+                                $.post("/account_signin",
+                                        {
+                                            uname: uname,
+                                            pword: pword
+                                        },
+                                        function(data){}
+                                )
+                            })
                        });
                     }(jQuery);
                 </script>
