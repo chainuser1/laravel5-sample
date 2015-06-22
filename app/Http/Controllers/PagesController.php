@@ -31,4 +31,7 @@ class PagesController extends Controller
     public function showLogin(){
         return view('login');
     }
+    public function showGallery(){
+        return view('gallery');
+    }
 }

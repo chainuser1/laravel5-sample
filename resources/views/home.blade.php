@@ -23,7 +23,7 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                                    <li><a href="#">Public Gallery</a></li>
+                                    <li><a href="/public_gallery">Public Gallery</a></li>
 <!--                                    <li class="dropdown">-->
 <!--                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
 <!--                                        <ul class="dropdown-menu">-->
@@ -69,6 +69,7 @@
 
                 </footer>
                 {!! HTML::script('js/app.js') !!}
+                {!! HTML::script('js/directorySlideshow.js') !!}
                 <script>
                     $.noConflict();
                     !function($){
@@ -89,7 +90,14 @@
                                         },
                                         function(data){}
                                 )
-                            })
+                            });
+                            $(".gallerySlider").directorySlider({
+                                animation: 'fade',
+                                filebase: 'slide_',
+                                directory: '/gallery/images',
+                                extension: 'jpg',
+                                height: 450
+                            });
                        });
                     }(jQuery);
                 </script>
