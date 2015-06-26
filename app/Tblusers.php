@@ -8,4 +8,8 @@ class Tblusers extends Model
 {
     //
     protected $table="tblusers";
+    protected $fillable=[
+        'username',
+        'password'
+    ];
 }

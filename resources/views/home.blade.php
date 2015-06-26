@@ -49,8 +49,8 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                           @if(isset($name))
-                                            <li><a href="#">{{$name}}</a></li>
+                                           @if(isset($uname))
+                                            <li><a href="#">{{$uname}}</a></li>
                                             <li role="separator" class="divider">Logout</li>
                                            @else
                                             <li><a href="/login">Log In</a></li>
@@ -82,19 +82,22 @@
                             $(".close").click(function(){$("#loginModal").fadeOut(4000).toggleClass("show",false);});
                             $("#login").click(function(){
                                 var uname=$("#uname").val();
-                                var uname=$("#pword").val();
+                                var pword=$("#pword").val();
+                                alert(uname);
                                 $.post("/account_signin",
                                         {
                                             uname: uname,
                                             pword: pword
                                         },
-                                        function(data){}
+                                        function(data){
+                                            alert(data);
+                                        }
                                 )
                             });
                             $(".gallerySlider").directorySlider({
                                 animation: 'fade',
                                 filebase: 'slide_',
-                                directory: '/gallery/images',
+                                directory: '{!!url("/gallery/images")!!}',
                                 extension: 'jpg',
                                 height: 450
                             });

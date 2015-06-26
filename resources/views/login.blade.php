@@ -9,19 +9,19 @@
                 <h1 class="text-center">Login</h1>
             </div>
             <div class="modal-body">
-                <form class="form col-md-12 center-block">
+                {!!Form::open(array('url'=>'/account_signin')) !!}
 <!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
                     <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Username" type="text" required id="uname">
+                        <input class="form-control input-lg" placeholder="Username" type="text" required name="uname">
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Password" type="password" required id="pword">
+                        <input class="form-control input-lg" placeholder="Password" type="password" required name="pword">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block" id="login">Sign In</button>
+                        {!! Form::submit('Sign In',array('class'=>'btn btn-primary btn-lg btn-block')) !!}
                         <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
                     </div>
-                </form>
+                {!!Form::close()!!}
             </div>
             <div class="modal-footer">
                 <div class="col-md-12">

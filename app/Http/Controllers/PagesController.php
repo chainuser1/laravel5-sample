@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Request;
 use Illuminate\Routing\Controller;
 use App\Tblusers;
 use Hash;
@@ -11,7 +10,6 @@ class PagesController extends Controller
     protected $req;
     protected $table_users;
     public function index(){
-        $request=new Request;
         return view('welcome');
     }
     public function SignUp(){
@@ -33,5 +31,13 @@ class PagesController extends Controller
     }
     public function showGallery(){
         return view('gallery');
+    }
+    public function login(){
+        $uname=Request::get('uname');
+        $pword=Request::get('pword');
+        //database transaction save
+        $req=new Tblusers;
+        $result=$req->all()
+        return "Done!!!";
     }
 }

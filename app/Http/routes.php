@@ -17,3 +17,4 @@ Route::post('/register','PagesController@SignUp');
 Route::get('/signup','PagesController@register');
 Route::get('/login','PagesController@showLogin');
 Route::get('/public_gallery','PagesController@showGallery');
+Route::post('/account_signin','PagesController@login');
