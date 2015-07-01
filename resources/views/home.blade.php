@@ -49,9 +49,10 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                           @if(isset($uname))
-                                            <li><a href="#">{{$uname}}</a></li>
-                                            <li role="separator" class="divider">Logout</li>
+                                           @if(Session::has('uname'))
+                                            <li><a href="#">{!!Session::get('uname')!!}</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/logout">Logout</a></li>
                                            @else
                                             <li><a href="/login">Log In</a></li>
                                            @endif

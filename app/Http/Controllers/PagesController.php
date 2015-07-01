@@ -5,23 +5,25 @@ use Request;
 use Illuminate\Routing\Controller;
 use App\Tblusers;
 use Hash;
+use Redirect;
+use Session;
 class PagesController extends Controller
 {
-    protected $req;
-    protected $table_users;
+
     public function index(){
         return view('welcome');
     }
-    public function SignUp(){
-        $req=new Request;
-        $username=$req->input('uname');
-        $password=$req->input('pword');
+    public function register(){
+
+        $uname=Request::get('uname');
+        $pword=Request::get('pword');
         $table_users=new Tblusers;
-        $table_users->username=$username;
-        $table_users->password=Hash::make($password);
-        $table_users->created_at=new \DateTime();
-        $table_users->updated_at=new \DateTime();
+        $table_users->username=$uname;
+        $table_users->password=md5($pword);
         $table_users->save();
+    }
+    public function showSignUp(){
+        return view('register');
     }
     public function home(){
         return view('home');
@@ -37,7 +39,20 @@ class PagesController extends Controller
         $pword=Request::get('pword');
         //database transaction save
         $req=new Tblusers;
-        $result=$req->all()
-        return "Done!!!";
+        $results=$req->all()->toArray();
+        $error="Incorrect Username or Password!!!";
+        /** @noinspection PhpUndefinedVariableInspection */
+        /** @var $result STRING */
+        foreach($results as $result){
+            $hash_pass=md5($pword);
+            if((strcmp($hash_pass,$result['password'])==0) && strcmp($uname,$result['username'])==0){
+                Session::put('uname',$uname);
+                return redirect('/home');
+            }
+            else{
+                return view('login',compact('error'));
+            }
+        }
+
     }
 }

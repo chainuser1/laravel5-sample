@@ -1,6 +1,9 @@
 @extends('home')
 @section('content')
 <!--login modal-->
+@if(isset($error))
+  <p class="alert-warning">{!!$error!!}</p>
+@endif
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -19,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::submit('Sign In',array('class'=>'btn btn-primary btn-lg btn-block')) !!}
-                        <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                        <span class="pull-right"><a href="/signup">Register</a></span><span><a href="#">Need help?</a></span>
                     </div>
                 {!!Form::close()!!}
             </div>
