@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
         <html>
             <head>
                 {!!HTML::style('css/app.css')!!}
                 {!!HTML::style('css/app.css')!!}
+                <title>MICP-ICT Arena</title>
             </head>
             <body>
                 <header>

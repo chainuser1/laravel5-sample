@@ -1,9 +1,10 @@
+@if(Session::has('uname'))
+<div class="alert-danger">{!!Redirect::to('home')!!}</div>
+@endif
 @extends('home')
 @section('content')
 <!--login modal-->
-@if(isset($error))
-  <p class="alert-warning">{!!$error!!}</p>
-@endif
+
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -12,13 +13,18 @@
                 <h1 class="text-center">Login</h1>
             </div>
             <div class="modal-body">
+                @if(isset($error))
+                    <p class="alert-warning">{!!$error!!}</p>
+                @endif
                 {!!Form::open(array('url'=>'/account_signin')) !!}
 <!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
-                    <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Username" type="text" required name="uname">
+                    <div class="form-group {{$errors->has('uname') ? 'has-error' : ''}}">
+                        {!!Form::input('text','uname',null,array('class'=>'form-control input-lg','placeholder'=>'Username'))!!}
+                        {!!$errors->first('uname','<span class="help-block">:message</span>')!!}
                     </div>
-                    <div class="form-group">
-                        <input class="form-control input-lg" placeholder="Password" type="password" required name="pword">
+                    <div class="form-group {{$errors->has('pword') ? 'has-error' : ''}}">
+                        {!!Form::password('pword',array('class'=>'form-control input-lg','placeholder'=>'Password'))!!}
+                        {!!$errors->first('pword','<span class="help-block">:message</span>')!!}
                     </div>
                     <div class="form-group">
                         {!! Form::submit('Sign In',array('class'=>'btn btn-primary btn-lg btn-block')) !!}

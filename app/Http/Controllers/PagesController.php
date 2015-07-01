@@ -7,6 +7,7 @@ use App\Tblusers;
 use Hash;
 use Redirect;
 use Session;
+use App\Http\Requests\CreateLoginRequest;
 class PagesController extends Controller
 {
 
@@ -19,8 +20,10 @@ class PagesController extends Controller
         $pword=Request::get('pword');
         $table_users=new Tblusers;
         $table_users->username=$uname;
-        $table_users->password=md5($pword);
+        $table_users->password=Hash::make($pword);
         $table_users->save();
+        $error="Successfully Saved Your Account";
+        return view('login',compact('error'));
     }
     public function showSignUp(){
         return view('register');
@@ -34,9 +37,9 @@ class PagesController extends Controller
     public function showGallery(){
         return view('gallery');
     }
-    public function login(){
-        $uname=Request::get('uname');
-        $pword=Request::get('pword');
+    public function login(CreateLoginRequest $request){
+        $uname=$request->get('uname');
+        $pword=$request->get('pword');
         //database transaction save
         $req=new Tblusers;
         $results=$req->all()->toArray();
@@ -44,15 +47,11 @@ class PagesController extends Controller
         /** @noinspection PhpUndefinedVariableInspection */
         /** @var $result STRING */
         foreach($results as $result){
-            $hash_pass=md5($pword);
-            if((strcmp($hash_pass,$result['password'])==0) && strcmp($uname,$result['username'])==0){
+            if(Hash::check($pword,$result['password']) && strcmp($uname,$result['username'])==0){
                 Session::put('uname',$uname);
                 return redirect('/home');
             }
-            else{
-                return view('login',compact('error'));
-            }
         }
-
+        return view('login',compact('error'));
     }
 }

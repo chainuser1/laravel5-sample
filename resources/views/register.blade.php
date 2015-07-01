@@ -1,5 +1,9 @@
+@if(Session::has('uname'))
+    <div class="alert-danger">{!!Redirect::to('home')!!}</div>
+@endif
 @extends('home')
 @section('content')
+
 <div id="signupModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -11,10 +15,11 @@
                 {!!Form::open(array('url'=>'/account_register')) !!}
                 <!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
                 <div class="form-group">
-                    <input class="form-control input-lg" placeholder="Username" type="text" required name="uname">
+                    {!!Form::input('text','uname',null,array('class'=>'form-control input-lg','placeholder'=>'Username'))!!}
+
                 </div>
                 <div class="form-group">
-                    <input class="form-control input-lg" placeholder="Password" type="password" required name="pword">
+                    {!!Form::input('text','uname',null,array('class'=>'form-control input-lg','placeholder'=>'Username'))!!}
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Register',array('class'=>'btn btn-primary btn-lg btn-block')) !!}

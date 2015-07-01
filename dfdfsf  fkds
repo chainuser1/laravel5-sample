@@ -1,0 +1,83 @@
+[33mcommit edbc65e7c70a96cdb4b586a8269cdd54a6829cbe[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jul 1 11:20:46 2015 +0800
+
+    Complete SignUp and Login Functionality
+
+[33mcommit 4c8db0d36dc0be8c3e2be606691b27d4211756c6[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Fri Jun 26 14:40:23 2015 +0800
+
+    Make Changes to Router, PagesController, LoginForm
+
+[33mcommit 0cfbf2c94fe500f800bcb5f9a8a3f6ad3668c8d3[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Mon Jun 22 11:39:43 2015 +0800
+
+    Add Gallery Images
+
+[33mcommit fe5fbe2b537c8cc6d0908692f120ff0098ed5e63[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Mon Jun 22 10:12:05 2015 +0800
+
+    Redesign Home Page
+
+[33mcommit 8d3f10ecba1c7ad4b3524b91728f7632b7f798cd[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Fri Jun 19 14:55:55 2015 +0800
+
+    Add Login Page, Configure X-CSRF for Ajax Requests
+
+[33mcommit 1df7c12fe86ce75daec999fcfd4e74b8a876e68e[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Fri Jun 19 11:42:43 2015 +0800
+
+    Finalize Bootstrap Integration, Login Page Creation, Nav Bar for Masterpage creation
+
+[33mcommit 4dea337136eba8b39981285487bbc8a1ab92d6c5[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Thu Jun 18 11:07:12 2015 +0800
+
+    Modify bower.json
+
+[33mcommit f9e452b8a0b19a1fc8d46f0886a510d9fc422438[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Thu Jun 18 09:22:30 2015 +0800
+
+    Add Elixir, Bootstrap, and Jquery
+
+[33mcommit 220cfeafb8593768daa18b92516292096b2938d2[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 17:12:10 2015 +0800
+
+    Integrate Elixir
+
+[33mcommit 1ced99bcfd2f8dfb067433454e6161be13615c39[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 13:41:00 2015 +0800
+
+    Add signup, and register to route
+
+[33mcommit 8f0fe8b1d616b74593babae31edd48a0247fdbfa[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 12:28:06 2015 +0800
+
+    Modify Pages Controller, add save function
+
+[33mcommit a4137dbb8c972495d00678032603c1bfa43280c2[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 11:16:00 2015 +0800
+
+    Create Home Layout
+
+[33mcommit a2bbf38821dabafb96fbd5e8b27421ade508dae8[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 08:49:37 2015 +0800
+
+    Finalize Laravel Integration
+
+[33mcommit b5e61f1ac512f1e32169d1ba2a325bdf34a0c6eb[m
+Author: Jayson Rael Ramos <lothlorien654@gmail.com>
+Date:   Wed Jun 17 08:37:14 2015 +0800
+
+    Initial Commit
