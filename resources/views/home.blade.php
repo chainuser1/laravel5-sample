@@ -3,7 +3,7 @@
         <html>
             <head>
                 {!!HTML::style('css/app.css')!!}
-                {!!HTML::style('css/app.css')!!}
+                {!!HTML::style('css/jquery-ui.css')!!}
                 <title>MICP-ICT Arena</title>
             </head>
             <body>
@@ -73,6 +73,7 @@
                 </footer>
                 {!! HTML::script('js/app.js') !!}
                 {!! HTML::script('js/directorySlideshow.js') !!}
+                {!! HTML::script('js/jquery_ui.js') !!}
                 <script>
                     $.noConflict();
                     !function($){
@@ -83,20 +84,9 @@
                                }
                            });
                             $(".close").click(function(){$("#loginModal").fadeOut(4000).toggleClass("show",false);});
-                            $("#login").click(function(){
-                                var uname=$("#uname").val();
-                                var pword=$("#pword").val();
-                                alert(uname);
-                                $.post("/account_signin",
-                                        {
-                                            uname: uname,
-                                            pword: pword
-                                        },
-                                        function(data){
-                                            alert(data);
-                                        }
-                                )
-                            });
+                           $(".datepicker").datepicker({showButtonPanel: true, changeMonth: true,
+                               changeYear: true})
+                           $(".datepicker").datepicker("option", "showAnim", "slideDown");
                             $(".gallerySlider").directorySlider({
                                 animation: 'fade',
                                 filebase: 'slide_',

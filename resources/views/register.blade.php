@@ -3,35 +3,60 @@
 @endif
 @extends('home')
 @section('content')
+<div class="modal show modal-dialog">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <legend><a href="#SignUp"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
+            {!!Form::open(array('url'=>'/account_register','role'=>'form')) !!}
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <div class="form-group {{$errors->has('fname') ? 'has-error' : ''}}">
+                          <input class="form-control" name="lname" placeholder="First Name" type="text"
+                               required autofocus />
+                         {!!$errors->first('fname','<span class="help-block">:message</span>')!!}
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
 
-<div id="signupModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="text-center">Login</h1>
-            </div>
-            <div class="modal-body">
-                {!!Form::open(array('url'=>'/account_register')) !!}
-                <!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
-                <div class="form-group">
-                    {!!Form::input('text','uname',null,array('class'=>'form-control input-lg','placeholder'=>'Username'))!!}
-
+                        <div class="form-group {{$errors->has('lname') ? 'has-error' : ''}}">
+                            <input class="form-control" name="lname" placeholder="First Name" type="text"
+                                   required autofocus />
+                            {!!$errors->first('lname','<span class="help-block">:message</span>')!!}
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    {!!Form::input('text','uname',null,array('class'=>'form-control input-lg','placeholder'=>'Username'))!!}
+                <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
+                    <input class="form-control" name="email" placeholder="Your Email" type="email" />
+                    {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                 </div>
-                <div class="form-group">
-                    {!! Form::submit('Register',array('class'=>'btn btn-primary btn-lg btn-block')) !!}
-                    <span class="pull-right"><a href="/login">Login</a></span><span><a href="#">Need help?</a></span>
+                <div class="form-group {{$errors->has('pword') ? 'has-error' : ''}}">
+                    <input class="form-control" name="pword" placeholder="Password" type="password" />
+                    {!!$errors->first('pword','<span class="help-block">:message</span>')!!}
                 </div>
-                {!!Form::close()!!}
-            </div>
-            <div class="modal-footer">
-                <div class="col-md-12">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <div class="form-group {{$errors->has('birthday') ? 'has-error' : ''}}">
+                    <input class="datepicker form-control" name="birthday" placeholder="Birth Date" type="text" />
+                    {!!$errors->first('birthday','<span class="help-block">:message</span>')!!}
                 </div>
-            </div>
+                <div class="form-group {{$errors->has('sex') ? 'has-error' : ''}}">
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
+                        Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
+                        Female
+                    </label>
+                    {!!$errors->first('sex','<span class="help-block">:message</span>')!!}
+             </div>
+                <br />
+                <br />
+                <button class="btn btn-lg btn-green-gradient btn-block" type="submit">
+                    Sign up</button>
+            {!!Form::close()!!}
+            <span class="pull-right"><a href="/login">Login</a></span><span><a href="#">Need help?</a></span>
         </div>
     </div>
 </div>
+</div>
+@stop

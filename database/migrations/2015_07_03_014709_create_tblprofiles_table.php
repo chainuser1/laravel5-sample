@@ -14,11 +14,11 @@ class CreateTblprofilesTable extends Migration
     {
         Schema::create('tblprofiles', function (Blueprint $table) {
             $table->string('username')->primary();
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email')->unique();
+            $table->string('password');
             $table->date('birthday');
-            $table->string('address');
-            $table->string('city');
-            $table->string('province');
             $table->timestamps(false);
         });
     }

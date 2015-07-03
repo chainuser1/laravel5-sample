@@ -27,7 +27,7 @@
                         {!!$errors->first('pword','<span class="help-block">:message</span>')!!}
                     </div>
                     <div class="form-group">
-                        {!! Form::submit('Sign In',array('class'=>'btn btn-primary btn-lg btn-block')) !!}
+                        {!! Form::submit('Sign In',array('class'=>'btn btn-green-gradient btn-lg btn-block')) !!}
                         <span class="pull-right"><a href="/signup">Register</a></span><span><a href="#">Need help?</a></span>
                     </div>
                 {!!Form::close()!!}
