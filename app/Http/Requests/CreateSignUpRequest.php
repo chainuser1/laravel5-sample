@@ -42,20 +42,24 @@ class CreateSignUpRequest extends FormRequest
     public function messages()
     {
         return [
-                'fname.required'=>' First Name is required.',
+                'fname.required'=>'*',
                 'fname.between'=>'First Name must be at least 2 letters and not exceeding 25.',
                 'fname.alpha'=>'Must compose of letters only.',
-                'lname.required'=>' Last Name is required.',
+                'lname.required'=>'*',
                 'lname.between'=>'Lastt Name must be at least 2 letters and not exceeding 75.',
                 'lname.alpha'=>'Must compose of letters only.',
-                'uname.required'=>'Username is required.',
+                'uname.required'=>'*',
                 'uname.unique'=>'This username is already taken.',
+                 'email.required'=>'*',
+                 'email.unique'=>'This email address is used in another account.',
                 'uname.between'=>'Username must be at least 8 to 25 characters.',
                 'uname.alpha_num'=>'Username should contain letters and numbers only.',
-                'pword.required'=>'Password is required.',
+                'pword.required'=>'*',
                 'pword.between'=>'Password must be at least 12 to 50 characters.',
-                'confirm_pword.required'=>'Please confirm your password.',
-                'confirm_pword.same'=>'Password didn\'t matched.'
+                'confirm_pword.required'=>'*',
+                'confirm_pword.same'=>'Password didn\'t matched.',
+                'birthday.required'=>'*',
+                'sex.required'=>'*'
             ];
     }
 

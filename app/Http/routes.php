@@ -15,7 +15,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/home','PagesController@home');
 Route::get('/logout',function(){
     Session::flush();
-    return redirect('home/login');
+    return redirect('/login');
 });
 Route::get('/home/{uname}','PagesController@find');
 Route::post('/register','PagesController@SignUp');
@@ -24,7 +24,3 @@ Route::get('/login','PagesController@showLogin');
 Route::get('/public_gallery','PagesController@showGallery');
 Route::post('/account_signin','PagesController@login');
 Route::post('/account_register','PagesController@register');
-Route::get('/logout',function(){
-    Session::flush();
-    return redirect('home');
-});

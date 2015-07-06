@@ -49,7 +49,7 @@ class PagesController extends Controller
     public function find($uname){
         if(Session::has('uname')){
             if(strcmp(Session::get('uname'),$uname)==0){
-                return redirect('home');
+                return redirect('home/'.$uname);
             }
         }
         return view('/login');
@@ -72,7 +72,7 @@ class PagesController extends Controller
         foreach($results as $result){
             if(Hash::check($pword,$result['password']) && strcmp($uname,$result['username'])==0){
                 Session::put('uname',$uname);
-                return redirect('/home/'.$uname);
+                return redirect('/home');
             }
         }
         return redirect('/login',compact('error'));
