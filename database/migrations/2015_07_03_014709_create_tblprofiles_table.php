@@ -17,8 +17,8 @@ class CreateTblprofilesTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->string('password');
             $table->date('birthday');
+            $table->string('sex');
             $table->timestamps(false);
         });
     }

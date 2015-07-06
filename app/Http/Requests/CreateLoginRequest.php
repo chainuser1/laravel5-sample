@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class CreateLoginRequest extends Request
+class CreateLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,4 +34,12 @@ class CreateLoginRequest extends Request
             'pword.required' => 'Er, you forgot your password!',
         ];
     }
+
+
+    /**
+     * Validate the given class instance.
+     *
+     * @return void
+     */
+
 }
