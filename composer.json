@@ -9,7 +9,7 @@
         "laravel/framework": "5.1.*",
         "laravel/elixir": "~1.0",
         "illuminate/html": "5.0.*@dev",
-        "twbs/bootstrap": "^3.3@dev"
+        "twbs/bootstrap": "~3.3@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
