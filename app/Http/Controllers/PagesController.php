@@ -24,7 +24,7 @@ class PagesController extends Controller
         $lname=$request->get('lname');
         $email=$request->get('email');
         $pword=$request->get('pword');
-        $birthday=$request->get('birthday');
+        $birthday=date('Y-m-d',strtotime($request->get('birthday')));
         $sex=(string)$request->get('sex');
         //model profile
         $profiles->username=$uname;
@@ -72,10 +72,11 @@ class PagesController extends Controller
         foreach($results as $result){
             if(Hash::check($pword,$result['password']) && strcmp($uname,$result['username'])==0){
                 Session::put('uname',$uname);
+                Session::forget('error');
                 return redirect('/home');
             }
         }
-        return redirect('/login',compact('error'));
+        return back()->with('error',$error)->withInput();
     }
 
 }

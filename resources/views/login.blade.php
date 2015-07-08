@@ -13,8 +13,8 @@
                 <h1 class="text-center">Login</h1>
             </div>
             <div class="modal-body">
-                @if(isset($error))
-                    <p class="alert-warning">{!!$error!!}</p>
+                @if(Session::has('error'))
+                    <p class="alert-warning">{!!Session::get('error')!!}</p>
                 @endif
                 {!!Form::open(array('url'=>'/account_signin')) !!}
 <!--                    <input type="hidden" name="_token" value="{{ csrf_token() }}">-->
