@@ -71,9 +71,8 @@ class PagesController extends Controller
         /** @var $result STRING */
         foreach($results as $result){
             if(Hash::check($pword,$result['password']) && strcmp($uname,$result['username'])==0){
-                Session::put('uname',$uname);
                 Session::forget('error');
-                return redirect('/home');
+                return redirect('/home')-with('uname',$uname);
             }
         }
         return back()->with('error',$error)->withInput();
