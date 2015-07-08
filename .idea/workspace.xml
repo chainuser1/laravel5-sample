@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2370a930-308f-4f74-8cd8-5c742b53e131" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
     </list>
     <ignored path="laravel5-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dfdfsf  fkds" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dfdfsf  fkds" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dfdfsf  fkds">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="82" selection-end="82" vertical-scroll-proportion="-0.04992658">
+            <state line="20" column="18" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_07_03_014709_create_tblprofiles_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_07_03_014709_create_tblprofiles_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="22" selection-start="336" selection-end="336" vertical-scroll-proportion="0.3648855">
               <folding />
             </state>
           </provider>
@@ -83,15 +93,6 @@
         <entry file="file://$PROJECT_DIR$/bootstrap/cache/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="26" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -224,6 +225,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5-sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5-sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,13 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_07_03_014709_create_tblprofiles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="40" selection-start="2382" selection-end="2382" vertical-scroll-proportion="0.0">
@@ -512,7 +524,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dfdfsf  fkds">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="82" selection-end="82" vertical-scroll-proportion="-0.04992658">
+        <state line="20" column="18" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_07_03_014709_create_tblprofiles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="336" selection-end="336" vertical-scroll-proportion="0.3648855">
           <folding />
         </state>
       </provider>
