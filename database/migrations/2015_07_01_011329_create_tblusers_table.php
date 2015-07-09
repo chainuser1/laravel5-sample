@@ -14,7 +14,9 @@ class CreateTblusersTable extends Migration
     {
         Schema::create('tblusers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();
+            $table->string('fname');
+            $table->string('name');
+            $table->string('email')->unique();
             $table->string('password',75);
             $table->timestamps(false);
         });

@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\CanResetPassword;
-class Tblusers extends Model implements CanResetPassword
+class Tblusers extends Model
 {
     //
     protected $table="tblusers";
     protected $fillable=[
-        'username',
+        'lname',
+        'fname',
+        'email',
         'password'
     ];
 
@@ -18,8 +19,5 @@ class Tblusers extends Model implements CanResetPassword
      *
      * @return string
      */
-    public function getEmailForPasswordReset()
-    {
-        // TODO: Implement getEmailForPasswordReset() method.
-    }
+
 }

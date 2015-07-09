@@ -1,7 +1,5 @@
-@if(Session::has('uname'))
-<div class="alert-danger">{!!Redirect::to('home')!!}</div>
-@endif
-@extends('home')
+@extends('layout')
+@section('title')<title>MICP: Login</title>
 @section('content')
 <!--login modal-->
 

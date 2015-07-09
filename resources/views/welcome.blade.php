@@ -44,7 +44,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title"><a href="/home">Welcome to Laravel Sample for MICP</a></div>
+                <div class="title"><a href="/index">Welcome to MICP</a></div>
                 <div class="quote">{{ Inspiring::quote() }}</div>
             </div>
         </div>

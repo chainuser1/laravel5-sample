@@ -4,7 +4,8 @@
             <head>
                 {!!HTML::style('css/app.css')!!}
                 {!!HTML::style('css/jquery-ui.css')!!}
-                <title>MICP-ICT Arena</title>
+                @yield('title')
+                <title>MICP Arena</title>
             </head>
             <body>
                 <header>
@@ -56,7 +57,7 @@
                                             <li role="separator" class="divider"></li>
                                             <li><a href="/logout">Logout</a></li>
                                            @else
-                                            <li><a href="/login">Log In</a></li>
+                                            <li><a href="/auth/login">Log In</a></li>
                                            @endif
                                         </ul>
                                     </li>
