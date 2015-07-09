@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/index','PagesController@main');
+
 Route::get('/auth/reset',function(){
     return view('auth.reset');
 });

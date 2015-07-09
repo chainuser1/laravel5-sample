@@ -72,9 +72,9 @@
                 <footer>
 
                 </footer>
-                {!! HTML::script('js/app.js') !!}
+                @include('scripts')
                 {!! HTML::script('js/directorySlideshow.js') !!}
-                {!! HTML::script('js/jquery_ui.js') !!}
+
                 <script>
                     $.noConflict();
                     !function($){
@@ -84,17 +84,17 @@
                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                }
                            });
-                            $(".close").click(function(){$("#loginModal").fadeOut(4000).toggleClass("show",false);});
+                           $(".close").click(function(){$("#loginModal").fadeOut(4000).toggleClass("show",false);});
                            $(".datepicker").datepicker({showButtonPanel: true, changeMonth: true,
                                changeYear: true})
                            $(".datepicker").datepicker("option", "showAnim", "slideDown");
-                            $(".gallerySlider").directorySlider({
+                           $(".gallerySlider").directorySlider({
                                 animation: 'fade',
                                 filebase: 'slide_',
                                 directory: '{!!url("/gallery/images")!!}',
                                 extension: 'jpg',
                                 height: 450
-                            });
+                           });
                        });
                     }(jQuery);
                 </script>
