@@ -1,65 +1,100 @@
-<?php
+<?php namespace App\Http\Controllers\Auth;
 
-namespace App\Http\Controllers\Auth;
-
-use App\Tblusers;
-use Validator;
+use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Contracts\Auth\Guard;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 
-class AuthController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
+class AuthController extends Controller {
 
-    use AuthenticatesAndRegistersUsers;
+    /**
+     * the model instance
+     * @var User
+     */
+    protected $user;
+    /**
+     * The Guard implementation.
+     *
+     * @var Authenticator
+     */
+    protected $auth;
 
     /**
      * Create a new authentication controller instance.
      *
+     * @param  Authenticator  $auth
      * @return void
      */
-    public function __construct()
+    public function __construct(Guard $auth, User $user)
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->user = $user;
+        $this->auth = $auth;
+
+        $this->middleware('guest', ['except' => ['getLogout']]);
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Show the application registration form.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return Response
      */
-    protected function validator(array $data)
+    public function getRegister()
     {
-        return Validator::make($data, [
-            'fname' => 'required|max:255',
-            'lname' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:tblusers',
-            'password' => 'required|confirmed|min:6',
+        return view('auth.register');
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  RegisterRequest  $request
+     * @return Response
+     */
+    public function postRegister(RegisterRequest $request)
+    {
+        //code for registering a user goes here.
+        $this->auth->login($this->user);
+        return redirect('/dash-board');
+    }
+
+    /**
+     * Show the application login form.
+     *
+     * @return Response
+     */
+    public function getLogin()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Handle a login request to the application.
+     *
+     * @param  LoginRequest  $request
+     * @return Response
+     */
+    public function postLogin(LoginRequest $request)
+    {
+        if ($this->auth->attempt($request->only('email', 'password')))
+        {
+            return redirect('/dash-board');
+        }
+
+        return redirect('/login')->withErrors([
+            'email' => 'The credentials you entered did not match our records. Try again?',
         ]);
     }
 
     /**
-     * Create a new user instance after a valid registration*
-     * @param  array  $data
-     * @return User
+     * Log the user out of the application.
+     *
+     * @return Response
      */
-    protected function create(array $data)
+    public function getLogout()
     {
-        return Tblusers::create([
-            'lname' => $data['name'],
-            'fname' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $this->auth->logout();
+
+        return redirect('/');
     }
+
 }

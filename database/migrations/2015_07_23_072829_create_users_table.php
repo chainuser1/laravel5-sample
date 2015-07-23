@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblprofilesTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreateTblprofilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tblprofiles', function (Blueprint $table) {
-            $table->string('username')->primary();
-            $table->string('firstname');
-            $table->string('lastname');
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('email')->unique();
-            $table->date('birthday');
-            $table->string('sex');
+            $table->string('password',60);
             $table->timestamps(false);
         });
     }
@@ -30,6 +27,6 @@ class CreateTblprofilesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tblprofiles');
+        Schema::drop('users');
     }
 }

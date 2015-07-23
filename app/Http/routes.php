@@ -11,15 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/index','PagesController@main');
+Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
+Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
 
-Route::get('/auth/reset',function(){
-    return view('auth.reset');
-});
-Route::get('/auth/login',function(){
-    return view('auth.login');
-});
-Route::get('/auth/register',function(){
-    return view('auth.register');
-});
+Route::controller('/','Auth\AuthController');
