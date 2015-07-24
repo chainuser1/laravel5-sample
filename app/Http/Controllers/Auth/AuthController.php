@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Auth;
-
+use Hash;
+use Session;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -19,6 +20,7 @@ class AuthController extends Controller {
      */
     protected $auth;
 
+    protected $account;
     /**
      * Create a new authentication controller instance.
      *
@@ -29,6 +31,7 @@ class AuthController extends Controller {
     {
         $this->user = $user;
         $this->auth = $auth;
+        $this->account=new User;
         $this->middleware('guest', ['except' => ['getLogout']]);
     }
 
@@ -51,6 +54,9 @@ class AuthController extends Controller {
     public function postRegister(RegisterRequest $request)
     {
         //code for registering a user goes here.
+        $this->account->email=$request["email"];
+        $this->account->password=Hash::make($request["password"]);
+        $this->account->save();
         $this->auth->login($this->user);
         return redirect('/dash-board');
     }
@@ -74,7 +80,7 @@ class AuthController extends Controller {
     {
         if ($this->auth->attempt($request->only('email', 'password')))
         {
-            Session::put('email', $request->email);
+            Session::put('email', $request['email']);
             return redirect('/dash-board');
         }
         return redirect('/login')->withErrors([
@@ -90,6 +96,7 @@ class AuthController extends Controller {
     public function getLogout()
     {
         $this->auth->logout();
+        Session::remove('email');
         return redirect('/');
     }
 

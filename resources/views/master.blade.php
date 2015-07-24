@@ -11,7 +11,7 @@
                 <div class="container">
                     <header id="header">
                         <div class="jumbotron">
-                            <h1>Laravel 5: New Auth Generators and User Authentication</h1>
+                            <h1 class="center">MICP-ICT Arena</h1>
                         </div>
                     </header>
                     <div class="row">

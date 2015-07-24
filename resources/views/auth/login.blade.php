@@ -1,6 +1,5 @@
 <!-- -->
 @extends('master')
-@section('title'){!!HTML::title('Login to MICP')@endsection
 @section('main')
 <div class="col-md-8 col-md-offset-2 form-content">
     <h3 class="heading">Login</h3>

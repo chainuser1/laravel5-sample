@@ -12,5 +12,6 @@
 */
 
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
+Route::get('/news',['as'=>'news','uses'=>'NewsController@index','only'=>'index']);
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
 Route::controller('/','Auth\AuthController');
