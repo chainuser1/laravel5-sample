@@ -15,7 +15,6 @@ class AuthController extends Controller {
     protected $user;
     /**
      * The Guard implementation.
-     *
      * @var Authenticator
      */
     protected $auth;
@@ -30,7 +29,6 @@ class AuthController extends Controller {
     {
         $this->user = $user;
         $this->auth = $auth;
-
         $this->middleware('guest', ['except' => ['getLogout']]);
     }
 
@@ -59,7 +57,6 @@ class AuthController extends Controller {
 
     /**
      * Show the application login form.
-     *
      * @return Response
      */
     public function getLogin()
@@ -77,9 +74,9 @@ class AuthController extends Controller {
     {
         if ($this->auth->attempt($request->only('email', 'password')))
         {
+            Session::put('email', $request->email);
             return redirect('/dash-board');
         }
-
         return redirect('/login')->withErrors([
             'email' => 'The credentials you entered did not match our records. Try again?',
         ]);
@@ -93,7 +90,6 @@ class AuthController extends Controller {
     public function getLogout()
     {
         $this->auth->logout();
-
         return redirect('/');
     }
 

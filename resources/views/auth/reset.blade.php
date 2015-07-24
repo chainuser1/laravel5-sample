@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
                 <legend><a href="#Reset"><i class="glyphicon glyphicon-globe"></i></a> Reset Password!</legend>
-                {!!Form::open(array('url'=>'/auth.reset','role'=>'form')) !!}
+                {!!Form::open(array('url'=>'/reset','role'=>'form')) !!}
 
                 <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
                     <input class="form-control" name="email" placeholder="Your Email" type="text" />
