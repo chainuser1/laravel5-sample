@@ -4,3 +4,4 @@
 {!!HTML::style('css/default.css')!!}
 {!!HTML::style('css/flexSlider.css')!!}
 {!!HTML::style('css/costume.css')!!}
+{!!HTML::style('datetimepicker-master/jquery.datetimepicker.css')!!}

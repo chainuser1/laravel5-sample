@@ -9,6 +9,38 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
 
 }
+@-webkit-keyframes glow {
+    to {
+         border-color: #69c800;
+    -webkit-box-shadow: 0 0 5px #69c800;
+       -moz-box-shadow: 0 0 5px #69c800;
+            box-shadow: 0 0 5px #69c800;
+    }
+}
+
+
+
+Manipulating the above answer for CSS only solution
+
+@-webkit-keyframes glow {
+    to {
+         border-color: #69c800;
+    -webkit-box-shadow: 0 0 5px #69c800;
+       -moz-box-shadow: 0 0 5px #69c800;
+            box-shadow: 0 0 5px #69c800;
+    }
+}
+
+.myGlower {
+    background-color: #ccc;
+    border: 1px solid transparent;
+    -webkit-animation: glow 1.0s infinite alternate;
+    -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+    -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+    transition: border 1.0s linear, box-shadow 1.0s linear;
+}
+
+
 /*! fancyBox v2.1.4 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
 .fancybox-skin,

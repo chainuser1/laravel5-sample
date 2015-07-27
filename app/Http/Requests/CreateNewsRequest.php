@@ -23,15 +23,17 @@ class CreateNewsRequest extends Request
     public function rules()
     {
         return [
-            'title'=>'required|max=250',
-            'content'=>'required'
+            'title'=>'required|max:250',
+            'content'=>'required',
+            'created_at'=>'required|date'
         ];
     }
     public function messages(){
         return [
             'title.required'=>'News title must be provided.',
             'title.max'=>'News title must be less than 251 characters.',
-            'content.required'=>'Must include news content.'
+            'content.required'=>'Must include news content.',
+            'created_at.required'=>'Must include date of article creation'.
         ];
     }
 }
