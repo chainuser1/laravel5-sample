@@ -1,19 +1,21 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Request;
 use App\Http\Controllers\Controller;
-use App\CreateNewsRequest;
+use App\Http\Requests\Admin\CreateNewsRequest;
+use App\News;
+use Carbon;
 class NewsController extends Controller
 {
+    protected $news;//news table
     /**
      * Create a new controller instance.
      * @return void
      */
+
     public function _construct(){
+        $news=new News;
         $this->middleware('auth', ['except' => ['index','show']]);
     }
 
@@ -24,7 +26,8 @@ class NewsController extends Controller
      */
     public function getIndex()
     {
-        return view('news.news');
+        $feed=$this->news->all()->where('created_at','<=',Carbon::now());
+        return view('news.news',compact('feed'));
     }
 
     /**
@@ -42,9 +45,14 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function postStore()
+    public function postStore(CreateNewsRequest $request)
     {
-        return "My news";
+            if(Request::ajax()){
+                return Request::all();
+            }
+            else
+               return '<p class="alert-primary">'.$request->get('created_at').'</p>';
+
     }
 
     /**

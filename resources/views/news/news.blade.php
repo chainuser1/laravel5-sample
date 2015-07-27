@@ -20,15 +20,45 @@
                @endif
                {!!HTML::script('datetimepicker-master/jquery.js')!!}
                {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
+               {!! HTML::script('js/jquery_ui.js') !!}
                <script>
                    $.noConflict();
                    !function($){
                        $(function(){
+
                            $(".datetimepicker").datetimepicker({
                                   mask:true,
                                   format:'Y/m/d H:i',
                                   timepicker:true,
                                   datepicker:true
+                           });
+                           $(".ajax").click(function(){
+                               var news_title=$("#title").val();
+                               var content=$("#content").html();
+                               var created_at=$("#created_at").val();
+                               //var created_at=new Date($("#created_at").val());
+                               //var formatted=created_at.dateFormat("Y-m-d H:i:s")
+                               $.ajaxSetup({
+                                   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+                               });
+
+                               $.ajax({
+                                   url: "news/store",
+                                   type:"POST",
+
+                                   data: {
+                                       title: news_title,
+                                       content: content,
+                                       created_at:created_at
+                                   },
+                                   dataType: 'JSON',
+                                   success: function(data){
+                                       alert(data)
+                                   },
+                                   error: function(xhr,status){
+                                       alert(status);
+                                   }
+                               })
                            });
                        });
                    }(jQuery);
