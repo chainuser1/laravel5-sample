@@ -1,33 +1,24 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\CreateNewsRequest;
 use App\News;
 use Carbon;
+use Illuminate\Http\Request;
+use Validator;
+use Response;
 class NewsController extends Controller
 {
-    protected $news;
-    /**
-     * Create a new controller instance.
-     * @return void
-     */
-
-    public function _construct(){
-        $this->middleware('auth');
-        $this->news=new News;
-    }
 
 
      /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function getIndex()
+    public function index(News $table)
     {
-        //$feed=$this->news->findAll()->where('created_at','<=',Carbon::now());
-        return view('news.news'/*,compact('feed')*/);
+        $feed=$table->where('created_at','<=',Carbon::now());
+        return view('news.news',compact('feed'));
     }
 
     /**
@@ -35,7 +26,7 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function getCreate()
+    public function create()
     {
         return view('news.create-news');
     }
@@ -45,34 +36,48 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function postStore(CreateNewsRequest $request)
+    public function store(Request $req, News $table)
     {
-            if($request->ajax()){
-                return $request->get('_token');
-            }
-            else
-               return '<p class="alert-primary">'.$request->get('created_at').'</p>';
+         if($req->ajax()){
+                $validator=Validator::make($req->all(),[
+                 'title'=>'required|max:250',
+                 'slug'=>'unique:news,slug',
+                 'content'=>'required',
+                 'created_at'=>'required|date',
+                ]);
+                if($validator->fails()){
+                    $errors=$validator->messages();
+                    return  Response::json($errors->all());
+                }
+             $table->title=$req->input('title');
+             $table->slug=$req->input('slug');
+             $table->content=$req->input('content');
+             $table->created_at=strtotime($req->input('created_at'));
+             $table->save();
+                return  "Your news was successfully saved.";
 
+         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return Response
      */
-    public function getShow($id)
+    public function show($slug, News $table)
     {
-
+        $article=$table->where('slug','=',$slug)->first();
+        return view('news.show',compact('article'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return Response
      */
-    public function getEdit($id)
+    public function edit($slug)
     {
         //
     }
@@ -80,10 +85,10 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return Response
      */
-    public function postUpdate($id)
+    public function update($slug)
     {
         //
     }
@@ -91,10 +96,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return Response
      */
-    public function postDestroy($id)
+    public function destroy($slug)
     {
         //
     }
