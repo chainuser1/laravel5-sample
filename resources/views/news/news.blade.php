@@ -1,6 +1,7 @@
 <!DOCTYPE html>
         <html>
            <head>
+               <meta name="csrf-token" content="{{ csrf_token() }}">
                <title>MICP News</title>
                @include('../style')
            </head>
@@ -32,33 +33,37 @@
                                   timepicker:true,
                                   datepicker:true
                            });
-                           $(".ajax").click(function(){
+                           $(".btn-primary").click(function(){
                                var news_title=$("#title").val();
                                var content=$("#content").html();
                                var created_at=$("#created_at").val();
+                               var _token=$('input[name=_token]').val();
                                //var created_at=new Date($("#created_at").val());
                                //var formatted=created_at.dateFormat("Y-m-d H:i:s")
                                $.ajaxSetup({
-                                   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+                                   headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
                                });
+                               console.log(_token);
+                               $.post('news/store',{
+                                   title:news_title,
+                                   content:content,
+                                   created_at:created_at,
+                                   _token:_token
+                               },
+                                       function(data,status)
+                                       {
+                                           if(status==="success"){
+                                               console.log(data);
+                                               alert(data);
+                                           }
+                                           else{
+                                               console.log(status)
+                                               alert(status);
+;                                           }
+                                       }
 
-                               $.ajax({
-                                   url: "news/store",
-                                   type:"POST",
+                              )
 
-                                   data: {
-                                       title: news_title,
-                                       content: content,
-                                       created_at:created_at
-                                   },
-                                   dataType: 'JSON',
-                                   success: function(data){
-                                       alert(data)
-                                   },
-                                   error: function(xhr,status){
-                                       alert(status);
-                                   }
-                               })
                            });
                        });
                    }(jQuery);

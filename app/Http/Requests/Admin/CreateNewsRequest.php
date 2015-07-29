@@ -1,19 +1,30 @@
 <?php
 
 namespace App\Http\Requests\Admin;
-
+use Session;
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Contracts\Auth\Guard;
 class CreateNewsRequest extends FormRequest
 {
+
+
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
+
     public function authorize()
     {
-        return true;
+
+        if(Auth::check()){
+            return true;
+        }
+        else{
+            Session::put('cache','news/create');
+            return redirect('/login');
+        }
     }
 
     /**

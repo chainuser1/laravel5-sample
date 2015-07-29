@@ -81,7 +81,13 @@ class AuthController extends Controller {
         if ($this->auth->attempt($request->only('email', 'password')))
         {
             Session::put('email', $request['email']);
-            return redirect('/dash-board');
+            $cache=Session::get('cache');
+            if(isset($cache)){
+                return redirect(Session::get('cache'));
+            }
+            else{
+                return redirect('/dash-board');
+            }
         }
         return redirect('/login')->withErrors([
             'email' => 'The credentials you entered did not match our records. Try again?',

@@ -42,13 +42,15 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            @if(Session::has('email'))
+                            @if(Session::has('email' && Auth::check()))
                             <li><a href="#">{!!Session::get('email')!!}</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/logout">Logout</a></li>
                             @else
                             <li><a href="/login">Log In</a></li>
                             <li><a href="/register">Signup</a></li>
+                            {!!Session::flush()!!}
+                            {!!Auth::logout()!!}
                             @endif
                         </ul>
                     </li>

@@ -23,10 +23,9 @@
         </div>
          <div class="panel-footer">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-lg btn-primary" value="Create News" id="create_news_00"/>
+                    <button class="btn btn-lg btn-dark">Add News</button>
                     &nbsp;&nbsp;<input type="reset" class="btn btn-lg btn-danger" value="Reset"/>
          {!!Form::close()!!}
-                    &nbsp;&nbsp;<input type="button" class="ajax btn btn-lg btn-primary" value="Create News Async" id="create_news"/>
                 </div>
          </div>
 
