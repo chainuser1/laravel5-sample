@@ -1,3 +1,19 @@
+/**
+* Created By: Jayson Ramos
+*
+**/
+.shadow-box{
+    -webkit-box-shadow: 5px 3px 4px 5px #8CFFC6;
+    box-shadow: 5px 3px 4px 5px #8CFFC6;
+}
+.shadow-text{
+    text-shadow: 3px 2px 3px #A1FFFC;
+}
+p.content:first-line{
+    text-indent: 4px;
+}
+p.content:first-letter { font-size: 3.2em;
+    color: #27c914; }
 .costume-box-gradient-1{
     background: #f3e2c7; /* Old browsers */
     background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6+ */
@@ -21,6 +37,23 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color: #ff1811;
 }
+.title{
+    font-size: 1.7em;
+    color: #91e842;
+    font-weight: bold;
+}
+.title:selection{
+    color: #ff1811;
+    text-decoration: no-underline;
+    text-decoration-color: #ff6666;
+}
+.title:hover{
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
 .transparent{
     opacity: 0.0;
 }
@@ -35,7 +68,7 @@
 
 
 
-Manipulating the above answer for CSS only solution
+/**Manipulating the above answer for CSS only solution**/
 
 @-webkit-keyframes glow {
     to {

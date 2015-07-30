@@ -6,18 +6,18 @@
                @include('../style')
            </head>
            <body>
-               <h1 class="h1 alert-warning myGlower" style="position: fixed; z-index: 12345; box-shadow: 4px 3px 2px 3px; margin-top:1px">News Center</h1>
-               <br>
+<!--               <h1 class="h1 alert-warning myGlower rightt" style=" position: fixed; z-index: 12345; box-shadow: 4px 3px 2px 3px; margin-top:1px">News Center</h1>-->
+               @include('header')
                @yield('admin-only')
-               @if(isset($news))
-
-                     @foreach($news->all() as $story)
+               @if(isset($feed))
+                     @foreach($feed->all() as $story)
                         <div class="container">
-                             <h3 class="h3">{!!$story->title!!}</h3><br>
-                             <h6 class="h6">{!! $story->created_at!!}</h6>
+                             <a class="title" href="{!!URL::to('/news').'/'.$story->slug.'/show'!!}">{!!$story->title!!}</a><br>
+                             <h6 class="h6">{!!$story->created_at->diffForHumans()!!}</h6>
                         </div>
                       @endforeach
-
+               @elseif(isset($error))
+                         <p class="alert">{!!$error!!}</p>
                @endif
                {!!HTML::script('datetimepicker-master/jquery.js')!!}
                {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
@@ -41,9 +41,8 @@
                                var content=$("#content").val();
                                var created_at=$("#created_at").val();
                                var _token=$('input[name=_token]').val();
+                               //create our slug
                                var slug=news_title.toLowerCase().replace(/([\^\!@\+#\$%^\,\.\'\"&*\s]){1,}/g,"-");
-//                               var created_at=new Date($("#created_at").val());
-//                               var formatted=created_at.dateFormat("Y-m-d H:i:s");
                                //our data string
                                var dataString="title="+news_title+"&slug="+slug+"&content="+content+"&created_at="+created_at+"&_token="+_token;
                                //ajax here
@@ -87,5 +86,7 @@
                        });
                    }(window.jQuery);
                </script>
+               {!!HTML::script('js/app.js')!!}
+
            </body>
         </html>

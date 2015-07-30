@@ -15,10 +15,16 @@ class NewsController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index(News $table)
+    public function index()
     {
-        $feed=$table->where('created_at','<=',Carbon::now());
-        return view('news.news',compact('feed'));
+        //->get()
+        $feed=News::createdAt()->get()->sortByDesc(function($role){
+            return $role->created_at;
+        });
+        if(!is_null($feed))
+            return view('news.news',compact('feed'));
+        else
+            return view('news.news',array('error'=>'There are no news published'));
     }
 
     /**
@@ -68,7 +74,10 @@ class NewsController extends Controller
     public function show($slug, News $table)
     {
         $article=$table->where('slug','=',$slug)->first();
-        return view('news.show',compact('article'));
+        if(!is_null($article))
+            return view('news.show',compact('article'));
+        else
+            return view('news.show',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
     }
 
     /**
