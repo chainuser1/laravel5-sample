@@ -8,6 +8,7 @@
     @endforeach
     {!!Form::open(['url'=>'/login','class'=>'form form-horizontal','style'=>'margin-top:50px'])!!}
     <div class="form-group">
+        <input type="hidden" name="url" value="{!!$url!!}"/>
         {!! Form::label('email','Email:',['class'=>'col-sm-3 control-label']) !!}
         <div class="col-sm-8">
             {!! Form::text('email',Input::old('email'),['class'=>'form-control']) !!}

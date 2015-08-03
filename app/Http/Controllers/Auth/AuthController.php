@@ -2,6 +2,7 @@
 use Hash;
 use Session;
 use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use App\Http\Requests\Auth\LoginRequest;
@@ -65,9 +66,10 @@ class AuthController extends Controller {
      * Show the application login form.
      * @return Response
      */
-    public function getLogin()
+    public function getLogin(Request $url)
     {
-        return view('auth.login');
+        $url=$url->get('url');
+        return view('auth.login',compact('url'));
     }
 
     /**
@@ -81,17 +83,15 @@ class AuthController extends Controller {
         if ($this->auth->attempt($request->only('email', 'password')))
         {
             Session::put('email', $request['email']);
-            $cache=Session::get('cache');
-            if(isset($cache)){
-                return redirect(Session::get('cache'));
-            }
-            else{
-                return redirect('/dash-board');
-            }
+            if(is_null($request->get('url')))
+                return redirect('/');
+            else
+                return redirect($request->get('url'));
+
         }
         return redirect('/login')->withErrors([
             'email' => 'The credentials you entered did not match our records. Try again?',
-        ]);
+        ])->withInput();
     }
 
     /**
@@ -99,11 +99,15 @@ class AuthController extends Controller {
      *
      * @return Response
      */
-    public function getLogout()
+    public function getLogout(Request $input)
     {
+        $url=$input->get('url');
         $this->auth->logout();
         Session::flush();
-        return redirect('/');
+        if(is_null($input)){
+            return redirect('/');
+        }
+        return redirect($url);
     }
 
 }

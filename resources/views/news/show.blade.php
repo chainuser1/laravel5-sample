@@ -5,7 +5,7 @@
        <p class="alert">{!!$error!!}</p>
     @else
     <div class="panel-heading"><h1 class="shadow-text h1">{!!$article->title!!}</h1><br></div>
-    <div class="panel-body"><p class="content" style="text-align: justify;">{!!$article->content!!}</p></div>
+    <div class="panel-body"><p class="content" style="text-align: justify;">{!!preg_replace('/[\n|\r]{4,}/','<br>',$article->content)!!}</p></div>
     @endif
 </div>
 

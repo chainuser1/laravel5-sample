@@ -3,4 +3,4 @@
 {!! HTML::script('js/jquery_ui.js') !!}
 {!! HTML::script('js/flexSlider.js') !!}
 {!! HTML::script('js/jquery.datetimepicker.js') !!}
-
+{!! HTML::script('js/costume.js') !!}

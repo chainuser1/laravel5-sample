@@ -5,6 +5,7 @@
                 @include('style')
                 @yield('title')
                 <title>MICP Arena: Laravel 5 Sample</title>
+
             </head>
             <body>
                 @include('header')
