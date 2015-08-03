@@ -16,14 +16,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="item active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="item active"><a href="/public_gallery">Public Gallery</a></li>
+                    <li class="item active"><a href="/public-gallery">Public Gallery</a></li>
                     <li class="item active dropdown">
                         <a href="/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/news">View all news</a></li>
+                            <li><a href="/news">News</a></li>
                             <li role="separator" class="divider"></li>
                           @if(Auth::check())
                             <li><a href="/news/create">Publish a Story</a></li>
+                            <li><a href="/news/unpublished">View all unpublished news</a></li>
                           @endif
                         </ul>
                     </li>

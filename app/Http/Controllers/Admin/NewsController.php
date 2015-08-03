@@ -112,4 +112,17 @@ class NewsController extends Controller
     {
         //
     }
+    /**
+     * View all unpublished news
+     * @return Response
+     */
+    public function viewUnpublished(){
+        $feed=News::unpublished()->get()->sortByDesc(function($role){
+            return $role->created_at;
+        });
+        if(!is_null($feed))
+            return view('news.news',compact('feed'));
+        else
+            return view('news.news',array('error'=>'There are no news published'));
+    }
 }

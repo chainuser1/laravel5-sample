@@ -10,13 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('/public-gallery',['as'=>'public-gallery','uses'=>function(){
+    return view('public_gallery');
+}]);
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
 Route::get('/news',['as'=>'news','uses'=>'Admin\NewsController@index']);
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/news/create',['as'=>'new.create','uses'=>'Admin\NewsController@create']);
     Route::post('/news/store',['as'=>'new.store','uses'=>'Admin\NewsController@store']);
+    Route::get('/news/unpublished',['as'=>'news.unpublished','uses'=>'Admin\NewsController@viewUnpublished']);
     Route::post('/news/update',['as'=>'new.update','uses'=>'Admin\NewsController@update']);
     Route::post('/news/delete',['as'=>'new.delete','uses'=>'Admin\NewsController@destroy']);
     Route::get('/news/{slug}/edit',['as'=>'new.edit','uses'=>'Admin\NewsController@edit']);
