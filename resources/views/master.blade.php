@@ -22,16 +22,6 @@
                 <input type="hidden" value="{!!URL::to('/').'/public_gallery/images'!!}" name="gallery"/>
                 @include('scripts')
                 {!! HTML::script('js/directorySlideshow.js') !!}
-                <script>
-                    $.noConflict();
-                    !function($){
-                       $(function(){
-                          var directory=$("input[name=gallery]").val();
-                          $(".directorySlider").directorySlider({
-                                directory: directory
-                          });
-                       });
-                    }(jQuery);
-                </script>
+
             </body>
         </html>

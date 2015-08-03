@@ -1,4 +1,4 @@
-{!! HTML::script('js/costume.js') !!}
+
 {!! HTML::script('js/app.js') !!}
 {!! HTML::script('js/jquery_ui.js') !!}
 {!! HTML::script('js/flexSlider.js') !!}

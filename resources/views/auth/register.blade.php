@@ -2,7 +2,7 @@
 @extends('master')
 @section('main')
 <div class="col-md-8 col-md-offset-2 form-content">
-    <h3 class="heading">Register</h3>
+    <h3 class="title">Register</h3>
     @foreach($errors->all() as $error)
     <p class="alert alert-danger">{!!$error!!}</p>
     @endforeach
