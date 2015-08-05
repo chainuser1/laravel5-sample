@@ -15,7 +15,7 @@ class News extends Model
         $query->where('created_at','<=',Carbon::now());
     }
     public function setCreatedAt($date){
-        $this->attributes['created_at']=Carbon::parse($date);
+        $this->attributes['created_at']= Carbon::createFromFormat('Y-m-d H:i:s', $date);
     }
     public function scopeUnpublished($query){
         $query->where('created_at','>',Carbon::now());

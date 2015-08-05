@@ -38,6 +38,7 @@
                            });
                            $(".btn-success").click(function(){
                                var news_title=$("#title").val();
+                               var action=$("input[name=action]").val();
                                var content=$("#content").val();
                                var created_at=$("#created_at").val();
                                var _token=$('input[name=_token]').val();
@@ -47,7 +48,7 @@
                                var dataString="title="+news_title+"&slug="+slug+"&content="+content+"&created_at="+created_at+"&_token="+_token;
                                //ajax here
                                $.ajax({
-                                       url:"/news/store",
+                                       url:action,
                                        type: "POST",
                                        data:dataString
                                        ,success:function(data){

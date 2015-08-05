@@ -27,6 +27,9 @@ border-radius: 10px;
 p.content:first-line{
     text-indent: 4px;
 }
+.invisible{
+    visibility: hidden;
+}
 .modal-emerald {
     position: absolute;
     top: 0;
