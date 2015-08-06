@@ -18,9 +18,8 @@ class NewsController extends Controller
     public function index()
     {
         //->get()
-        $feed=News::createdAt()->get()->sortByDesc(function($role){
-            return $role->created_at;
-        });
+        $news=new News;
+        $feed=$news->createdAt()->paginate(4);
         if(!is_null($feed))
             return view('news.news',compact('feed'));
         else
@@ -83,12 +82,16 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $slug
+     * @param  string  $slug
      * @return Response
      */
-    public function edit($slug)
+    public function edit($slug, News $table)
     {
-        //
+        $story=$table->where('slug','=',$slug)->first();
+        if(!is_null($story))
+            return view('news.edit',compact('story'));
+        else
+            return view('news.show',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
     }
 
     /**
@@ -117,9 +120,8 @@ class NewsController extends Controller
      * @return Response
      */
     public function viewUnpublished(){
-        $feed=News::unpublished()->get()->sortByDesc(function($role){
-            return $role->created_at;
-        });
+        $news=new News;
+        $feed=$news->unpublished()->paginate(4);
         if(!is_null($feed))
             return view('news.news',compact('feed'));
         else

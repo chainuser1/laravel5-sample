@@ -3200,7 +3200,7 @@ fieldset[disabled] a.btn {
     background-color: #fff; }
 
 .btn-link {
-  color: #337ab7;
+  color: #1fe719;
   font-weight: normal;
   border-radius: 0; }
   .btn-link,
@@ -3217,7 +3217,7 @@ fieldset[disabled] a.btn {
     border-color: transparent; }
   .btn-link:hover,
   .btn-link:focus {
-    color: #23527c;
+    color: #80c217;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link[disabled]:hover,
@@ -4289,7 +4289,7 @@ tbody.collapse.in {
       padding: 6px 12px;
       line-height: 1.42857;
       text-decoration: none;
-      color: #337ab7;
+      color: #80c217;
       background-color: #fff;
       border: 1px solid #ddd;
       margin-left: -1px; }
@@ -4307,10 +4307,10 @@ tbody.collapse.in {
   .pagination > li > span:hover,
   .pagination > li > span:focus {
     z-index: 3;
-    color: #23527c;
+    color: #80c217;
     background-color: #eeeeee;
-    border-color: #ddd; }
-  .pagination > .active > a,
+    border-color: #80c217; }
+  .pagination > .active > li,
   .pagination > .active > a:hover,
   .pagination > .active > a:focus,
   .pagination > .active > span,
@@ -4318,8 +4318,8 @@ tbody.collapse.in {
   .pagination > .active > span:focus {
     z-index: 2;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
+    background-color: #167c1b;
+    border-color: #80c217;
     cursor: default; }
   .pagination > .disabled > span,
   .pagination > .disabled > span:hover,

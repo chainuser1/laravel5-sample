@@ -12,12 +12,12 @@ class News extends Model
     protected $hidden=['_token'];
     protected $dates=['created_at'];
     public function scopeCreatedAt($query){
-        $query->where('created_at','<=',Carbon::now());
+        $query->where('created_at','<=',Carbon::now())->orderBy('created_at','DESC');
     }
     public function setCreatedAt($date){
         $this->attributes['created_at']= Carbon::createFromFormat('Y-m-d H:i:s', $date);
     }
     public function scopeUnpublished($query){
-        $query->where('created_at','>',Carbon::now());
+        $query->where('created_at','>',Carbon::now())->orderBy('created_at','DESC');;
     }
 }
