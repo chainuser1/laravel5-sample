@@ -3,6 +3,16 @@
 *
 **/
 
+#rss{
+    margin-right: 23px; max-height: 650px; height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#rss_apple{
+    margin-right: 23px;  max-height: 650px; height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .paragraph-content
 {
     text-shadow:1px 1px 0 rgba(191,222,211,1);
@@ -16,9 +26,7 @@
     line-height:1;
 }
 
-::-webkit-scrollbar {
-width: 12px;
-}
+
 
 ::-webkit-scrollbar-track {
 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -904,3 +912,6 @@ footer{
 #sub-footer{
     background:#68A4C4;
 }
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); -webkit-border-radius: 10px; border-radius: 10px; } /* Handle */
+::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; border-radius: 10px; background: rgba(255,0,0,0.8); -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
+::-webkit-scrollbar-thumb:window-inactive { background: rgba(255,0,0,0.4); }

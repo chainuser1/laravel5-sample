@@ -16,6 +16,8 @@ Route::get('/public-gallery',['as'=>'public-gallery','uses'=>function(){
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
 Route::get('/news',['as'=>'news','uses'=>'Admin\NewsController@index']);
+Route::get('/news/rss',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeed']);
+Route::get('/news/rss/apple',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeedApple']);
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/news/create',['as'=>'new.create','uses'=>'Admin\NewsController@create']);
     Route::post('/news/store',['as'=>'new.store','uses'=>'Admin\NewsController@store']);

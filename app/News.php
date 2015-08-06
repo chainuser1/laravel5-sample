@@ -20,4 +20,10 @@ class News extends Model
     public function scopeUnpublished($query){
         $query->where('created_at','>',Carbon::now())->orderBy('created_at','DESC');;
     }
+    public function setTitle($title){
+        $this->attributes['title']=News::getConnection()->getPdo()->quote($title);
+    }
+    public function setContent($content){
+        $this->attributes['content']=News::getConnection()->getPdo()->quote($content);
+    }
 }
