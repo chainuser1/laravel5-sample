@@ -3,16 +3,11 @@
 *
 **/
 
-#rss{
+#rss,#rss_apple{
     margin-right: 23px; max-height: 650px; height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y:auto; overflow-x: hidden;
 }
-#rss_apple{
-    margin-right: 23px;  max-height: 650px; height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
+
 .paragraph-content
 {
     text-shadow:1px 1px 0 rgba(191,222,211,1);
@@ -26,7 +21,9 @@
     line-height:1;
 }
 
-
+textarea{
+    resize: none;
+}
 
 ::-webkit-scrollbar-track {
 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -190,16 +187,15 @@ p.content:first-letter { font-size: 3.2em;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color: #ff1811;
 }
+
+
+
 .title{
     font-size: 1.7em;
-    color: #91e842;
+    color: #63dd30;
     font-weight: bold;
 }
-.title:selection{
-    color: #ff1c1b;
-    text-decoration: no-underline;
-    text-decoration-color: #1d28ff;
-}
+
 .title:hover{
     -webkit-transition: all 1s ease-in;
     -moz-transition: all 1s ease-in;
@@ -207,6 +203,7 @@ p.content:first-letter { font-size: 3.2em;
     -o-transition: all 1s ease-in;
     transition: all 1s ease-in;
 }
+
 .transparent{
     opacity: 0.0;
 }
@@ -233,7 +230,7 @@ p.content:first-letter { font-size: 3.2em;
 }
 
 .myGlower {
-    background-color: #ccc;
+    background-color: #80c217;
     border: 1px solid transparent;
     -webkit-animation: glow 1.0s infinite alternate;
     -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;

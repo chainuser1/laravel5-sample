@@ -5,7 +5,7 @@
     </div>
     <div class="modal-body ">
         <div class="form-group col-sm-10 center">
-            <p class="alert"></p>
+
             <input type="hidden" value="{!!$action!!}" name="action"/>
             <input type="hidden" name="_token" value="{!!csrf_token()!!}"/>
             @if(isset($story))

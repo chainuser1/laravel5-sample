@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">MICP ICT Arena</a>
+                <a class="navbar-brand myGlower" href="#">MICP ICT Arena</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,4 +55,7 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+
 </header>
+<br>
+<p class="alert modal-sm"></p>

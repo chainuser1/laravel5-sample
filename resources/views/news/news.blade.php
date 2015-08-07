@@ -8,9 +8,9 @@
            <body>
 <!--               <h1 class="h1 alert-warning myGlower rightt" style=" position: fixed; z-index: 12345; box-shadow: 4px 3px 2px 3px; margin-top:1px">News Center</h1>-->
                @include('header')
-              <div class="mCustomScrollbar fancybox-skin">
-               @yield('admin-only')
-              </div>
+               <div class="mCustomScrollbar">
+                @yield('admin-only')
+               </div>
                @if(isset($feed))
                      @foreach($feed->all() as $story)
                         <div class="container">
@@ -41,7 +41,7 @@
                @endif
                {!!HTML::script('js/jquery-1.11.1.min.js')!!}
                {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
-
+               {!!HTML::script('costume-scrollbar/jquery.mCustomScrollbar.concat.min.js')!!}
                {!! HTML::script('js/jquery_ui.js') !!}
                <script>
                    $.noConflict();
@@ -50,6 +50,13 @@
                        $(function(){
                            $.ajaxSetup({
                                headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
+                           });
+                           $(document).ajaxSend(function(){
+                               $('.alert').text('Sending request to remote rss server...').addClass("alert-warning").fadeOut(3000);
+                           });
+                           $(document).ajaxComplete(function(){
+                               $('.alert').fadeIn(100).text('Request Completed.').removeClass('alert-warning').addClass("alert-success").fadeOut(3000);
+
                            });
                            $(".datetimepicker").datetimepicker({
                                   mask:false,
@@ -144,33 +151,34 @@
                                    });
                                }
                            });
+                           $('#rss').mCustomScrollbar({
+                               axis: 'y',
+                               theme: "dark",
+                               scrollButtons:{
+                                   enable:true
+                               },
+                               scrollInertia:100
+                           });
+                           $('#rss').mCustomScrollbar({
+                               theme: "dark",
+                               axis: 'y',
+                               scrollButtons:{
+                                   enable:true
+                               },
+                               scrollInertia:100
+                           });
                            function getRss(){
                                $("#rss").load('/news/rss');
                            }
                            function getRssApple(){
                                $("#rss_apple").load('/news/rss/apple');
                            }
-                           window.setInterval(getRss,2000);
-                           window.setInterval(getRssApple,2000);
+                           window.setInterval(getRss,10000);
+                           window.setInterval(getRssApple,10000);
                        });
                    }(window.jQuery);
                </script>
 
-               <script>
-                   !function($){
-                       $(function(){
-                           $('#rss').mCustomScrollbar({
-                               axis: 'y',
-                               theme: "dark"
-                           });
-                           $('#rss').mCustomScrollbar({
-                               theme: "dark",
-                               axis: 'y'
-                           });
-                           alert('Hello');
-                       });
-                   }(jQuery);
-               </script>
               @include('../scripts')
            </body>
         </html>
