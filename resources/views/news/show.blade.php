@@ -3,7 +3,7 @@
 <div class="col-sm-2 pull-left mCustomScrollbar" data-mcs-theme="dark" id="rss"></div>
 <div class="container col-md-7 ">
     @if(isset($error))
-       <p class="alert">{!!$error!!}</p>
+       <p class="alert-dismissable">{!!redirect('/errors/503')!!}</p>
     @else
     <div class="panel-heading"><h1 class="shadow-text title">{!!$article->title!!}</h1><br></div>
     <div class="panel-body">

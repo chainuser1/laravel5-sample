@@ -13,6 +13,9 @@
 Route::get('/public-gallery',['as'=>'public-gallery','uses'=>function(){
     return view('public_gallery');
 }]);
+Route::get('/errors/503',function(){
+    return view('errors.503');
+});
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
 Route::get('/news',['as'=>'news','uses'=>'Admin\NewsController@index']);
