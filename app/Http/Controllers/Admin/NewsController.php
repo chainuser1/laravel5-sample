@@ -118,10 +118,11 @@ class NewsController extends Controller
      * @param  int  $slug
      * @return Response
      */
-    public function update(Request $req, News $table)
+    public function update(Request $req)
     {
         if($req->ajax()){
             $title=htmlentities($req->input('title'));
+            $id=$req->input('id');
             $slug=$req->input('slug');
             $title=ucwords($title);
             $title='\''.$title.'\'';
@@ -142,7 +143,7 @@ class NewsController extends Controller
                 $errors=$validator->messages();
                 return  Response::json($errors->all());
             }
-            $table=$table->where('slug','=',$slug);
+            $table=News::findOrNew($id);
             $table->title=$req->input('title');
             $table->slug=$req->input('slug');
             $table->content=$req->input('content');

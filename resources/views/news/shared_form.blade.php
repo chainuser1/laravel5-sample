@@ -10,7 +10,7 @@
 
             <input type="hidden" name="_token" value="{!!csrf_token()!!}"/>
             @if(isset($story))
-            <input type="hidden" value="{!!$story->slug!!}" name="slug"/>
+            <input type="hidden" value="{!!$story->id!!}" name="id"/>
             <input type="text" name="title"  class="input-lg form-control"
                    value="{!!$story->title!!}"    placeholder="Enter the title of your news"/><br>
             <label class="" for="content">Content</label>

@@ -4,7 +4,6 @@
     <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/edit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/news.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/news.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/shared_form.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/shared_form.blade.php" />
     </list>
@@ -38,22 +37,13 @@
       <file leaf-file-name="news.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="39" selection-start="6906" selection-end="6906" vertical-scroll-proportion="-5.076923">
+            <state line="131" column="40" selection-start="7316" selection-end="7316" vertical-scroll-proportion="-11.076923">
               <folding>
-                <marker date="1440391058296" expanded="true" signature="2384:2574" placeholder="..." />
-                <marker date="1440391058296" expanded="true" signature="2453:2574" placeholder="{...}" />
-                <marker date="1440391058296" expanded="true" signature="2490:2574" placeholder="{...}" />
-                <marker date="1440391058296" expanded="true" signature="2531:2574" placeholder="{...}" />
+                <marker date="1440393691269" expanded="true" signature="2384:2574" placeholder="..." />
+                <marker date="1440393691269" expanded="true" signature="2453:2574" placeholder="{...}" />
+                <marker date="1440393691269" expanded="true" signature="2490:2574" placeholder="{...}" />
+                <marker date="1440393691269" expanded="true" signature="2531:2574" placeholder="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdatesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UpdatesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="69" selection-start="493" selection-end="493" vertical-scroll-proportion="-13.076923">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -61,7 +51,7 @@
       <file leaf-file-name="NewsController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="0" selection-start="4703" selection-end="4703" vertical-scroll-proportion="0.8961832">
+            <state line="149" column="48" selection-start="4591" selection-end="4591" vertical-scroll-proportion="2.2414815">
               <folding />
             </state>
           </provider>
@@ -70,7 +60,7 @@
       <file leaf-file-name="shared_form.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="1105" selection-end="1105" vertical-scroll-proportion="-12.423077">
+            <state line="12" column="69" selection-start="484" selection-end="484" vertical-scroll-proportion="-7.8461537">
               <folding />
             </state>
           </provider>
@@ -97,7 +87,7 @@
       <file leaf-file-name="show.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="675" selection-end="675" vertical-scroll-proportion="-8.5">
+            <state line="19" column="5" selection-start="808" selection-end="808" vertical-scroll-proportion="-12.423077">
               <folding />
             </state>
           </provider>
@@ -138,9 +128,9 @@
         <option value="$PROJECT_DIR$/resources/views/errors/503.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/create-news.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" />
         <option value="$PROJECT_DIR$/resources/views/news/shared_form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/news.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" />
       </list>
     </option>
   </component>
@@ -789,16 +779,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UpdatesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="28" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.6153846">
+        <state line="20" column="59" selection-start="483" selection-end="483" vertical-scroll-proportion="0.519084">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/news/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="675" selection-end="675" vertical-scroll-proportion="-8.5">
+        <state line="4" column="28" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.6153846">
           <folding />
         </state>
       </provider>
@@ -810,35 +800,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/news/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="1105" selection-end="1105" vertical-scroll-proportion="-12.423077">
+        <state line="19" column="5" selection-start="808" selection-end="808" vertical-scroll-proportion="-12.423077">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UpdatesController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="69" selection-start="493" selection-end="493" vertical-scroll-proportion="-13.076923">
+        <state line="12" column="69" selection-start="484" selection-end="484" vertical-scroll-proportion="-7.8461537">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="39" selection-start="6906" selection-end="6906" vertical-scroll-proportion="-5.076923">
+        <state line="131" column="40" selection-start="7316" selection-end="7316" vertical-scroll-proportion="-11.076923">
           <folding>
-            <marker date="1440391058296" expanded="true" signature="2384:2574" placeholder="..." />
-            <marker date="1440391058296" expanded="true" signature="2453:2574" placeholder="{...}" />
-            <marker date="1440391058296" expanded="true" signature="2490:2574" placeholder="{...}" />
-            <marker date="1440391058296" expanded="true" signature="2531:2574" placeholder="{...}" />
+            <marker date="1440393691269" expanded="true" signature="2384:2574" placeholder="..." />
+            <marker date="1440393691269" expanded="true" signature="2453:2574" placeholder="{...}" />
+            <marker date="1440393691269" expanded="true" signature="2490:2574" placeholder="{...}" />
+            <marker date="1440393691269" expanded="true" signature="2531:2574" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="0" selection-start="4703" selection-end="4703" vertical-scroll-proportion="0.8961832">
+        <state line="149" column="48" selection-start="4591" selection-end="4591" vertical-scroll-proportion="2.2414815">
           <folding />
         </state>
       </provider>
