@@ -47,6 +47,7 @@ class NewsController extends Controller
          if($req->ajax()){
                 $title=htmlentities($req->input('title'));
                 $slug=$req->input('slug');
+                $title=ucwords($title);
                 $title='\''.$title.'\'';
                 $content=htmlentities($req->input('content'));
                 $content='\''.$content.'\'';
@@ -117,26 +118,39 @@ class NewsController extends Controller
      * @param  int  $slug
      * @return Response
      */
-    public function update($slug, Request $req, News $table)
+    public function update(Request $req, News $table)
     {
-       if($req->ajax()){
-           $validator=Validator::make($req->all(),[
-               'title'=>'required|max:250',
-               'slug'=>'unique:news,slug',
-               'content'=>'required',
-               'created_at'=>'required|date',
-           ]);
-           if($validator->fails()){
-               $errors=$validator->messages();
-               return  Response::json($errors->all());
-           }
-           $story=$table->where('slug','=',$slug);
-           $story->title=$req->input('title');
-           $story->content=$req->input('content');
-           $story->created_at=$req->input('created_at');
-           $story->save();
-           return "Your news was successfully updated.";
-       }
+        if($req->ajax()){
+            $title=htmlentities($req->input('title'));
+            $slug=$req->input('slug');
+            $title=ucwords($title);
+            $title='\''.$title.'\'';
+            $content=htmlentities($req->input('content'));
+            $content='\''.$content.'\'';
+            $created_at=$req->input('created_at');
+
+            $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
+
+            $validator=Validator::make($array,[
+                'title'=>'required|max:250',
+                'slug'=>'required',
+                'content'=>'required',
+                'created_at'=>'required|date',
+            ]);
+
+            if($validator->fails()){
+                $errors=$validator->messages();
+                return  Response::json($errors->all());
+            }
+            $table=$table->where('slug','=',$slug);
+            $table->title=$req->input('title');
+            $table->slug=$req->input('slug');
+            $table->content=$req->input('content');
+            $table->created_at=strtotime($req->input('created_at'));
+            $table->save();
+            return  "Your news was successfully saved.";
+
+        }
     }
 
     /**
