@@ -5,7 +5,13 @@
     @if(isset($error))
        <p class="alert-dismissable">{!!redirect('/errors/503')!!}</p>
     @else
-    <div class="panel-heading"><h1 class="shadow-text title">{!!$article->title!!}</h1><br></div>
+    <div class="panel-heading">
+        <h1 class="shadow-text title">{!!$article->title!!}</h1>
+        <h5 class="h5 text-primary">{!!$article->created_at->diffForHumans()!!}
+            &nbsp;<a class="text-success" href="{!!'/news/'.$article->slug.'/edit'!!}">Edit</a>
+        </h5>
+
+    </div>
     <div class="panel-body">
         <p class="content" style="text-align: justify;">
         <?php

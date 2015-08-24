@@ -101,14 +101,13 @@
                                                if($(".alert").hasClass("alert-success")){
                                                    $(".alert").removeClass("alert-success");
                                                }
+
                                                $(".alert").addClass("alert-danger");
                                                for(var i=data.length-1; i>0; i--){
                                                    $(".alert").text(data[i]+$(".alert").text()).fadeIn(2000).fadeOut(7000);
                                                }
                                            }
-                                           else{
-                                               console.log(data);
-                                           }
+
                                        }
 
 
@@ -117,7 +116,7 @@
                                }
                                else{
                                    var id=$("input[name=id]").val();
-                                   alert(action);
+
                                    $.ajax({
                                        url:action,
                                        type: "POST",
@@ -143,14 +142,13 @@
                                                    if($(".alert").hasClass("alert-success")){
                                                        $(".alert").removeClass("alert-success");
                                                    }
+                                                  // console.log(data);
                                                    $(".alert").addClass("alert-danger");
                                                    for(var i=data.length-1; i>0; i--){
                                                        $(".alert").text(data[i]+$(".alert").text()).fadeIn(2000).fadeOut(7000);
                                                    }
                                                }
-                                               else{
-                                                   console.log(data);
-                                               }
+                                               //
                                      });
                                }
                            });

@@ -45,18 +45,16 @@ class NewsController extends Controller
     public function store(Request $req, News $table)
     {
          if($req->ajax()){
-                $title=htmlentities($req->input('title'));
-                $slug=$req->input('slug');
-                $title=ucwords($title);
-                $title='\''.$title.'\'';
-                $content=htmlentities($req->input('content'));
-                $content='\''.$content.'\'';
-                $created_at=$req->input('created_at');
+             $title=htmlentities($req->input('title'));
+             $slug=$req->input('slug');
+             $title='\''.ucwords($title).'\'';
+             $content='\''.htmlentities($req->input('content')).'\'';
+             $created_at=$req->input('created_at');
 
                 $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
 
                 $validator=Validator::make($array,[
-                 'title'=>'required|max:250',
+                 'title'=>'required|max:250|min:5',
                  'slug'=>'unique:news,slug',
                  'content'=>'required',
                  'created_at'=>'required|date',
@@ -124,21 +122,17 @@ class NewsController extends Controller
             $title=htmlentities($req->input('title'));
             $id=$req->input('id');
             $slug=$req->input('slug');
-            $title=ucwords($title);
-            $title='\''.$title.'\'';
-            $content=htmlentities($req->input('content'));
-            $content='\''.$content.'\'';
+            $title='\''.ucwords($title).'\'';
+            $content='\''.htmlentities($req->input('content')).'\'';
             $created_at=$req->input('created_at');
 
             $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
-
             $validator=Validator::make($array,[
-                'title'=>'required|max:250',
+                'title'=>'required|max:250|min:5',
                 'slug'=>'required',
                 'content'=>'required',
                 'created_at'=>'required|date',
             ]);
-
             if($validator->fails()){
                 $errors=$validator->messages();
                 return  Response::json($errors->all());
@@ -162,7 +156,7 @@ class NewsController extends Controller
      */
     public function destroy($slug)
     {
-        //
+
     }
     /**
      * View all unpublished news
