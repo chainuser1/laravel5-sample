@@ -152,7 +152,7 @@
                                      });
                                }
                            });
-
+                          //remove news
                            $(".text-danger").click(function(){
                                var id=$("input[name=_id]").val();
                                $.ajax({

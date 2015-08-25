@@ -21,6 +21,7 @@
         <p class="content" style="text-align: justify;">
         <?php
             $content=htmlspecialchars_decode($article->content);
+            //see for any url within the article content and highlight them
             echo preg_replace("~[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]~","<a href=\"\\0\" class=\"btn-link\">\\0</a>",$content);
         ?>
     </p></div>

@@ -2,7 +2,9 @@
 * Created By: Jayson Ramos
 *
 **/
-
+header.page-header{
+    display:block;
+}
 #rss,#rss_apple{
     margin-right: 23px; max-height: 650px; height: 600px;
     overflow-y:auto; overflow-x: hidden;
