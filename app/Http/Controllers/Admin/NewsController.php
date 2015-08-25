@@ -151,12 +151,16 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $slug
+     * @param  Request $req
      * @return Response
      */
-    public function destroy($slug)
+    public function destroy(Request $req)
     {
-
+        if($req->ajax()){
+            $id=$req->input('id');
+            $row=News::where('id','=',$id)->delete();
+            return (string)$row;
+        }
     }
     /**
      * View all unpublished news
@@ -170,8 +174,6 @@ class NewsController extends Controller
         else
             return view('news.news',array('error'=>'There are no news published'));
     }
-
-
     public function getRssFeed(){
         $xml='http://news.google.com/news?ned=us&topic=h&output=rss';
         $xmlDoc = new DOMDocument();

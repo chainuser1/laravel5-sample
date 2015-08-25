@@ -153,6 +153,19 @@
                                }
                            });
 
+                           $(".text-danger").click(function(){
+                               var id=$("input[name=_id]").val();
+                               $.ajax({
+                                   url: "/news/delete",
+                                   type: "POST",
+                                   data: {
+                                       id: id
+                                   }
+                               }).done(function(data){
+                                       $(".alert").fadeIn(2000).text(data+" news has been deleted.");
+                                       window.location="/news";
+                               });
+                           })
                            function getRss(){
                                $("#rss").load('/news/rss');
                            }

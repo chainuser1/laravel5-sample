@@ -6,9 +6,14 @@
        <p class="alert-dismissable">{!!redirect('/errors/503')!!}</p>
     @else
     <div class="panel-heading">
-        <h1 class="shadow-text title">{!!$article->title!!}</h1>
+        <h1 class="shadow-text title">{!!ucwords($article->title)!!}</h1>
+        <input type="hidden" name="_id" value="{!!$article->id!!}"/>
         <h5 class="h5 text-primary">{!!$article->created_at->diffForHumans()!!}
-            &nbsp;<a class="text-success" href="{!!'/news/'.$article->slug.'/edit'!!}">Edit</a>
+            &nbsp;
+            @if(Auth::check())
+                    <a class="text-success" href="{!!'/news/'.$article->slug.'/edit'!!}">Edit</a>
+                    <a class="text-danger" href="#">Remove</a>
+            @endif
         </h5>
 
     </div>
