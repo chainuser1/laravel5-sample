@@ -1,6 +1,6 @@
 @extends('news.news')
 @section('admin-only')
-<div class="col-sm-2 pull-left mCustomScrollbar" data-mcs-theme="dark" id="rss"></div>
+<div class="col-sm-2 pull-left mCustomScrollbar cron" data-mcs-theme="dark" id="rss"></div>
 <div class="container col-md-7 ">
     @if(isset($error))
        <p class="alert-dismissable">{!!redirect('/errors/503')!!}</p>
@@ -27,6 +27,6 @@
     </p></div>
     @endif
 </div>
-<div class="col-sm-2 pull-left mCustomScrollbar" data-mcs-theme="dark" id="rss_apple"></div>
+<div class="col-sm-2 pull-left mCustomScrollbar cron" data-mcs-theme="dark" id="rss_apple"></div>
 
 @stop

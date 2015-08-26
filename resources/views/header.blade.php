@@ -1,61 +1,109 @@
-<header class="page-header">
-    <nav class="navbar navbar-costume-1 shadow-box">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand myGlower" href="#">MICP ICT Arena</a>
+<header class="header-user-dropdown-2 page-header">
+<!--    <nav class="navbar navbar-costume-1 shadow-box">-->
+<!--        <div class="container-fluid">-->
+<!--            <!-- Brand and toggle get grouped for better mobile display -->
+<!--            <div class="navbar-header">-->
+<!--                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+<!--                    <span class="sr-only">Toggle navigation</span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                </button>-->
+<!--                <a class="navbar-brand myGlower" href="#">MICP ICT Arena</a>-->
+<!--            </div>-->
+<!---->
+<!--            <!-- Collect the nav links, forms, and other content for toggling -->
+<!--            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+<!--                <ul class="nav navbar-nav">-->
+<!--                    <li class="item active"><a href="#">Home<span class="sr-only">(current)</span></a></li>-->
+<!--                    <li class="item active"><a href="/public-gallery">Public Gallery</a></li>-->
+<!--                    <li class="item active dropdown">-->
+<!--                        <a href="/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a href="/news">News</a></li>-->
+<!--                            <li role="separator" class="divider"></li>-->
+<!--                          @if(Auth::check())-->
+<!--                            <li><a href="/news/create">Publish a Story</a></li>-->
+<!--                            <li><a href="/news/unpublished">View all unpublished news</a></li>-->
+<!--                          @endif-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <form class="navbar-form navbar-left" role="search">-->
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" class="form-control" placeholder="Search">-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-default">Submit</button>-->
+<!--                </form>-->
+<!--                <ul class="nav navbar-nav navbar-right">-->
+<!--                    <li class="item active"><a href="#">About</a></li>-->
+<!---->
+<!--                    <li class="item active dropdown">-->
+<!--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            @if(Auth::check())-->
+<!--                                <li class="btn-dark"><a href="#{!!Session::get('email')!!}">{!!Session::get('email')!!}</a></li>-->
+<!--                                <li  role="separator" class="divider"></li>-->
+<!--                                <li class="btn-dark"><a href="/logout?url={!!Request::url()!!}">Logout</a></li>-->
+<!--                            @else-->
+<!--                                <li class="btn-dark"><a href="/login?url={!!Request::url()!!}">Log In</a></li>-->
+<!--                                <li class="btn-dark"><a href="/register">Signup</a></li>-->
+<!--                            @endif-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div><!-- /.navbar-collapse -->
+<!--        </div><!-- /.container-fluid -->
+<!--    </nav>-->
+
+
+
+      <!--New Style -->
+    <div class="header-limiter">
+        <h1><a href="#">MICP ICT Arena&nbsp;<span class="badge">Baybay</span></a></h1>
+
+        <nav>
+<!--            <a href="#">(current)</a>-->
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+
+            <div class="header-user-menu">
+                &nbsp;&nbsp;&nbsp;
+                <a href="#">News <span class="header-new-feature">new</span></a>
+
+                <ul>
+                         <li><a href="/news">News</a></li>
+                         <li role="separator" class="divider"></li>
+                           @if(Auth::check())
+                                <li><a href="/news/create">Publish a Story</a></li>
+                                <li><a href="/news/unpublished">View all unpublished news</a></li>
+                           @endif
+                </ul>
+            </div>
+        </nav>
+
+            <div class="header-user-menu-2">
+                @if(Auth::check())
+                <img src="{!!URL::to('css/assets/index.jpg')!!}" alt=" {!!Session::get('email')!!} Image"/>
+                <a href="#">Welcome, {!!Session::get('email')!!}</a>
+                @else
+                <img src="{!!URL::to('css/assets/logo.png')!!}" alt="User Image"/>
+                <a href="#" >Welcome, Guest!</a>
+                @endif
+                <ul>
+                    @if(Auth::check())
+                    <li><a href="#{!!Session::get('email')!!}">Profile Settings</a></li>
+                    <li><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
+                    @else
+                    <li><a href="/login?url={!!Request::url()!!}">Log In</a></li>
+                    <li><a href="/register">Register</a></li>
+                    @endif
+                </ul>
+
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="item active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="item active"><a href="/public-gallery">Public Gallery</a></li>
-                    <li class="item active dropdown">
-                        <a href="/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/news">News</a></li>
-                            <li role="separator" class="divider"></li>
-                          @if(Auth::check())
-                            <li><a href="/news/create">Publish a Story</a></li>
-                            <li><a href="/news/unpublished">View all unpublished news</a></li>
-                          @endif
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="item active"><a href="#">About</a></li>
 
-                    <li class="item active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @if(Auth::check())
-                                <li class="btn-dark"><a href="#{!!Session::get('email')!!}">{!!Session::get('email')!!}</a></li>
-                                <li  role="separator" class="divider"></li>
-                                <li class="btn-dark"><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
-                            @else
-                                <li class="btn-dark"><a href="/login?url={!!Request::url()!!}">Log In</a></li>
-                                <li class="btn-dark"><a href="/register">Signup</a></li>
-                            @endif
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
+    </div>
 </header>
 <br>
 <p class="alert modal-sm"></p>

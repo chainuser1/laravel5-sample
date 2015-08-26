@@ -30,13 +30,15 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/news/{slug}/edit',['as'=>'new.edit','uses'=>'Admin\NewsController@edit']);
 });
 Route::get('/news/{slug}/show',['as'=>'new.show','uses'=>'Admin\NewsController@show']);
-Route::get('/profile',['as'=>'profile','uses'=>'Admin\ProfileController@index']);
+
 Route::group(['middleware'=>['auth']],function(){
+    Route::get('/profile',['as'=>'profile','uses'=>'Admin\ProfileController@index']);
     Route::get('/profile/create',['as'=>'profile.create','uses'=>'Admin\ProfileController@create']);
     Route::post('/profile/store',['as'=>'profile.store','uses'=>'Admin\ProfileController@store']);
     Route::post('/profile/update',['as'=>'profile.update','uses'=>'Admin\ProfileController@update']);
     Route::post('/profile/delete',['as'=>'profile.delete','uses'=>'Admin\ProfileController@destroy']);
     Route::get('/profile/edit',['as'=>'profile.edit','uses'=>'Admin\ProfileController@edit']);
+    Route::get('/profile{user}',['as'=>'profile','uses'=>'Admin\ProfileController@index']);
 });
-Route::get('/profile/{user}',['as'=>'profile.show','uses'=>'Admin\ProfileController@index']);
+Route::get('/profile/{user}/show',['as'=>'profile.show','uses'=>'Admin\ProfileController@index']);
 Route::controller('/','Auth\AuthController');

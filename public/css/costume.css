@@ -3,7 +3,12 @@
 *
 **/
 header.page-header{
-    display:block;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+}
+div.container, div.cron{
+   margin-top: 4.2em;
 }
 #rss,#rss_apple{
     margin-right: 23px; max-height: 650px; height: 600px;
