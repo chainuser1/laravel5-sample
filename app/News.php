@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon;
 class News extends Model
 {
-    protected $carbon;
     protected $table="news";
     protected $fillable=['title','slug','content','created_at'];
     protected $hidden=['_token'];

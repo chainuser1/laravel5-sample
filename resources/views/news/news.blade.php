@@ -8,9 +8,7 @@
            <body>
 <!--               <h1 class="h1 alert-warning myGlower rightt" style=" position: fixed; z-index: 12345; box-shadow: 4px 3px 2px 3px; margin-top:1px">News Center</h1>-->
                @include('header')
-
-                @yield('admin-only')
-
+               @yield('admin-only')
                @if(isset($feed))
                      @foreach($feed->all() as $story)
                         <div class="container">
@@ -26,11 +24,17 @@
                                           $stringCut=substr($content,0,300);
                                           $content=substr($stringCut, 0, strrpos($stringCut, ' ')).'...'.'<br><a class="btn-link"'.'href="/news/'.$story->slug.'/show">'.'Show More</a>';
                                      }
-
-                                      echo $content;
+                                     echo $content;
                                  ?>
                              </p>
-                             <h6 class="h6">{!!$story->created_at->diffForHumans()!!}</h6>
+                             <a class="text-primary" data-toggle="tooltip"
+                                data-placement="right" title="{!!$story->created_at->format('M d,Y')!!}">{!!$story->created_at->diffForHumans()!!}</a>&nbsp;
+                            <?php if(strlen($content)<=300){ ?>
+                                @if(Auth::check())
+                                    <a class="text-success" href="{!!'/news/'.$story->slug.'/edit'!!}">Edit</a>
+                                    <a class="text-danger" href="#">Remove</a>
+                                @endif
+                            <?php } ?>
                         </div>
                       @endforeach
 
@@ -48,6 +52,7 @@
 
                    !function($){
                        $(function(){
+                           $('[data-toggle="tooltip"]').tooltip('toggle');
                            $.ajaxSetup({
                                headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
                            });
@@ -107,10 +112,7 @@
                                                    $(".alert").text(data[i]+$(".alert").text()).fadeIn(2000).fadeOut(7000);
                                                }
                                            }
-
                                        }
-
-
                                    });
 
                                }

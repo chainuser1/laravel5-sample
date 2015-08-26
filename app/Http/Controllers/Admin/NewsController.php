@@ -10,8 +10,6 @@ use Response;
 use DOMDocument;
 class NewsController extends Controller
 {
-
-
      /**
      * Display a listing of the resource.
      * @return Response
@@ -50,28 +48,23 @@ class NewsController extends Controller
              $title='\''.ucwords($title).'\'';
              $content='\''.htmlentities($req->input('content')).'\'';
              $created_at=$req->input('created_at');
-
                 $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
-
                 $validator=Validator::make($array,[
                  'title'=>'required|max:250|min:5',
                  'slug'=>'unique:news,slug',
                  'content'=>'required',
                  'created_at'=>'required|date',
                 ]);
-
                 if($validator->fails()){
                     $errors=$validator->messages();
                     return  Response::json($errors->all());
                 }
-
              $table->title=$req->input('title');
              $table->slug=$req->input('slug');
              $table->content=$req->input('content');
              $table->created_at=strtotime($req->input('created_at'));
              $table->save();
                 return  "Your news was successfully saved.";
-
          }
     }
 
@@ -144,7 +137,6 @@ class NewsController extends Controller
             $table->created_at=strtotime($req->input('created_at'));
             $table->save();
             return  "Your news was successfully saved.";
-
         }
     }
 

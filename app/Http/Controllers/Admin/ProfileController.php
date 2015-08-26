@@ -3,23 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
-//    public function _construct(){
-//        $this->middleware('auth',['except'=>['index','show']]);
-//    }
+
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $req)
     {
+       if($req->ajax()){
 
+       }
     }
 
     /**
