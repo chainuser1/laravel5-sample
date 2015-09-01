@@ -1,12 +1,5 @@
 .header-user-dropdown-2 {
-    background: #9dd53a; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#9dd53a), color-stop(50%,#a1d54f), color-stop(51%,#80c217), color-stop(100%,#7cbc0a)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-color: #3c423b;
     box-shadow:0 1px 1px #7bccc4;
     padding: 20px 40px;
     height: 80px;
@@ -48,7 +41,7 @@
     padding: 0;
 }
 
-.header-user-dropdown-2 .header-limiter nav a{
+.header-user-dropdown-2 .header-limiter nav a, .header-user-dropdown-2 .header-limiter nav div{
     font-size: 14px;
     display: inline-block;
     padding: 0 12px;
@@ -56,6 +49,7 @@
     position: relative;
     text-decoration:none;
     line-height: 1;
+    margin-left:3px
 }
 
 .header-user-dropdown-2 .header-limiter nav a:hover {
@@ -221,15 +215,34 @@
     color: #5a59e9;
 }
 
-.header-user-dropdown-2 .header-user-menu-2 img{
+.header-user-dropdown-2 .header-user-menu-2 img ,.img-badge{
     border-radius:50%;
     position:absolute;
     top:6px;
     max-width: 28px;
-    left:34px;
+    margin-right:0;
+    right:14px;
   }
 
-
+.badge-2 {
+    margin-top:9px;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: left;
+    background-color: #f71313;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right:29px;
+ }
+.badge-2:empty {
+    display: none; }
 
 
 

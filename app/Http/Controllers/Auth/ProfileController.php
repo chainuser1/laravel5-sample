@@ -1,25 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Session;
+use App\Profile;
 class ProfileController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index(Request $req)
-    {
-       if($req->ajax()){
-
-       }
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +18,8 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        $email=Session::get('email');
+        return view('auth.create_profile',array('email'=>$email));
     }
 
     /**

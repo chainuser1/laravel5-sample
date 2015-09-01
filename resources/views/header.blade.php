@@ -59,51 +59,66 @@
 
 
       <!--New Style -->
-    <div class="header-limiter">
-        <h1><a href="#">MICP ICT Arena&nbsp;<span class="badge">Baybay</span></a></h1>
+<nav class="navbar navbar-costume-1 shadow-box ">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse navbar-left">
+            <div class="header-limiter">
+                <h1><a href="#">MICP ICT Arena&nbsp;<span class="badge">Baybay</span></a></h1>
 
-        <nav>
-<!--            <a href="#">(current)</a>-->
-            <a href="#">Projects</a>
-            <a href="#">About</a>
-
-            <div class="header-user-menu">
-                &nbsp;&nbsp;&nbsp;
-                <a href="#">News <span class="header-new-feature">new</span></a>
-
-                <ul>
-                         <li><a href="/news">News</a></li>
-                         <li role="separator" class="divider"></li>
-                           @if(Auth::check())
+                <nav>
+                    <ul><!--            <a href="#">(current)</a>-->
+                        <a href="#">Projects</a>
+                        <a href="#">About</a>
+                        <div class="dropdown">
+                            <span class="caret" style="margin-left:0; padding-left: 4px;"></span>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                News <span class="header-new-feature">new</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/news">News</a></li>
+                                <li role="separator" class="divider"></li>
+                                @if(Auth::check())
                                 <li><a href="/news/create">Publish a Story</a></li>
                                 <li><a href="/news/unpublished">View all unpublished news</a></li>
-                           @endif
-                </ul>
+                                @endif
+                            </ul>
+                        </div>
+                    <ul>
+                </nav>
             </div>
-        </nav>
-
-            <div class="header-user-menu-2">
-                @if(Auth::check())
-                <img src="{!!URL::to('css/assets/index.jpg')!!}" alt=" {!!Session::get('email')!!} Image"/>
-                <a href="#">Welcome, {!!Session::get('email')!!}</a>
-                @else
-                <img src="{!!URL::to('css/assets/logo.png')!!}" alt="User Image"/>
-                <a href="#" >Welcome, Guest!</a>
-                @endif
-                <ul>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <div class="header-limiter">
+                <div class="dropdown">
                     @if(Auth::check())
-                    <li><a href="#{!!Session::get('email')!!}">Profile Settings</a></li>
-                    <li><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="badge-2">Welcome, {!!Session::get('email')!!}</span>
+                        <img src="{!!URL::to('css/assets/index.jpg')!!}" alt=" {!!Session::get('email')!!} Image" class="img-badge"/>
+                        <span class="caret"></span>
+                    </a>
                     @else
-                    <li><a href="/login?url={!!Request::url()!!}">Log In</a></li>
-                    <li><a href="/register">Register</a></li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="badge-2">Welcome, Guest!!!</span>
+                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt="User Image" class="img-badge"/>
+                        <span class="caret"></span>
+                    </a>
                     @endif
-                </ul>
 
+                    <ul class="dropdown-menu">
+                        @if(Auth::check())
+                        <li><a href="#{!!Session::get('email')!!}">Profile Settings {!!Session::get('login_count')!!}</a></li>
+                        <li><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
+                        @else
+                        <li><a href="/login?url={!!Request::url()!!}">Log In</a></li>
+                        <li><a href="/register">Register</a></li>
+                        @endif
+                    </ul>
+
+                </div>
             </div>
-
-
+        </div>
     </div>
+</nav>
 </header>
 <br>
-<p class="alert modal-sm"></p>
+<p class="alert modal-sm" style="z-index: 25000;"></p>

@@ -1,70 +1,93 @@
-@if(Session::has('uname'))
-    <div class="alert-danger">{!!Redirect::to('home')!!}</div>
-@endif
-@extends('home')
-@section('content')
-<div class="modal show modal-dialog">
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
-            <legend><a href="#SignUp"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
-            {!!Form::open(array('url'=>'/account_register','role'=>'form')) !!}
-                <div class="row">
-                    <div class="col-xs-6 col-md-6">
-                        <div class="form-group {{$errors->has('fname') ? 'has-error' : ''}}">
-                          <input class="form-control" name="fname" placeholder="First Name" type="text"
-                                autofocus />
-                         {!!$errors->first('fname','<span class="help-block">:message</span>')!!}
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-6">
+@extends('master')
 
-                        <div class="form-group {{$errors->has('lname') ? 'has-error' : ''}}">
-                            <input class="form-control" name="lname" placeholder="First Name" type="text"
-                                    autofocus />
-                            {!!$errors->first('lname','<span class="help-block">:message</span>')!!}
+@section('main')
+<div class='container-1'>
+    <div class='panel panel-success dialog-panel'>
+        <div class='panel-heading'>
+            <h3 class="title">{!!$email!!} - You're One Step now, Create Your Profile</h3>
+        </div>
+        <div class='panel-body'>
+            <form class='form-horizontal' role='form'>
+                <div class="form-group">
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_photo'>Profile Photo</label>
+                    <div class="col-md-6">
+                        <input type="file" name="prof_pic" id="id_photo" />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Name</label>
+                    <div class='col-md-8'>
+                        <div class='col-md-2'>
+                            <div class='form-group internal'>
+                                <select class='form-control' name='title' id='id_title' disabled='true'>
+                                    <option>Mr</option>
+                                    <option>Ms</option>
+                                    <option>Mrs</option>
+                                    <option>Miss</option>
+                                    <option>Dr</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class='col-md-3 indent-small'>
+                            <div class='form-group internal'>
+                                <input class='form-control' id='id_first_name' placeholder='First Name' type='text' name='fname'>
+                            </div>
+                        </div>
+                        <div class='col-md-3 indent-small'>
+                            <div class='form-group internal'>
+                                <input class='form-control' id='id_middle_name' placeholder='Middle Name' type='text' name='fname'>
+                            </div>
+                        </div>
+                        <div class='col-md-3 indent-small'>
+                            <div class='form-group internal'>
+                                <input class='form-control' id='id_last_name' placeholder='Last Name' type='text' name='lname'>
+                            </div>
+                        </div>
+                    </div>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Birth date</label>
+                    <div class="col-md-4 indent-small">
+                    <div class="col-md-6">
+                        <div class='form-group internal'>
+                            <input class='form-control' id='id_birthday' placeholder='When you were born?' type='text' name='birthday'>
                         </div>
                     </div>
                 </div>
-                <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
-                    <input class="form-control" name="email" placeholder="Your Email" type="text" />
-                    {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                 </div>
-                <div class="form-group {{$errors->has('uname') ? 'has-error' : ''}}">
-                    <input class="form-control" name="uname" placeholder="Username" type="text" />
-                    {!!$errors->first('uname','<span class="help-block">:message</span>')!!}
+                <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Contact</label>
+                    <div class='col-md-6'>
+                        <div class='form-group'>
+                            <div class='col-md-11'>
+                                <input class='form-control' id='id_email' disabled='true' placeholder='E-mail' type='text' value="{!!$email!!}" name='email'>
+                            </div>
+                        </div>
+                        <div class='form-group internal'>
+                            <div class='col-md-11'>
+                                <input class='form-control' id='id_address' placeholder='Address' type='text' name='address'>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group {{$errors->has('pword') ? 'has-error' : ''}}">
-                    <input class="form-control" name="pword" placeholder="Password" type="password" />
-                    {!!$errors->first('pword','<span class="help-block">:message</span>')!!}
+
+
+
+                <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>About Yourself</label>
+                    <div class='col-md-6'>
+                        <textarea class='form-control' id='id_comments' placeholder='About Me' rows='3'></textarea>
+                    </div>
                 </div>
-                <div class="form-group {{$errors->has('confirm_pword') ? 'has-error' : ''}}">
-                    <input class="form-control" name="confirm_pword" placeholder="Confirm Password" type="password" />
-                    {!!$errors->first('confirm_pword','<span class="help-block">:message</span>')!!}
+                <div class='form-group'>
+                    <div class='col-md-offset-4 col-md-3'>
+                        <button class='btn-lg btn-success' type='submit'>Create Profile</button>
+                    </div>
+                    <div class='col-md-3'>
+                        <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancel</button>
+                    </div>
                 </div>
-                <div class="form-group {{$errors->has('birthday') ? 'has-error' : ''}}">
-                    <input class="datepicker form-control" name="birthday" placeholder="Birth Date" type="text" />
-                    {!!$errors->first('birthday','<span class="help-block">:message</span>')!!}
-                </div>
-                <div class="form-group {{$errors->has('sex') ? 'has-error' : ''}}">
-                    <label class="radio-inline">
-                        <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
-                        Male
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
-                        Female
-                    </label>
-                    {!!$errors->first('sex','<span class="help-block">:message</span>')!!}
-             </div>
-                <br />
-                <br />
-                <button class="btn btn-lg btn-green-gradient btn-block" type="submit">
-                    Sign up</button>
-            {!!Form::close()!!}
-            <span class="pull-right"><a href="/login">Login</a></span><span><a href="#">Need help?</a></span>
+            </form>
         </div>
     </div>
 </div>
-</div>
-@stop
+
+@endsection

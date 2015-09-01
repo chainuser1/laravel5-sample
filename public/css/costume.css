@@ -2,24 +2,32 @@
 * Created By: Jayson Ramos
 *
 **/
+/* For the "inset" look only */
+html { overflow: auto; }
+body { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; } /* Let's get this party started */
 header.page-header{
     position: fixed;
     width: 100%;
     height: 10%;
+    z-index:2100;
 }
-div.container, div.cron{
-   margin-top: 4.2em;
+div.container-1, .cron{
+   background-color: #2e3839;
+   margin-top: 2.5em;
+   padding-bottom: 21px;
+   overflow-x: hidden;
+   overflow-y:auto;
 }
 #rss,#rss_apple{
-    margin-right: 23px; max-height: 650px; height: 600px;
+    margin-right: 23px;
+    margin-top: 45px;;
+    margin-left: 23px;max-height: 650px; height: 600px;
     overflow-y:auto; overflow-x: hidden;
 }
-
 .paragraph-content
 {
-    text-shadow:1px 1px 0 rgba(191,222,211,1);
-    font-weight:bold;font-style:italic;color:#000000;
-    background-color:#F0FFF3;
+    text-shadow:1px 1px 0 rgb(201, 222, 185);
+    font-weight:bold;font-style:italic;color: #e0e0e0;
     letter-spacing:0pt;
     word-spacing:2pt;
     font-size:12px;
@@ -31,10 +39,10 @@ div.container, div.cron{
 textarea{
     resize: none;
 }
-
-::-webkit-scrollbar-track {
--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
+.qoute{
+    margin-top: 40px;
+    font-family: Times,Philosopher,"Open Sans";
+    font-size: 4em;
 }
 .pagination-costume {
     display: inline-block;
@@ -168,7 +176,11 @@ p.content:first-line{
     opacity: 0.5;
     filter: alpha(opacity=50); }
 
-
+p.content{
+    font-size: 1em;
+    font-family: "Times New Roman", sans-serif;
+    color: #ffffff;
+}
 p.content:first-letter { font-size: 3.2em;
     color: #27c914; }
 .costume-box-gradient-1{

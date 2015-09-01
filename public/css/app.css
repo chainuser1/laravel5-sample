@@ -1495,11 +1495,15 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
+
 .container {
   margin-right: auto;
+  margin-top: auto;
   margin-left: auto;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  top: 45px;
+}
   .container:before,
   .container:after {
     content: " ";

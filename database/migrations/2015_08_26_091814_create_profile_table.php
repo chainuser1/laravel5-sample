@@ -14,12 +14,14 @@ class CreateProfileTable extends Migration
     {
         Schema::create('profile', function (Blueprint $table) {
             $table->string('email');
+            $table->string('title');
             $table->string('fname',40);
             $table->string('mname',40);
             $table->string('lname',40);
             $table->string('address',100);
             $table->string('city',21);
             $table->date('birthday');
+            $table->text('about-me');
             $table->primary('email');
             $table->timestamps('created_at');
         });

@@ -2,6 +2,7 @@
 use Hash;
 use Session;
 use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -57,6 +58,7 @@ class AuthController extends Controller {
         //code for registering a user goes here.
         $this->account->email=$request["email"];
         $this->account->password=Hash::make($request["password"]);
+        $this->account->login_count=0;
         $this->account->save();
         $this->auth->login($this->user);
         return redirect('/dash-board');
@@ -80,14 +82,29 @@ class AuthController extends Controller {
      */
     public function postLogin(LoginRequest $request)
     {
-        if ($this->auth->attempt($request->only('email', 'password')))
+        if ($this->auth->attempt($request->only('email', 'password'),true))
         {
-            Session::put('email', $request['email']);
-            if(is_null($request->get('url')))
-                return redirect('/');
-            else
-                return redirect($request->get('url'));
+            //update login-count here
+            $this->account=User::where('email','=',$request['email'])->first();
 
+                $login_count=(int) $this->account->login_count;
+                $login_count=$login_count+1;
+                $this->account->login_count=$login_count;
+                $this->account->save();
+            //create a session
+            Session::put('email', $request['email']);
+
+            $this->account=Profile::where('email','=',$request['email'])->first();
+
+            if((string)$this->account==null){
+                return redirect('/profile/create');
+            }
+            else{
+                if(is_null($request->get('url')))
+                    return redirect('/');
+                else
+                    return redirect($request->get('url'));
+            }
         }
         return redirect('/login')->withErrors([
             'email' => 'The credentials you entered did not match our records. Try again?',

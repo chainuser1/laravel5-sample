@@ -1,7 +1,7 @@
 <!-- -->
 @extends('master')
 @section('main')
-<div class="col-md-8 col-md-offset-2 form-content">
+<div class="col-md-8 col-md-offset-2 form-content container">
     <h3 class="title">Register</h3>
     @foreach($errors->all() as $error)
     <p class="alert alert-danger">{!!$error!!}</p>

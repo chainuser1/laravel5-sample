@@ -1,6 +1,9 @@
 <!DOCTYPE html>
         <html>
            <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge">
+               <meta name="viewport" content="width=device-width, initial-scale=1">
                <meta name="csrf-token" content="{{ csrf_token() }}">
                <title>MICP News</title>
                @include('../style')
@@ -10,9 +13,10 @@
                @include('header')
                @yield('admin-only')
                @if(isset($feed))
-                     @foreach($feed->all() as $story)
-                        <div class="container">
-                             <a class="title" href="#">{!!ucwords($story->title)!!}</a><br>
+
+                        <div class="container container-1">
+                            @foreach($feed->all() as $story)
+                             <br><br><a class="title" href="#">{!!ucwords($story->title)!!}</a><br>
                              <p class="paragraph-content">
                                  <?php
                                      $content=htmlspecialchars_decode($story->content);
@@ -35,12 +39,13 @@
                                     <a class="text-danger" href="#">Remove</a>
                                 @endif
                             <?php } ?>
+                            @endforeach
+                            <div class="text-center"><div class="pagination">{!!$feed->fragment('news')->render()!!}</div></div>
                         </div>
-                      @endforeach
+                @endif
 
-                      <div class="container text-center"><div class="pagination">{!!$feed->fragment('news')->render()!!}</div></div>
 
-               @elseif(isset($error))
+               @if(isset($error))
                          <p class="alert">{!!$error!!}</p>
                @endif
                {!!HTML::script('js/jquery-1.11.1.min.js')!!}
