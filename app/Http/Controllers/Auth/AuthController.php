@@ -86,17 +86,14 @@ class AuthController extends Controller {
         {
             //update login-count here
             $this->account=User::where('email','=',$request['email'])->first();
-
-                $login_count=(int) $this->account->login_count;
-                $login_count=$login_count+1;
-                $this->account->login_count=$login_count;
-                $this->account->save();
+            $login_count=$this->account->login_count;
+            $this->account->login_count=$login_count+1;
+            $this->account->save();
             //create a session
             Session::put('email', $request['email']);
-
             $this->account=Profile::where('email','=',$request['email'])->first();
 
-            if((string)$this->account==null){
+            if((string)$this->account==null){//if the user has no profile yet
                 return redirect('/profile/create');
             }
             else{

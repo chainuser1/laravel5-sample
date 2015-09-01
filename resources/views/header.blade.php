@@ -61,7 +61,15 @@
       <!--New Style -->
 <nav class="navbar navbar-costume-1 shadow-box ">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse navbar-left">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
             <div class="header-limiter">
                 <h1><a href="#">MICP ICT Arena&nbsp;<span class="badge">Baybay</span></a></h1>
 
@@ -89,11 +97,12 @@
         </div>
         <div class="collapse navbar-collapse navbar-right">
             <div class="header-limiter">
-                <div class="dropdown">
+
+                <div class="dropdown text-left">
                     @if(Auth::check())
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="badge-2">Welcome, {!!Session::get('email')!!}</span>
-                        <img src="{!!URL::to('css/assets/index.jpg')!!}" alt=" {!!Session::get('email')!!} Image" class="img-badge"/>
+                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt=" {!!Session::get('email')!!} Image" class="img-badge"/>
                         <span class="caret"></span>
                     </a>
                     @else

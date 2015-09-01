@@ -30,7 +30,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/news/{slug}/edit',['as'=>'new.edit','uses'=>'Admin\NewsController@edit']);
 });
 Route::get('/news/{slug}/show',['as'=>'new.show','uses'=>'Admin\NewsController@show']);
-
+//routes for profile
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/profile/create',['as'=>'profile.create','uses'=>'Auth\ProfileController@create']);
     Route::post('/profile/store',['as'=>'profile.store','uses'=>'Auth\ProfileController@store']);
