@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
 use App\Profile;
+use Request;
 class ProfileController extends Controller
 {
 
@@ -27,9 +26,19 @@ class ProfileController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $req)
     {
-        //
+        if($req->ajax()){
+            $email=$req->input('email');
+            $title=$req->input('title');
+            $fname=$req->input('fname');
+            $mname=$req->input('mname');
+            $lname=$req->input('lname');
+            $birthday=strtotime($req->input('birthday'));
+            $address='\''.$req->input('address').'\'';
+            $about_me='\''.$req->input('about_me').'\'';
+            $filename=md5($email);
+        }
     }
 
     /**
