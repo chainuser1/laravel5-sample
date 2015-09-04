@@ -37,6 +37,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/profile/update',['as'=>'profile.update','uses'=>'Auth\ProfileController@update']);
     Route::post('/profile/delete',['as'=>'profile.delete','uses'=>'Auth\ProfileController@destroy']);
     Route::get('/profile/edit',['as'=>'profile.edit','uses'=>'Auth\ProfileController@edit']);
+    Route::get('/profile/loadProfPic/{prof_pic}',['as'=>'profile.prof_pic','uses'=>'Auth\ProfileController@loadProfPic']);
     Route::get('/profile{user}',['as'=>'profile','uses'=>'Auth\ProfileController@index']);
 });
 Route::get('/profile/{user}/show',['as'=>'profile.show','uses'=>'Admin\ProfileController@index']);

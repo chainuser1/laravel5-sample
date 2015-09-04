@@ -17,33 +17,44 @@
             </head>
             <body>
                 @include('header')
-                <div class="container">
+                <div class="cont">
 
-                    <div class="row">
-                        @yield('main')
+                    <div class="container">
+
+                        <div class="row">
+                            @yield('main')
+                        </div>
                     </div>
+
+                    <input type="hidden" value="{!!URL::to('/').'/public_gallery/images'!!}" name="gallery"/>
+                    {!!HTML::script('js/jquery-1.11.1.min.js')!!}
+                    {!!HTML::script('js/picedit.js')!!}
+                    {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
+                    <script>
+                        !function($){
+                            $.ajaxSetup({
+                                headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
+                            });
+                            $(function(){
+                                $("input[name=birthday]").datetimepicker({
+                                    mask:false,
+                                    format: "M-d,Y"
+                                });
+                                $("input[name=prof_pic]").picEdit({
+                                    maxWidth: 225,
+                                    maxHeight:225,
+                                    formSubmitted: function(response){
+                                        alert(response.responseText);
+                                    },
+                                    redirectUrl:"{!!URL::to('/')!!}"
+                                });
+
+                            });
+                        }(jQuery);
+                    </script>
+                    @include('scripts')
+
+
                 </div>
-
-                <input type="hidden" value="{!!URL::to('/').'/public_gallery/images'!!}" name="gallery"/>
-                {!!HTML::script('js/jquery-1.11.1.min.js')!!}
-                {!!HTML::script('js/picedit.min.js')!!}
-                {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
-                <script>
-                    !function($){
-                        $(function(){
-                            $("input[name=birthday]").datetimepicker({
-                                mask:false,
-                                format: "M-d,Y"
-                            });
-                            $("input[name=prof_pic]").picEdit({
-                                maxWidth: 225,
-                                maxHeight:225
-                            });
-                        });
-                    }(jQuery);
-                </script>
-                @include('scripts')
-
-
             </body>
         </html>

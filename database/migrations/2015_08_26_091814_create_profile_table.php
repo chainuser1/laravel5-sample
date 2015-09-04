@@ -21,8 +21,11 @@ class CreateProfileTable extends Migration
             $table->string('address',100);
             $table->string('city',21);
             $table->date('birthday');
-            $table->text('about-me');
+            $table->text('about_me');
+            $table->string('prof_pic');
+            $table->string('mime');
             $table->primary('email');
+
             $table->timestamps('created_at');
         });
     }

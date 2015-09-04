@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Session;
 use App\Profile;
-use Request;
+use Illuminate\Http\Request;;
+use File;
+use Storage;
+use Validator;
+use Response;
 class ProfileController extends Controller
 {
 
@@ -28,20 +32,48 @@ class ProfileController extends Controller
      */
     public function store(Request $req)
     {
-        if($req->ajax()){
+//       if($req->ajax()){
             $email=$req->input('email');
             $title=$req->input('title');
             $fname=$req->input('fname');
             $mname=$req->input('mname');
             $lname=$req->input('lname');
-            $birthday=strtotime($req->input('birthday'));
+            $birthday=$req->input('birthday');
             $address='\''.$req->input('address').'\'';
             $about_me='\''.$req->input('about_me').'\'';
-            $filename='';
-            if($req->hasFile('prof_pic')){
-                $filename=md5($email);
+            $file=$req->file('prof_pic');
+
+            $data=array('email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
+                'birthday'=>$birthday,'address'=>$address,'prof_pic'=>$file);
+
+            $validator=Validator::make($data,[
+                'email'=>'required|email',
+                'title'=>'required',
+                'fname'=>'required|alpha',
+                'mname'=>'required|alpha',
+                'lname'=>'required|alpha',
+                'birthday'=>'date|required',
+                'prof_pic'=>'required|image'
+            ]);
+            if($validator->fails()){
+                $errors=$validator->messages();
+                return  Response::json($errors->all());
             }
-        }
+            $extension = $file->getClientOriginalExtension();
+            $mime=$file->getClientMimeType();
+            $filename=md5(Session::get('email')).'.'.$extension;
+            Storage::disk('local')->put($filename,File::get($file));
+            $profile=new Profile;
+            try{
+                $newProf=$profile->create(['email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
+                    'birthday'=>$birthday,'address'=>$address,'about_me'=>$about_me,'prof_pic'=>$filename,'mime'=>$mime]);
+                return 'Your Profile has been created.';
+            }catch(\Exception $e)
+            {
+                echo 'An error occurred while creating your profile. Perhaps your profile already exists.';
+            }
+
+//        }
     }
 
     /**
@@ -87,4 +119,13 @@ class ProfileController extends Controller
     {
         //
     }
+    public function loadProfPic($prof_pic){
+
+            $email=$prof_pic;
+            $user=Profile::where('email','=',$email)->first();
+            $file=Storage::disk('local')->get($user->prof_pic);
+            return response($file,200)->header('mime',$user->mime);
+
+    }
+
 }

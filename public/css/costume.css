@@ -4,7 +4,7 @@
 **/
 /* For the "inset" look only */
 html { overflow: auto; }
-body { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; } /* Let's get this party started */
+body div.cont  { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; margin-top: 50px; } /* Let's get this party started */
 header.page-header{
     position: fixed;
     width: 100%;
@@ -126,10 +126,9 @@ p.content:first-line{
     bottom: 0;
     left: 0;
     box-shadow: 0 5px 15px #60a48e;
-    width: 45em;
+    width: 47em;
     margin: 1em auto;
     z-index: 1000;
-    overflow-style: scrollbar;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
     background: #9dd53a; /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6+ */

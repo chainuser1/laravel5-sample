@@ -1,3 +1,4 @@
+
 <header class="page-header header-user-dropdown-2">
 <!--    <nav class="navbar navbar-costume-1 shadow-box">-->
 <!--        <div class="container-fluid">-->
@@ -102,7 +103,7 @@
                     @if(Auth::check())
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="badge-2">Welcome, {!!Session::get('email')!!}</span>
-                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt=" {!!Session::get('email')!!} Image" class="img-badge"/>
+                        <img src="{!!route('profile.prof_pic',Session::get('email'))!!}" alt=" {!!Session::get('email')!!}" class="img-badge"/>
                         <span class="caret"></span>
                     </a>
                     @else
@@ -130,4 +131,4 @@
 </nav>
 </header>
 <br>
-<p class="alert modal-sm" style="z-index: 25000;"></p>
+
