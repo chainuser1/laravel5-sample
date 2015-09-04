@@ -1,4 +1,4 @@
-<header class="header-user-dropdown-2 page-header">
+<header class="page-header header-user-dropdown-2">
 <!--    <nav class="navbar navbar-costume-1 shadow-box">-->
 <!--        <div class="container-fluid">-->
 <!--            <!-- Brand and toggle get grouped for better mobile display -->

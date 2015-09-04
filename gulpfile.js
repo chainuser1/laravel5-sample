@@ -12,7 +12,7 @@ var elixir = require('laravel-elixir');
 */
 
 var paths = {
-    'jquery': './vendor/bower_components/jquery/dist/jquery-1.11.1.min.js',
+    'jquery': './vendor/bower_components/jquery/dist/jquery.min.js',
     'bootstrap': './vendor/bower_components/bootstrap-sass-official/assets/',
     'cropit':'./vendor/bower_components/cropit/dist/jquery.cropit.js'
 }

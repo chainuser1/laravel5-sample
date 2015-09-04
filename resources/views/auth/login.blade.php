@@ -1,14 +1,11 @@
 <!-- -->
 @extends('master')
 @section('main')
-<div class="modal-emerald-02">
-    <div class="modal-header">
-     <h1 class="title">Login</h1>
+<div class="col-md-8 col-md-offset-2 form-content container" style="margin-top: 70px;">
+     <h1 class="title text-center">Login</h1>
     @foreach($errors->all() as $error)
-    <p class="alert alert-danger">{!!$error!!}</p>
+    <p class="alert alert-danger modal-sm">{!!$error!!}</p>
     @endforeach
-    </div>
-    <div class="modal-body">
         {!!Form::open(['url'=>'/login','class'=>'form form-horizontal','style'=>'margin-top:50px'])!!}
         <div class="form-group">
             <input type="hidden" name="url" value="{!!$url!!}"/>
@@ -27,7 +24,6 @@
             {!!Form::submit('Login',['class'=>'btn btn-default'])!!}
         </div>
         {!!Form::close()!!}
-    </div>
 </div>
 
 @stop

@@ -4,7 +4,7 @@
 <div class="col-md-8 col-md-offset-2 form-content container">
     <h3 class="title">Register</h3>
     @foreach($errors->all() as $error)
-    <p class="alert alert-danger">{!!$error!!}</p>
+    <p class="alert alert-danger modal-sm">{!!$error!!}</p>
     @endforeach
     {!!Form::open(['url'=>'/register','class'=>'form form-horizontal','style'=>'margin-top:50px'])!!}
     <div class="form-group">

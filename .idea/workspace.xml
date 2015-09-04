@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\css\app.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\css\app.css.map" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery-1.11.1.min.js" />
+      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\all.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\all.js.map" afterPath="" />
       <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\app.js" afterPath="" />
       <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\app.js.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\jquery-2.1.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\lamp\www\laravel5-sample\public\js\picedit.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ProfileController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/picedit.min.css" afterPath="$PROJECT_DIR$/public/css/picedit.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/create_profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/create_profile.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css.map" afterPath="$PROJECT_DIR$/public/css/all.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css" afterPath="$PROJECT_DIR$/public/css/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/news.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/news.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" />
@@ -41,33 +36,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gulpfile.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="gulpfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="7" selection-start="941" selection-end="941" vertical-scroll-proportion="0.6740088">
+            <state line="26" column="31" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/all.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61062" column="18" selection-start="1782337" selection-end="1782337" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#490751#490836#2" expanded="true" />
-                <element signature="e#491588#493937#2" expanded="true" />
-                <element signature="e#516041#525387#1" expanded="true" />
-                <element signature="e#525411#533336#1" expanded="true" />
-                <element signature="e#544419#553765#1" expanded="true" />
-                <element signature="e#553785#561710#1" expanded="true" />
-                <element signature="e#788557#788642#2" expanded="true" />
-                <element signature="e#789394#791743#2" expanded="true" />
-                <element signature="e#813847#823193#1" expanded="true" />
-                <element signature="e#823217#831142#1" expanded="true" />
-                <element signature="e#842225#851571#1" expanded="true" />
-                <element signature="e#851591#859516#1" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +48,27 @@
       <file leaf-file-name="news.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="24" selection-start="3271" selection-end="3271" vertical-scroll-proportion="-18.153847">
+            <state line="53" column="33" selection-start="3100" selection-end="3100" vertical-scroll-proportion="-31.23077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="27" selection-start="892" selection-end="892" vertical-scroll-proportion="0.46717557">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="12" selection-start="57" selection-end="104" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
@@ -84,7 +77,7 @@
       <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="39" selection-start="1294" selection-end="1294" vertical-scroll-proportion="-14.076923">
+            <state line="28" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="-9.615385">
               <folding />
             </state>
           </provider>
@@ -93,7 +86,7 @@
       <file leaf-file-name="all.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/all.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63568" column="20" selection-start="3707752" selection-end="3707752" vertical-scroll-proportion="-3.4">
+            <state line="42752" column="9" selection-start="2316141" selection-end="2316141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +95,7 @@
       <file leaf-file-name="scripts.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/scripts.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="51" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923">
+            <state line="5" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="-3.2692308">
               <folding />
             </state>
           </provider>
@@ -111,38 +104,16 @@
       <file leaf-file-name="style.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/style.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="38" selection-start="822" selection-end="822" vertical-scroll-proportion="-11.115385">
+            <state line="18" column="33" selection-start="876" selection-end="876" vertical-scroll-proportion="-11.769231">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <file leaf-file-name="header.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="3" selection-start="96299" selection-end="96299" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1441326807654" expanded="false" signature="95795:95919" placeholder="/*...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1441173238627" expanded="true" signature="0:129" placeholder="{&quot;private&quot;: true...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autoload.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="12" column="25" selection-start="841" selection-end="841" vertical-scroll-proportion="57.692307">
               <folding />
             </state>
           </provider>
@@ -161,11 +132,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/app.css" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_07_23_072829_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ProfileController.php" />
@@ -173,9 +140,13 @@
         <option value="$PROJECT_DIR$/public/css/picedit.min.css" />
         <option value="$PROJECT_DIR$/resources/views/style.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/create_profile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/scripts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/news.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/all.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
       </list>
     </option>
@@ -348,7 +319,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,6 +348,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5-sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5-sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -546,9 +535,9 @@
       <recent name="C:\lamp\www\laravel5-sample\public\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\lamp\www\laravel5-sample\public\js" />
       <recent name="C:\lamp\www\laravel5-sample\vendor\bower_components\jquery\dist" />
       <recent name="C:\lamp\www\laravel5-sample\app\Http\Controllers\Auth" />
-      <recent name="C:\lamp\www\laravel5-sample\public\js" />
       <recent name="C:\lamp\www\laravel5-sample\resources\views" />
       <recent name="public_gallery.php" />
     </key>
@@ -650,26 +639,11 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="32" selection-start="818" selection-end="818" vertical-scroll-proportion="-0.65384614" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/picedit.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18774" selection-start="18774" selection-end="18774" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/costume.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/all.js.map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/default.css">
@@ -700,74 +674,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+    <entry file="file://$PROJECT_DIR$/public/css/all.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="96299" selection-end="96299" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1441326807654" expanded="false" signature="95795:95919" placeholder="/*...*/" />
-          </folding>
+        <state line="71280" column="1" selection-start="2080154" selection-end="2080154" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/style.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="822" selection-end="822" vertical-scroll-proportion="-11.115385">
+        <state line="18" column="33" selection-start="876" selection-end="876" vertical-scroll-proportion="-11.769231">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/scripts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="51" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923">
+        <state line="5" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="-3.2692308">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63568" column="20" selection-start="3707752" selection-end="3707752" vertical-scroll-proportion="-3.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61062" column="18" selection-start="1782337" selection-end="1782337" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#490751#490836#2" expanded="true" />
-            <element signature="e#491588#493937#2" expanded="true" />
-            <element signature="e#516041#525387#1" expanded="true" />
-            <element signature="e#525411#533336#1" expanded="true" />
-            <element signature="e#544419#553765#1" expanded="true" />
-            <element signature="e#553785#561710#1" expanded="true" />
-            <element signature="e#788557#788642#2" expanded="true" />
-            <element signature="e#789394#791743#2" expanded="true" />
-            <element signature="e#813847#823193#1" expanded="true" />
-            <element signature="e#823217#831142#1" expanded="true" />
-            <element signature="e#842225#851571#1" expanded="true" />
-            <element signature="e#851591#859516#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="39" selection-start="1294" selection-end="1294" vertical-scroll-proportion="-14.076923">
+        <state line="28" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="-9.615385">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="24" selection-start="3271" selection-end="3271" vertical-scroll-proportion="-18.153847">
+        <state line="53" column="33" selection-start="3100" selection-end="3100" vertical-scroll-proportion="-31.23077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="841" selection-end="841" vertical-scroll-proportion="57.692307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="12" selection-start="57" selection-end="104" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42752" column="9" selection-start="2316141" selection-end="2316141" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="7" selection-start="941" selection-end="941" vertical-scroll-proportion="0.6740088">
+        <state line="26" column="31" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="892" selection-end="892" vertical-scroll-proportion="0.46717557">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
