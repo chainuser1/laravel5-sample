@@ -10,7 +10,8 @@
         "laravel/elixir": "~1.0",
         "illuminate/html": "5.0.*@dev",
         "twbs/bootstrap": "~3.3@dev",
-        "laravel/socialite": "^3.0@dev"
+        "laravel/socialite": "^3.0@dev",
+        "intervention/image": "^2.3@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

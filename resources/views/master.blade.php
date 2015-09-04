@@ -25,8 +25,7 @@
                 </div>
 
                 <input type="hidden" value="{!!URL::to('/').'/public_gallery/images'!!}" name="gallery"/>
-                {!!HTML::script('js/jquery-1.11.1.min.js')!!}
-                {!!HTML::script('js/picedit.min.js')!!}
+                @include('scripts'}
 
                 {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
                 <script>
@@ -36,12 +35,15 @@
                                 mask:false,
                                 format: "M-d,Y"
                             });
-                            $("input[name=prof_pic]").picEdit();
+                            $("input[name=prof_pic]").picEdit({
+                                maxWidth: 225,
+                                maxHeight:225
+                            });
                         });
                     }(jQuery);
                 </script>
                 @include('scripts')
-                {!! HTML::script('js/directorySlideshow.js') !!}
+
 
             </body>
         </html>

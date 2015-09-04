@@ -37,7 +37,10 @@ class ProfileController extends Controller
             $birthday=strtotime($req->input('birthday'));
             $address='\''.$req->input('address').'\'';
             $about_me='\''.$req->input('about_me').'\'';
-            $filename=md5($email);
+            $filename='';
+            if($req->hasFile('prof_pic')){
+                $filename=md5($email);
+            }
         }
     }
 

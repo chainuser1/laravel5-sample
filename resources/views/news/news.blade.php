@@ -48,10 +48,7 @@
                @if(isset($error))
                          <p class="alert">{!!$error!!}</p>
                @endif
-               {!!HTML::script('js/jquery-1.11.1.min.js')!!}
-               {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
-               {!!HTML::script('costume-scrollbar/jquery.mCustomScrollbar.concat.min.js')!!}
-               {!! HTML::script('js/jquery_ui.js') !!}
+               @include('..scripts')
                <script>
                    $.noConflict();
 

@@ -11,7 +11,22 @@
                 <div class="form-group">
                     <label class='control-label col-md-2 col-md-offset-2' for='id_photo'>Profile Photo</label>
                     <div class="col-md-6">
-                        <input type="file" name="prof_pic" id="id_photo" />
+<!--                        <input type="file" name="prof_pic" id="id_photo" />-->
+                        <!-- This wraps the whole cropper -->
+                        <div id="image-cropper">
+                            <!-- This is where the preview image is displayed -->
+                            <div class="cropit-image-preview"></div>
+
+                            <!-- This range input controls zoom -->
+                            <!-- You can add additional elements here, e.g. the image icons -->
+                            <input type="range" class="cropit-image-zoom-input" />
+
+                            <!-- This is where user selects new image -->
+                            <input type="file" class="cropit-image-input" name="prof_pic"/>
+
+                            <!-- The cropit- classes above are needed
+                      so cropit can identify these elements -->
+                        </div>
                     </div>
                 </div>
                 <div class='form-group'>
