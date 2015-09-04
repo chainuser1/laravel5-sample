@@ -91,12 +91,13 @@ class AuthController extends Controller {
             $this->account->save();
             //create a session
             Session::put('email', $request['email']);
-            $this->account=Profile::where('email','=',$request['email'])->first();
-
-            if((string)$this->account==null){//if the user has no profile yet
+            $userLogin=Profile::where('email','=',$request['email'])->first();
+            if((string)$userLogin==null){//if the user has no profile yet
                 return redirect('/profile/create');
             }
             else{
+                Session::put('fname',$userLogin->fname);
+                Session::put('lname',$userLogin->lname);
                 if(is_null($request->get('url')))
                     return redirect('/');
                 else
