@@ -67,6 +67,8 @@ class ProfileController extends Controller
             try{
                 $newProf=$profile->create(['email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
                     'birthday'=>$birthday,'address'=>$address,'about_me'=>$about_me,'prof_pic'=>$filename,'mime'=>$mime]);
+                   Session::put('lname',$lname);
+                   Session::put('fname',$fname);
                 return 'Your Profile has been created.';
             }catch(\Exception $e)
             {

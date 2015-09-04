@@ -101,9 +101,15 @@
 
                 <div class="dropdown text-left">
                     @if(Auth::check())
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="badge-2">Welcome, {!!Session::get('email')!!}</span>
-                        <img src="{!!route('profile.prof_pic',Session::get('email'))!!}" alt=" {!!Session::get('email')!!}" class="img-badge"/>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        @if(Session::get('lname')!=null && Session::get('fname')!=null)
+                           <span class="badge-2">Welcome, {!! Session::get('fname')!!}
+                               {!!Session::get('lname')!!}</span>
+                           <img src="{!!route('profile.prof_pic',Session::get('email'))!!}" alt=" {!!Session::get('email')!!}" class="img-badge"/>
+                        @else
+                            <span class="badge-2">Welcome, {!! Session::get('email')!!}</span>
+                            <img src="{!!URL::to('css/assets/logo.png')!!}" alt=" {!!Session::get('email')!!}" class="img-badge"/>
+                        @endif
                         <span class="caret"></span>
                     </a>
                     @else
