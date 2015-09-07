@@ -87,7 +87,7 @@
                                 <li><a href="/news">News</a></li>
                                 <li role="separator" class="divider"></li>
                                 @if(Auth::check())
-                                <li><a href="/news/create">Publish a Story</a></li>
+                                <li><a href="/news/create">Publish a Story {!!Session::get('type')!!}</a></li>
                                 <li><a href="/news/unpublished">View all unpublished news</a></li>
                                 @endif
                             </ul>

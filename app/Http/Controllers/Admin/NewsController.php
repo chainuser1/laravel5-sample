@@ -7,6 +7,7 @@ use Carbon;
 use Illuminate\Http\Request;
 use Validator;
 use Response;
+use Session;
 use DOMDocument;
 class NewsController extends Controller
 {
@@ -42,30 +43,37 @@ class NewsController extends Controller
      */
     public function store(Request $req, News $table)
     {
-         if($req->ajax()){
-             $title=htmlentities($req->input('title'));
-             $slug=$req->input('slug');
-             $title='\''.ucwords($title).'\'';
-             $content='\''.htmlentities($req->input('content')).'\'';
-             $created_at=$req->input('created_at');
-                $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
-                $validator=Validator::make($array,[
-                 'title'=>'required|max:250|min:5',
-                 'slug'=>'unique:news,slug',
-                 'content'=>'required',
-                 'created_at'=>'required|date',
-                ]);
-                if($validator->fails()){
-                    $errors=$validator->messages();
-                    return  Response::json($errors->all());
-                }
-             $table->title=$req->input('title');
-             $table->slug=$req->input('slug');
-             $table->content=$req->input('content');
-             $table->created_at=strtotime($req->input('created_at'));
-             $table->save();
-                return  "Your news was successfully saved.";
-         }
+
+             if($req->ajax()){
+                 if(strcmp(trim(Session::get('type')),'admin')==0){
+                     $title=htmlentities($req->input('title'));
+                     $slug=$req->input('slug');
+                     $title='\''.ucwords($title).'\'';
+                     $content='\''.htmlentities($req->input('content')).'\'';
+                     $created_at=$req->input('created_at');
+                     $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
+                     $validator=Validator::make($array,[
+                         'title'=>'required|max:250|min:5',
+                         'slug'=>'unique:news,slug',
+                         'content'=>'required',
+                         'created_at'=>'required|date',
+                     ]);
+                     if($validator->fails()){
+                         $errors=$validator->messages();
+                         return  Response::json($errors->all());
+                     }
+                     $table->title=$req->input('title');
+                     $table->slug=$req->input('slug');
+                     $table->content=$req->input('content');
+                     $table->created_at=strtotime($req->input('created_at'));
+                     $table->save();
+                     return  "Your news was successfully saved.";
+                 }
+                 else
+                     return "You are not allowed for this transaction. ";
+
+              }
+
     }
 
     /**
@@ -111,33 +119,39 @@ class NewsController extends Controller
      */
     public function update(Request $req)
     {
-        if($req->ajax()){
-            $title=htmlentities($req->input('title'));
-            $id=$req->input('id');
-            $slug=$req->input('slug');
-            $title='\''.ucwords($title).'\'';
-            $content='\''.htmlentities($req->input('content')).'\'';
-            $created_at=$req->input('created_at');
 
-            $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
-            $validator=Validator::make($array,[
-                'title'=>'required|max:250|min:5',
-                'slug'=>'required',
-                'content'=>'required',
-                'created_at'=>'required|date',
-            ]);
-            if($validator->fails()){
-                $errors=$validator->messages();
-                return  Response::json($errors->all());
+            if($req->ajax()){
+                if(strcmp(trim(Session::get('type')),'admin')==0){
+                    $title=htmlentities($req->input('title'));
+                    $id=$req->input('id');
+                    $slug=$req->input('slug');
+                    $title='\''.ucwords($title).'\'';
+                    $content='\''.htmlentities($req->input('content')).'\'';
+                    $created_at=$req->input('created_at');
+
+                    $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
+                    $validator=Validator::make($array,[
+                        'title'=>'required|max:250|min:5',
+                        'slug'=>'required',
+                        'content'=>'required',
+                        'created_at'=>'required|date',
+                    ]);
+                    if($validator->fails()){
+                        $errors=$validator->messages();
+                        return  Response::json($errors->all());
+                    }
+                    $table=News::findOrNew($id);
+                    $table->title=$req->input('title');
+                    $table->slug=$req->input('slug');
+                    $table->content=$req->input('content');
+                    $table->created_at=strtotime($req->input('created_at'));
+                    $table->save();
+                    return  "Your news was successfully saved.";
+                }
+                else
+                    return 'Your not allowed to make this transaction.';
             }
-            $table=News::findOrNew($id);
-            $table->title=$req->input('title');
-            $table->slug=$req->input('slug');
-            $table->content=$req->input('content');
-            $table->created_at=strtotime($req->input('created_at'));
-            $table->save();
-            return  "Your news was successfully saved.";
-        }
+
     }
 
     /**
@@ -148,11 +162,17 @@ class NewsController extends Controller
      */
     public function destroy(Request $req)
     {
-        if($req->ajax()){
-            $id=$req->input('id');
-            $row=News::where('id','=',$id)->delete();
-            return (string)$row;
-        }
+
+            if($req->ajax()){
+                if(strcmp(trim(Session::get('type')),'admin')==0){
+                    $id=$req->input('id');
+                    $row=News::where('id','=',$id)->delete();
+                    return (string)$row;
+                }
+                else
+                    return 'You are not allowed to make this transaction.';
+            }
+
     }
     /**
      * View all unpublished news

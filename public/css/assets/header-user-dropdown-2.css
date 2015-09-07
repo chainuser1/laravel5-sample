@@ -220,6 +220,9 @@
     position:absolute;
     top:6px;
     max-width: 28px;
+    max-height: 28px;;
+    min-height: 24px;
+    min-width: 25px;
     margin-right:0;
     right:14px;
   }

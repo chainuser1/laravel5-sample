@@ -84,14 +84,13 @@ class AuthController extends Controller {
     {
         if ($this->auth->attempt($request->only('email', 'password'),true))
         {
-            //update login-count here
+            //find the user for login update and Sessions
             $this->account=User::where('email','=',$request['email'])->first();
-            $login_count=$this->account->login_count;
-            $this->account->login_count=$login_count+1;
-            $this->account->save();
+
             //create a session
             Session::put('email', $request['email']);
             $userLogin=Profile::where('email','=',$request['email'])->first();
+            Session::put('type',$this->account->type);
             if((string)$userLogin==null){//if the user has no profile yet
                 return redirect('/profile/create');
             }
@@ -103,6 +102,9 @@ class AuthController extends Controller {
                 else
                     return redirect($request->get('url'));
             }
+            $login_count=$this->account->login_count;
+            $this->account->login_count=$login_count+1;
+            $this->account->save();
         }
         return redirect('/login')->withErrors([
             'email' => 'The credentials you entered did not match our records. Try again?',

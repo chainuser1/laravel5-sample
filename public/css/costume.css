@@ -12,11 +12,23 @@ header.page-header{
     z-index:2100;
 }
 div.container-1, .cron{
-   background-color: #2e3839;
+   background-color: #393914;
    margin-top: 2.5em;
    padding-bottom: 21px;
    overflow-x: hidden;
    overflow-y:auto;
+}
+div.container-2{
+    background-color: #d0d5d6;
+    margin-top: 2.5em;
+    padding-bottom: 21px;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+div.container-2 p.content{
+    font-size: 1em;
+    font-family: "Times New Roman", sans-serif;
+    color: #1b231d;
 }
 #rss,#rss_apple{
     margin-right: 23px;
