@@ -86,10 +86,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="/news">News</a></li>
                                 <li role="separator" class="divider"></li>
-                                @if(Auth::check())
-                                <li><a href="/news/create">Publish a Story {!!Session::get('type')!!}</a></li>
+                                <li><a href="/news/create">Create News</a></li>
                                 <li><a href="/news/unpublished">View all unpublished news</a></li>
-                                @endif
                             </ul>
                         </div>
                     <ul>
@@ -123,6 +121,9 @@
                     <ul class="dropdown-menu">
                         @if(Auth::check())
                         <li><a href="#{!!Session::get('email')!!}">Profile Settings {!!Session::get('login_count')!!}</a></li>
+                          @if(Session::get('type')=='admin')
+                          <li><a href="/dash-board">Admin Panel and Dashboard</a></li>
+                          @endif
                         <li><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
                         @else
                         <li><a href="/login?url={!!Request::url()!!}">Log In</a></li>

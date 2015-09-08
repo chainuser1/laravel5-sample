@@ -12,7 +12,7 @@
             &nbsp;
             @if(Auth::check())
                     <a class="text-success" href="{!!'/news/'.$article->slug.'/edit'!!}">Edit</a>
-                    <a class="text-danger" href="#">Remove</a>
+                    &nbsp; &nbsp;<a class="text-danger" href="#">Remove</a>
             @endif
         </h5>
 
