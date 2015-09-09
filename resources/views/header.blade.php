@@ -79,10 +79,11 @@
                         <a href="#">Projects</a>
                         <a href="#">About</a>
                         <div class="dropdown">
-                            <span class="caret" style="margin-left:0; padding-left: 4px;"></span>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                            <a class="glyphicon glyphicon-chevron-down text-left" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 News <span class="header-new-feature">new</span>
                             </a>
+
                             <ul class="dropdown-menu">
                                 <li><a href="/news">News</a></li>
                                 <li role="separator" class="divider"></li>

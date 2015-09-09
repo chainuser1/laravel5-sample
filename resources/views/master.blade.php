@@ -49,8 +49,8 @@
                                     maxHeight:225,
                                     formSubmitted: function(response){
                                         alert(response.responseText);
-                                    }//,
-                                    //redirectUrl:"{!!URL::to('/')!!}"
+                                    },
+                                    redirectUrl:"{!!URL::to('/')!!}"
                                 });
                                 $(".text-success").click(function(){
                                     var link=$(this).text();

@@ -3,14 +3,7 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Session;
 class DashBoardController extends Controller {
-    /**
-     * Create a new controller instance.
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     /**
      * Show the application dashboard to the user.
      * @return Response
@@ -23,11 +16,13 @@ class DashBoardController extends Controller {
         return view('control-panel.dashboard');
     }
     public function showUsers(){
-        $users=User::all()->toArray();
+        $users=DB::table('users')->join('profile',function($join){
+            $join->on('users.email','=','profile.email')->where('users.email','!=',Session::get('email'));
+        })->get();
         return view('control-panel.users',compact('users'));
     }
     public function showRoles(){
-
+        return "Roles";
     }
     public function showForms(){
 
