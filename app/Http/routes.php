@@ -19,10 +19,10 @@ Route::get('/errors/503',function(){
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
 
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
-Route::get('/dash-board/board',['as'=>'dash-board.board','uses'=>"DashBoardController@showDashbOARD"]);
+Route::get('/dash-board/board',['as'=>'dash-board.board','uses'=>"DashBoardController@showDashBoard"]);
 Route::get('/dash-board/users',['as'=>'dash-board.users','uses'=>"DashBoardController@showUsers"]);
 Route::get('/dash-board/roles',['as'=>'dash-board.roles','uses'=>"DashBoardController@showRoles"]);
-Route::get('/dash-board/forms',['as'=>'dash-board.users','uses'=>"DashBoardController@showForms"]);
+Route::get('/dash-board/forms',['as'=>'dash-board.forms','uses'=>"DashBoardController@showForms"]);
 Route::get('/dash-board/feedback',['as'=>'dash-board.feedback','uses'=>"DashBoardController@showFeedback"]);
 Route::get('/dash-board/settings',['as'=>'dash-board.settings','uses'=>"DashBoardController@showSettings"]);
 
