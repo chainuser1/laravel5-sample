@@ -17,4 +17,25 @@ class DashBoardController extends Controller {
     {
         return view('dashboard');
     }
+    public function _construct(){
+        $this->middleware('auth');
+    }
+    public function showDashBoard(){
+
+    }
+    public function showUsers(){
+        return view('control-panel.users');
+    }
+    public function showRoles(){
+
+    }
+    public function showForms(){
+
+    }
+    public function showFeedBack(){
+
+    }
+    public function showSettings(){
+
+    }
 }

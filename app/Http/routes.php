@@ -17,7 +17,15 @@ Route::get('/errors/503',function(){
     return view('errors.503');
 });
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
+
 Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);
+Route::get('/dash-board/board',['as'=>'dash-board.board','uses'=>"DashBoardController@showDashbOARD"]);
+Route::get('/dash-board/users',['as'=>'dash-board.users','uses'=>"DashBoardController@showUsers"]);
+Route::get('/dash-board/roles',['as'=>'dash-board.roles','uses'=>"DashBoardController@showRoles"]);
+Route::get('/dash-board/forms',['as'=>'dash-board.users','uses'=>"DashBoardController@showForms"]);
+Route::get('/dash-board/feedback',['as'=>'dash-board.feedback','uses'=>"DashBoardController@showFeedback"]);
+Route::get('/dash-board/settings',['as'=>'dash-board.settings','uses'=>"DashBoardController@showSettings"]);
+
 Route::get('/news',['as'=>'news','uses'=>'Admin\NewsController@index']);
 Route::get('/news/rss',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeed']);
 Route::get('/news/rss/apple',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeedApple']);
@@ -40,5 +48,5 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/profile/loadProfPic/{prof_pic}',['as'=>'profile.prof_pic','uses'=>'Auth\ProfileController@loadProfPic']);
     Route::get('/profile{user}',['as'=>'profile','uses'=>'Auth\ProfileController@index']);
 });
-Route::get('/profile/{user}/show',['as'=>'profile.show','uses'=>'Admin\ProfileController@index']);
+Route::get('/profile/{user}/show',['as'=>'profile.show','uses'=>'Auth\ProfileController@index']);
 Route::controller('/','Auth\AuthController');

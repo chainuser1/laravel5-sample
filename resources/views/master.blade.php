@@ -52,6 +52,28 @@
                                     }//,
                                     //redirectUrl:"{!!URL::to('/')!!}"
                                 });
+                                $(".text-success").click(function(){
+                                    var link=$(this).text();
+                                    switch(true){
+                                        case /Dashboard/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/board')!!}")
+                                            break;
+                                        case /Users/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/users')!!}");
+                                            break;
+                                        case /Roles/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/roles')!!}");
+                                            break;
+                                        case /Forms/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/forms')!!}")
+                                            ;break;
+                                        case /Feedback/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/feedback')!!}");break;
+                                        case /Settings/.test(link):
+                                            $('#control-panel').load("{!!URL::to('/dash-board/settings')!!}");
+                                            break;
+                                    }
+                                });
 
                             });
                         }(jQuery);

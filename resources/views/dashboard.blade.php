@@ -16,8 +16,8 @@
        </ul>
     </nav>
     <div class="divider"></div>
-    <div class="container costume-box-gradient-2">
-       <h3 class="h3 text-light">Welcome, Admin / Dashboard</h3>
+    <div class="container costume-box-gradient-2" id="control-panel">
+
     </div>
 @else
   {!!Redirect::to('/')!!}
