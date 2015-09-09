@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/control-panel/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/control-panel/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/control-panel/users.blade.php" />
-    </list>
+    <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="" />
     <ignored path="laravel5-sample.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,7 +77,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="64" selection-start="894" selection-end="894" vertical-scroll-proportion="0.14351144">
+            <state line="42" column="23" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.81832063">
               <folding />
             </state>
           </provider>
@@ -560,7 +554,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1612" height="886" extended-state="1" />
+    <frame x="-8" y="-8" width="1612" height="886" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -744,7 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="64" selection-start="894" selection-end="894" vertical-scroll-proportion="0.14351144">
+        <state line="42" column="23" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.81832063">
           <folding />
         </state>
       </provider>
