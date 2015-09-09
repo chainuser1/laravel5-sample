@@ -96,7 +96,6 @@
         </div>
         <div class="collapse navbar-collapse navbar-right">
             <div class="header-limiter">
-
                 <div class="dropdown text-left">
                     @if(Auth::check())
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -120,14 +119,14 @@
 
                     <ul class="dropdown-menu">
                         @if(Auth::check())
-                        <li><a href="#{!!Session::get('email')!!}">Profile Settings {!!Session::get('login_count')!!}</a></li>
+                        <li><a href="#{!!Session::get('email')!!}">Profile Settings <span class="glyphicon glyphicon-lock"></span></a></li>
                           @if(Session::get('type')=='admin')
                           <li><a href="/dash-board">Admin Panel and Dashboard</a></li>
                           @endif
-                        <li><a href="/logout?url={!!Request::url()!!}">Logout</a></li>
+                        <li><a href="/logout?url={!!Request::url()!!}">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
                         @else
-                        <li><a href="/login?url={!!Request::url()!!}">Log In</a></li>
-                        <li><a href="/register">Register</a></li>
+                        <li><a href="/login?url={!!Request::url()!!}">Login <span class="glyphicon glyphicon-log-in"></span></a></li>
+                        <li><a href="/register">Register</span></a></li>
                         @endif
                     </ul>
 

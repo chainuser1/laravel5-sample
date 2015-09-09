@@ -4,7 +4,7 @@
 **/
 /* For the "inset" look only */
 html { overflow: auto; }
-body div.cont  { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; margin-top: 50px; } /* Let's get this party started */
+body div.cont  { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; margin-top: 75px; } /* Let's get this party started */
 header.page-header{
     position: fixed;
     width: 100%;
@@ -47,7 +47,10 @@ div.container-2 p.content{
     font-family:arial, helvetica, sans-serif;
     line-height:1;
 }
-
+.text-light{
+    color: #ffffff;
+    font-family: "Times New Roman", monospace;
+}
 textarea{
     resize: none;
 }
@@ -150,6 +153,7 @@ p.content:first-line{
     background: -ms-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* IE10+ */
     background: radial-gradient(ellipse at center,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 .modal-emerald.fade {
     opacity: 0;
@@ -206,16 +210,15 @@ p.content:first-letter { font-size: 3.2em;
 
 }
 .costume-box-gradient-2{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d2ff52+0,91e842+100;Neon */
-    background: #d2ff52; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #d2ff52 0%, #91e842 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#d2ff52), color-stop(100%,#91e842)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #d2ff52 0%,#91e842 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #d2ff52 0%,#91e842 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #d2ff52 0%,#91e842 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  #d2ff52 0%,#91e842 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    color: #ff1811;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+    background: #9dd53a; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#9dd53a), color-stop(50%,#a1d54f), color-stop(51%,#80c217), color-stop(100%,#7cbc0a)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=1 );
 }
 
 

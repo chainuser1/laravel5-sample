@@ -18,12 +18,12 @@ var paths = {
 }
 
 elixir(function(mix) {
-    mix.sass('style.scss', 'public/css/').stylesIn('public/css')
+    mix.sass('style.scss', 'public/css/')//.stylesIn('public/css')
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
         .scripts([
         paths.jquery,
         paths.bootstrap + 'javascripts/bootstrap.js',
         paths.cropit
     ], 'public/js/app.js', './')
-        .scriptsIn('public/js');
+/*      .scriptsIn('public/js')*/;
 });
