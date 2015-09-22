@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/assets/header-user-dropdown-2.css" afterPath="$PROJECT_DIR$/public/css/assets/header-user-dropdown-2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/costume.css" afterPath="$PROJECT_DIR$/public/css/costume.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/news.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/news.blade.php" />
     </list>
     <ignored path="laravel5-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,26 +23,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="shared_form.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="-3.2692308">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="register.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,6 +41,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="99" selection-start="171" selection-end="171" vertical-scroll-proportion="-1.9615384">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="60" selection-start="2856" selection-end="2856" vertical-scroll-proportion="0.20560747">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="20" selection-start="1105" selection-end="1146" vertical-scroll-proportion="-17.653847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="users.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/control-panel/users.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,7 +82,7 @@
       <file leaf-file-name="header.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="29" selection-start="3872" selection-end="3872" vertical-scroll-proportion="-3.131579">
+            <state line="86" column="56" selection-start="5295" selection-end="5295" vertical-scroll-proportion="-1.1184211">
               <folding />
             </state>
           </provider>
@@ -90,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="costume.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="costume.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/costume.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="802" column="22" selection-start="21732" selection-end="21732" vertical-scroll-proportion="0.60465115">
+            <state line="777" column="50" selection-start="20310" selection-end="20310" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,14 +128,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminPanelController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminPanelController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/control-panel/users.blade.php" />
         <option value="$PROJECT_DIR$/public/js/backstretch.js" />
         <option value="$PROJECT_DIR$/resources/views/scripts.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
@@ -137,6 +142,8 @@
         <option value="$PROJECT_DIR$/public/css/assets/header-user-dropdown-2.css" />
         <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
         <option value="$PROJECT_DIR$/public/css/costume.css" />
+        <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/news/news.blade.php" />
       </list>
     </option>
   </component>
@@ -680,7 +687,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292011" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37419355" sideWeight="0.6707989" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37419355" sideWeight="0.6707989" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292011" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -749,26 +756,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/public_gallery/images/4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/public_gallery/images/2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/public_gallery/images/3.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="74" selection-start="2383" selection-end="2383" vertical-scroll-proportion="-18.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/public_gallery/images/5.jpg">
@@ -784,13 +774,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="-3.2692308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="154" selection-end="154" vertical-scroll-proportion="-2.6153846">
           <folding />
         </state>
       </provider>
@@ -811,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/control-panel/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="646" selection-end="646" vertical-scroll-proportion="-6.5384617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/webide.jar!/resources/html5-schema/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="179" column="22" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.33333334">
@@ -825,9 +801,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/control-panel/users.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/costume.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="558" selection-end="569" vertical-scroll-proportion="-9.807693">
+        <state line="777" column="50" selection-start="20310" selection-end="20310" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -839,16 +815,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/control-panel/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="29" selection-start="3872" selection-end="3872" vertical-scroll-proportion="-3.131579">
+        <state line="15" column="47" selection-start="558" selection-end="569" vertical-scroll-proportion="-9.807693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/costume.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="802" column="22" selection-start="21732" selection-end="21732" vertical-scroll-proportion="0.60465115">
+        <state line="4" column="47" selection-start="154" selection-end="154" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/control-panel/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="646" selection-end="646" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="99" selection-start="171" selection-end="171" vertical-scroll-proportion="-1.9615384">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="20" selection-start="1105" selection-end="1146" vertical-scroll-proportion="-17.653847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="56" selection-start="5295" selection-end="5295" vertical-scroll-proportion="-1.1184211">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="60" selection-start="2856" selection-end="2856" vertical-scroll-proportion="0.20560747">
           <folding />
         </state>
       </provider>

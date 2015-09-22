@@ -51,6 +51,7 @@
                    <p class="alert">{!!$error!!}</p>
                    @endif
                    {!!HTML::script('js/jquery-1.11.1.min.js')!!}
+                   {!! HTML::script('js/backstretch.js') !!}
                    {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
                    {!! HTML::script('js/jquery_ui.js') !!}
                    <script>
@@ -69,12 +70,23 @@
 //                               $('.alert').fadeIn(100).text('Request Completed.').removeClass('alert-warning').addClass("alert-success").fadeOut(3000);
 //
 //                           });
+
                                $(".datetimepicker").datetimepicker({
                                    mask:false,
                                    format:'Y/m/d H:i',
                                    timepicker:true,
                                    datepicker:true
                                });
+
+                               $('body').backstretch([
+                                       "{!!URL::to('/public_gallery/images/1.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/2.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/3.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/4.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/5.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/6.jpg')!!}",
+                                       "{!!URL::to('/public_gallery/images/7.jpg')!!}"
+                                   ],{duration:3000, fade: 750});
                                $(".btn-success").click(function(){
                                    var news_title=$("input[name=title]").val();
                                    var action=$("input[name=action]").val();

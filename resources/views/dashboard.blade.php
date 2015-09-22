@@ -1,8 +1,8 @@
 @extends('master')
 @section('admin')
 @if(Session::get('type')=='admin')
-    <div class="panel panel-default col-md-2 col-lg-offset-0" style="background: none;">
-        <nav class="text-center bg-success">
+    <div class="panel panel-default col-md-2 col-lg-offset-0" style="background: none; border: none;">
+        <nav class="text-center bg-danger">
             <ul class="nav">
                 <li class="nav-divider"></li>
                 <li><a class="ribbon text-success" role="button" href="#">Dashboard <span class="glyphicon glyphicon-chevron-right"></span></a></li>
@@ -14,7 +14,7 @@
             </ul>
         </nav>
     </div>
-    <div class="col-lg-offset-2  container " id="control-panel" style="opacity: 0.96;background-color:#ffffff;">
+    <div class="col-lg-offset-2 container " id="control-panel" style="opacity: 0.89;background-color:#ffffff; padding: 20px 20px 20px 20px">
 
     </div>
 @else
