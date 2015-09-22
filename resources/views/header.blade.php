@@ -1,5 +1,5 @@
 
-<header class="page-header">
+<header>
 <!--    <nav class="navbar navbar-costume-1 shadow-box">-->
 <!--        <div class="container-fluid">-->
 <!--            <!-- Brand and toggle get grouped for better mobile display -->
@@ -69,18 +69,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">MICP ICT Arena&nbsp;<span class="badge">Baybay</span></a>
+            <a class="navbar-brand" href="#">MICP ICT Arena &nbsp;<span class="badge">Baybay</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     <ul class="nav navbar-nav navbar-left"><!--            <a href="#">(current)</a>-->
                         <li class="item"><a href="#">Projects</a></li>
                         <li class="item"><a href="#">About</a></li>
-                        <li class="item dropdown">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 News
                                 <span class="caret"></span>
-                                 <span class="badge-1">new</span>
+<!--                                 <span class="badge-1">new</span>-->
                             </a>
 
                             <ul class="dropdown-menu">
@@ -98,10 +98,10 @@
                         @if(Session::get('lname')!=null && Session::get('fname')!=null)
                            <span class="badge-2">Welcome, {!! Session::get('fname')!!}
                                {!!Session::get('lname')!!}</span>
-                        <img src="{!!route('profile.prof_pic',Session::get('email'))!!}" alt=" {!!Session::get('email')!!}" class="img-badge"/>
+                        <img src="{!!route('profile.prof_pic',Session::get('email'))!!}" alt=" {!!Session::get('email')!!}" class="img-badge-3"/>
                         @else
                         <span class="badge-2">Welcome, {!! Session::get('email')!!}</span>
-                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt=" {!!Session::get('email')!!}" class="img-badge-2"/>
+                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt=" {!!Session::get('email')!!}" class="img-badge-3"/>
                             &nbsp;
                         <span class="caret"></span>
                         </a>
@@ -118,7 +118,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="badge-2">Welcome, Guest!!!</span>
-                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt="User Image" class="img-badge-2"/>&nbsp;
+                        <img src="{!!URL::to('css/assets/logo.png')!!}" alt="User Image" class="img-badge-3"/>&nbsp;
                         <span class="caret"></span>
                        </a>
                         <ul class="dropdown-menu">

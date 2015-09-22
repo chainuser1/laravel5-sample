@@ -6,7 +6,7 @@
 
 html { overflow: auto; }
 body div.cont  { position: absolute; top: 20px; left: 20px; bottom: 20px; right: 20px; padding: 30px; overflow-y: scroll; overflow-x: hidden; margin-top: 75px; } /* Let's get this party started */
-header.page-header{
+header{
     position: fixed;
     width: 100%;
     height: 10%;
@@ -157,6 +157,16 @@ header.page-header{
     min-width: 25px;
     margin-right:0;
     margin-left: 3px;
+}
+.img-badge-3{
+    border-radius:50%;
+    max-width: 28px;
+    max-height: 28px;;
+    min-height: 24px;
+    min-width: 25px;
+    margin-right:0;
+    margin-left: 3px;
+    margin-bottom: 16px;
 }
 div.container-1, .cron{
    background-color: #393914;
@@ -781,8 +791,6 @@ header .nav li.active ul.dropdown-menu li.active a{
     border-color: #cae7d9;
     font-family:Monaco,Consolas;
     font-size: 1.2em;
-
-    height:15%;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -793,7 +801,6 @@ header .nav li.active ul.dropdown-menu li.active a{
 .navbar-costume-1 .navbar-brand {
     color: #fffff9;
     line-height: -2px;
-    font-size: 3em;
     font-weight: bold;
 }
 .navbar-costume-1 .navbar-brand:hover,
