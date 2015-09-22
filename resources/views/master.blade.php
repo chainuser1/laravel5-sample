@@ -32,14 +32,25 @@
 
                     <input type="hidden" value="{!!URL::to('/').'/public_gallery/images'!!}" name="gallery"/>
                     {!!HTML::script('js/jquery-1.11.1.min.js')!!}
+                    {!! HTML::script('js/backstretch.js') !!}
                     {!!HTML::script('js/picedit.js')!!}
                     {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
+                </div>
                     <script>
                         !function($){
                             $.ajaxSetup({
                                 headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
                             });
                             $(function(){
+                                $('body').backstretch([
+                                    "{!!URL::to('public_gallery/images/1.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/2.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/3.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/4.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/5.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/6.jpg')!!}",
+                                    "{!!URL::to('public_gallery/images/7.jpg')!!}"
+                                ],{duration:3000, fade: 750});
                                 $("input[name=birthday]").datetimepicker({
                                     mask:false,
                                     format: "M-d,Y"
@@ -81,6 +92,6 @@
                     @include('scripts')
 
 
-                </div>
+
             </body>
         </html>

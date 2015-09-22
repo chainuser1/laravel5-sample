@@ -13,7 +13,11 @@ class DashBoardController extends Controller {
         return view('dashboard');
     }
     public function showDashBoard(){
-        return view('control-panel.dashboard');
+        $users=DB::table('users')->where('users.email','!=',Session::get('email'))->get();
+        $no_of_users=0;//initialize counter to 1
+        for($i=sizeof($users);$i>0;$i--)
+            $no_of_users++;
+        return view('control-panel.dashboard',array('no_of_users'=>$no_of_users));
     }
     public function showUsers(){
         $users=DB::table('users')->join('profile',function($join){

@@ -1,13 +1,13 @@
 
- <h3 class="h3 text-light text-center">Registered Users</h3>
+ <h3 class="h3 text-light text-center amersicome center-block ">Registered Users</h3>
  @if($users!=null)
     <table class="table table-striped bg-success">
         <thead>
             <tr>
-              <th>#: </th>
-              <th>Name: </th>
-              <th>Email Add: </th>
-              <th>Address: </th>
+              <th class="text-center">#</th>
+              <th class="text-center">Name: </th>
+              <th class="text-center">Email Address</th>
+              <th class="text-center">Home Address</th>
             </tr>
         </thead>
         <tbody>

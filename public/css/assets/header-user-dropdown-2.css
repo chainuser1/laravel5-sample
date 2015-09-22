@@ -1,6 +1,6 @@
 .header-user-dropdown-2 {
-    background-color: #3c423b;
-    box-shadow:0 1px 1px #7bccc4;
+    background-color: #3ea7a9;
+    /*box-shadow:0 1px 1px #7bccc4;*/
     padding: 20px 40px;
     height: 80px;
     color: #ffffff;
@@ -226,9 +226,8 @@
     margin-right:0;
     right:14px;
   }
-
-.badge-2 {
-    margin-top:9px;
+.badge-1 {
+    margin-bottom:15px;
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
@@ -239,10 +238,29 @@
     vertical-align: middle;
     white-space: nowrap;
     text-align: left;
+
     background-color: #f71313;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-right:29px;
+}
+.badge-1:empty {
+    display: none; }
+.badge-2 {
+    margin-bottom:9px;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 3em;
+    background-color: #f71313;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
  }
 .badge-2:empty {
     display: none; }
