@@ -20,7 +20,7 @@ class NewsController extends Controller
     {
         //->get()
         $news=new News;
-        $feed=$news->createdAt()->paginate(4);
+        $feed=$news->renderAll();
         if(!is_null($feed))
             return view('news.search',compact('feed'));
         else
@@ -43,11 +43,12 @@ class NewsController extends Controller
      */
     public function search(News $news, Request $req){
         try{
-            $feed=$news->searchByTitle($req->input('search'));
-            return view('news.search')->with(['search'=>$req->input('search'),'feed'=>$feed]);
+            $search=$req->input('search');
+            $feed=$news->searchByTitle($search);
+            return view('news.search',compact('feed'))->with(['search'=>$search]);
         }
         catch(QueryException $e){
-            return redirect('/errors/502')->with(['errors'=>'An error occurred while searching news.','search'=>$req->input('search')]);
+            return redirect('/errors/502')->with(['errors'=>'An error occurred while searching news.','search'=>$search]);
         }
     }
     /**

@@ -3,7 +3,7 @@
 @if(isset($feed))
   <div  class="container">
       @foreach($feed->all() as $story)
-      <br><br><a class="title" href="#">{!!$story->title!!}</a><br>
+      <br><br><a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a><br>
       <p class="text-justify text-warning">
           <?php
           $content=htmlspecialchars_decode($story->content);
@@ -30,5 +30,7 @@
       <div class="text-center"><div class="pagination">{!!$feed->fragment('news')->render()!!}</div></div>
 
   </div>
+ @else
+    {!!Redirect::to('/news')!!}
 @endif
 @endsection

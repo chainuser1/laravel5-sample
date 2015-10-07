@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/errors/503.blade.php" afterPath="$PROJECT_DIR$/resources/views/errors/503.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/News.php" afterPath="$PROJECT_DIR$/app/News.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/create_profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/create_profile.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/news.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/news.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/search.blade.php" />
     </list>
     <ignored path="laravel5-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,15 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="news.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="69" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="3400">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="header.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,7 +57,7 @@
       <file leaf-file-name="NewsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="7" selection-start="1402" selection-end="1402" vertical-scroll-proportion="-10.461538" vertical-offset="612" max-vertical-offset="4760">
+            <state line="45" column="26" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-10.461538" vertical-offset="493" max-vertical-offset="4777">
               <folding>
                 <element signature="e#45#81#0" expanded="true" />
               </folding>
@@ -85,7 +68,7 @@
       <file leaf-file-name="search.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="83" selection-end="83" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
+            <state line="8" column="40" selection-start="369" selection-end="369" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -112,16 +95,7 @@
       <file leaf-file-name="News.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="89" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.6751773" vertical-offset="0" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/news/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+            <state line="17" column="5" selection-start="498" selection-end="498" vertical-scroll-proportion="0.37621024" vertical-offset="0" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -158,10 +132,10 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/news/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/news.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/news/search.blade.php" />
         <option value="$PROJECT_DIR$/public/css/costume.css" />
         <option value="$PROJECT_DIR$/resources/views/errors/502.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/news/search.blade.php" />
         <option value="$PROJECT_DIR$/app/News.php" />
       </list>
     </option>
@@ -706,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="48" selection-start="267" selection-end="267" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/control-panel/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
@@ -734,6 +701,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="69" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="3400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/errors/502.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="40" selection-start="499" selection-end="499" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="612">
@@ -748,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/news.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="69" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="3400">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="101" selection-start="6040" selection-end="6040" vertical-scroll-proportion="-8.5" vertical-offset="1411" max-vertical-offset="2550">
@@ -762,25 +729,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/news/search.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="83" selection-end="83" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
+        <state line="196" column="25" selection-start="3635" selection-end="3635" vertical-scroll-proportion="0.58235294" vertical-offset="2732" max-vertical-offset="34731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/Builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="168" selection-end="168" vertical-scroll-proportion="0.25757575" vertical-offset="0" max-vertical-offset="726">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="7" selection-start="1402" selection-end="1402" vertical-scroll-proportion="-10.461538" vertical-offset="612" max-vertical-offset="4760">
+        <state line="45" column="26" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-10.461538" vertical-offset="493" max-vertical-offset="4777">
           <folding>
             <element signature="e#45#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/news/search.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="369" selection-end="369" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/news/shared_form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="48" selection-start="267" selection-end="267" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="89" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.6751773" vertical-offset="0" max-vertical-offset="731">
+        <state line="17" column="5" selection-start="498" selection-end="498" vertical-scroll-proportion="0.37621024" vertical-offset="0" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
