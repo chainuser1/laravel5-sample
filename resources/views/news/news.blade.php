@@ -4,7 +4,7 @@
                <meta charset="utf-8">
                <meta http-equiv="X-UA-Compatible" content="IE=edge">
                <meta name="viewport" content="width=device-width, initial-scale=1">
-               <meta name="csrf-token" content="{{ csrf_token() }}">
+               <meta name="csrf-token" content="{!!csrf_token()!!}">
                <title>MICP News</title>
                @include('../style')
            </head>
@@ -14,42 +14,11 @@
                <div class="cont">
                    <p class="alert" style="max-height: 5px;"></p>
                    @yield('admin-only')
-                   @if(isset($feed))
-
-                   <div class="container container-1">
-                       @foreach($feed->all() as $story)
-                       <br><br><a class="title" href="#">{!!ucwords($story->title)!!}</a><br>
-                       <p class="paragraph-content">
-                           <?php
-                           $content=htmlspecialchars_decode($story->content);
-                           $content= preg_replace(
-                               "~[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]~",
-                               "<a href=\"\\0\">\\0</a>",
-                               htmlspecialchars_decode($content));
-                           if(strlen($content)>300){
-                               $stringCut=substr($content,0,300);
-                               $content=substr($stringCut, 0, strrpos($stringCut, ' ')).'...'.'<br><a class="btn-link"'.'href="/news/'.$story->slug.'/show">'.'Show More</a>';
-                           }
-                           echo $content;
-                           ?>
-                       </p>
-                       <a class="text-primary" data-toggle="tooltip"
-                          data-placement="right" title="{!!$story->created_at->format('M d,Y')!!}">{!!$story->created_at->diffForHumans()!!}</a>&nbsp;
-                       <?php if(strlen($content)<=300){ ?>
-                       @if(Auth::check())
-                       <a class="text-success" href="{!!'/news/'.$story->slug.'/edit'!!}">Edit</a>
-                       <a class="text-danger" href="#">Remove</a>
-                       @endif
-                       <?php } ?>
-                       @endforeach
-                       <div class="text-center"><div class="pagination">{!!$feed->fragment('news')->render()!!}</div></div>
-                   </div>
-                   @endif
-
-
+                   @yield('search')
                    @if(isset($error))
                    <p class="alert">{!!$error!!}</p>
                    @endif
+               </div>
                    {!!HTML::script('js/jquery-1.11.1.min.js')!!}
                    {!! HTML::script('js/backstretch.js') !!}
                    {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
@@ -101,7 +70,7 @@
                                        //var dataString="title="+news_title+"&slug="+slug+"&content="+content+"&created_at="+created_at+"&_token="+_token;
 
                                        $.ajax({
-                                           url:action,
+                                           url:'{!!URL::to("news/store")!!}',
                                            type: "POST",
                                            data:{
                                                title: news_title,
@@ -138,7 +107,7 @@
                                        var id=$("input[name=id]").val();
 
                                        $.ajax({
-                                           url:action,
+                                           url:'{!!URL::to("news/update")!!}',
                                            type: "POST",
                                            data:{
                                                title: news_title,
@@ -176,14 +145,14 @@
                                $(".text-danger").click(function(){
                                    var id=$("input[name=_id]").val();
                                    $.ajax({
-                                       url: "/news/delete",
+                                       url: "{!!URL::to('/news/delete')!!}",
                                        type: "POST",
                                        data: {
                                            id: id
                                        }
                                    }).done(function(data){
                                                $(".alert").fadeIn(2000).text(data+" news has been deleted.");
-                                               window.location="/news";
+                                               window.location="{!!URL::to('/news')!!}";
                                            });
                                })
                                function getRss(){
@@ -221,6 +190,6 @@
                            });
                        }(jQuery);
                    </script>
-               </div>
+
            </body>
         </html>

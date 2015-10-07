@@ -91,6 +91,13 @@
                             </ul>
                         </li>
                     </ul>
+            <form class="navbar-form navbar-left" role="search" method="post" action="{!!URL::to('/news/search')!!}">
+                <input type="hidden" name="_token" value="{!!csrf_token()!!}"/>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search" value="<?php if(isset($search))echo $search;?>">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())
                     <li class="dropdown">

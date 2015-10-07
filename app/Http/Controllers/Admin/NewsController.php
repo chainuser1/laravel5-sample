@@ -9,6 +9,7 @@ use Validator;
 use Response;
 use Session;
 use DOMDocument;
+use Illuminate\Database\QueryException as QueryException;
 class NewsController extends Controller
 {
      /**
@@ -21,9 +22,9 @@ class NewsController extends Controller
         $news=new News;
         $feed=$news->createdAt()->paginate(4);
         if(!is_null($feed))
-            return view('news.news',compact('feed'));
+            return view('news.search',compact('feed'));
         else
-            return view('news.news',array('error'=>'There are no news published'));
+            return redirect('/news')->with(array('error'=>'There are no news published'));
     }
 
     /**
@@ -35,7 +36,20 @@ class NewsController extends Controller
     {
         return view('news.create-news');
     }
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function search(News $news, Request $req){
+        try{
+            $feed=$news->searchByTitle($req->input('search'));
+            return view('news.search')->with(['search'=>$req->input('search'),'feed'=>$feed]);
+        }
+        catch(QueryException $e){
+            return redirect('/errors/502')->with(['errors'=>'An error occurred while searching news.','search'=>$req->input('search')]);
+        }
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -85,14 +99,14 @@ class NewsController extends Controller
     public function show($slug, News $table)
     {
        try{
-           $article=$table->where('slug','=',$slug)->first();
+           $article=$table->searchBySlug($slug);
            if(!is_null($article))
                return view('news.show',compact('article'));
            else
-               return view('news.show',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
+               return redirect('/error/503',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
        }
        catch(QueryException $e){
-           return view('news.show',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
+           return redirect('/error/503',array('error'=>'Unable to fetch this news story. It does not appear in our database.'));
        }
     }
 
@@ -182,9 +196,9 @@ class NewsController extends Controller
         $news=new News;
         $feed=$news->unpublished()->paginate(4);
         if(!is_null($feed))
-            return view('news.news',compact('feed'));
+            return view('news.search',compact('feed'));
         else
-            return view('news.news',array('error'=>'There are no news published'));
+            return redirect('/news')->with(array('error'=>'There are no news published'));
     }
     public function getRssFeed(){
         $xml='http://news.google.com/news?ned=us&topic=h&output=rss';

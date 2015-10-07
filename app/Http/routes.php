@@ -16,12 +16,16 @@ Route::get('/public-gallery',['as'=>'public-gallery','uses'=>function(){
 Route::get('/errors/503',function(){
     return view('errors.503');
 });
+Route::get('/errors/502',function(){
+    return view('errors.503');
+});
 Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
 
 
 Route::get('/news',['as'=>'news','uses'=>'Admin\NewsController@index']);
 Route::get('/news/rss',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeed']);
 Route::get('/news/rss/apple',['as'=>'news.feed','uses'=>'Admin\NewsController@getRssFeedApple']);
+Route::match(array('GET','POST'),'/news/search','Admin\NewsController@search');
 Route::group(['middleware'=>['auth']],function(){
 
     Route::get('/dash-board',['as'=>'dash-board','uses'=>"DashBoardController@index"]);

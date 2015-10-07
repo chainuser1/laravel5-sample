@@ -7,7 +7,7 @@
             <h3 class="title">{!!$email!!} - You're One Step now, Create Your Profile</h3>
         </div>
         <div class='panel-body'>
-            <form class='form-horizontal' role='form' enctype="multipart/form-data" method="post" action="/profile/store" id="form_id">
+            <form class='form-horizontal' role='form' enctype="multipart/form-data" method="post" action="{!!URL::to('profile/store')!!}" id="form_id">
                 <input type="hidden" name="_token" value="{!!csrf_token()!!}"/>
                 <div class="form-group">
                     <label class='control-label col-md-2 col-md-offset-2' for='id_photo'>Profile Photo</label>
