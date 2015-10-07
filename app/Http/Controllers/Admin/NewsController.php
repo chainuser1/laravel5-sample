@@ -20,7 +20,7 @@ class NewsController extends Controller
     {
         //->get()
         $news=new News;
-        $feed=$news->renderAll();
+        $feed=$news->createdAt()->paginate(4);
         if(!is_null($feed))
             return view('news.search',compact('feed'));
         else
@@ -44,7 +44,7 @@ class NewsController extends Controller
     public function search(News $news, Request $req){
         try{
             $search=$req->input('search');
-            $feed=$news->searchByTitle($search);
+            $feed=$news->searchByTitle($search)->paginate(4);
             return view('news.search',compact('feed'))->with(['search'=>$search]);
         }
         catch(QueryException $e){

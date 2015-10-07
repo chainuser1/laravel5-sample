@@ -26,13 +26,11 @@ class News extends Model
 //    public function setContent($content){
 //        $this->attributes['content']=News::getConnection()->getPdo()->quote($content);
 //    }
-    public function searchByTitle($title){
-        return News::where('title','LIKE','%'.$title.'%')->paginate(4);
+    public function scopeSearchByTitle($query,$title){
+        return $query->where('title','LIKE','%'.$title.'%')->orderBy('created_at','DESC');
     }
     public function searchBySlug($value){
         return News::where('slug','=',$value)->get();
     }
-    public function renderAll(){
-        return News::createdAt()->paginate(4);
-    }
+
 }

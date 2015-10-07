@@ -1,9 +1,13 @@
 @extends('news.news')
-@section('search')
+@section('admin-only')
 @if(isset($feed))
   <div  class="container">
       @foreach($feed->all() as $story)
-      <br><br><a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a><br>
+      @if(isset($search))
+           <a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a>
+      @else
+      <br><br><a class="title" href="#">{!!$story->title!!}</a><br>
+      @endif
       <p class="text-justify text-warning">
           <?php
           $content=htmlspecialchars_decode($story->content);
@@ -33,4 +37,4 @@
  @else
     {!!Redirect::to('/news')!!}
 @endif
-@endsection
+@stop

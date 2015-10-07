@@ -14,7 +14,6 @@
                <div class="cont">
                    <p class="alert" style="max-height: 5px;"></p>
                    @yield('admin-only')
-                   @yield('search')
                    @if(isset($error))
                    <p class="alert">{!!$error!!}</p>
                    @endif
