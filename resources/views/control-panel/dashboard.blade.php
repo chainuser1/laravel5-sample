@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-6 col-md-2">
         <div class="thumbnail">
-            <p class="text-center text-danger loader-blip">{!!$no_of_users!!}</p>
+            <p class="text-center  badge">{!!$no_of_users!!}</p>
             <div class="caption">
                 <h3 class="text-success">Registered Accounts</h3>
                 <p class="text-left">The number indicates all registered accounts (except yours).</p>

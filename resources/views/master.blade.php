@@ -42,6 +42,7 @@
                                 headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
                             });
                             $(function(){
+                                //make a random background images  as carousel
                                 $('body').backstretch([
                                     "{!!URL::to('public_gallery/images/1.jpg')!!}",
                                     "{!!URL::to('public_gallery/images/2.jpg')!!}",
@@ -69,7 +70,7 @@
                                         case /Dashboard/.test(link):
                                             $('#control-panel').load("{!!URL::to('/dash-board/board')!!}")
                                             break;
-                                        case /Users/.test(link):
+                                        case /Accounts/.test(link):
                                             $('#control-panel').load("{!!URL::to('/dash-board/users')!!}");
                                             break;
                                         case /Roles/.test(link):
