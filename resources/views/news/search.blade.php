@@ -3,6 +3,7 @@
 @if(isset($feed))
   <div  class="container">
       @foreach($feed->all() as $story)
+      <br><br>
       @if(isset($search))
            <a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a>
       @else

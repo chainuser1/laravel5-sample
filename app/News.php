@@ -27,7 +27,7 @@ class News extends Model
 //        $this->attributes['content']=News::getConnection()->getPdo()->quote($content);
 //    }
     public function scopeSearchByTitle($query,$title){
-        return $query->where('title','LIKE','%'.$title.'%')->orderBy('created_at','DESC');
+        return $query->where('title','LIKE','%'.$title.'%')->latest('created_at');
     }
     public function searchBySlug($value){
         return News::where('slug','=',$value)->get();

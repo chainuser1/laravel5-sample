@@ -26,7 +26,12 @@ class DashBoardController extends Controller {
         return view('control-panel.users',compact('users'));
     }
     public function showRoles(){
-        return "Roles";
+
+       $admin=DB::table('users')->where('type','=','admin')->get();
+        $no_of_admin=sizeof($admin);
+       $users=DB::table('users')->where('type','=','user')->get();
+        $no_of_users=sizeof($users);
+       return view('control-panel.roles')->with(['admin'=>$no_of_admin,'users'=>$no_of_users]);
     }
     public function showForms(){
 

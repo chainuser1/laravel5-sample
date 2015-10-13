@@ -5,12 +5,14 @@
 /* For the "inset" look only */
 
 html { overflow: auto; }
+body{background:none;}
 body div.cont  { position: absolute;
     top: 20px; left: 20px; bottom: 20px; right: 20px;
     padding: 30px; overflow-y:
     scroll; overflow-x: hidden;
     background:none;
-    margin-top: 75px; } /* Let's get this party started */
+    margin-top: 75px; height:80%;width:100%}
+    /* Let's get this party started */
 header{
     position: fixed;
     width: 100%;
