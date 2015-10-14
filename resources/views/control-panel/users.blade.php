@@ -4,10 +4,11 @@
     <table class="table table-striped bg-success">
         <thead>
             <tr>
-              <th class="text-center">#</th>
-              <th class="text-center">Name: </th>
-              <th class="text-center">Email Address</th>
-              <th class="text-center">Home Address</th>
+              <th>#</th>
+              <th ">Name: </th>
+              <th >Email Address</th>
+              <th >Home Address</th>
+              <th></th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,16 @@
                 <td>{!!$user->lname!!},{!!$user->fname!!} {!!$user->mname!!} </td>
                 <td>{!!$user->email!!}</td>
                 <td>{!!$user->address!!}</td>
+                <td class="dropdown bg-warning">
+                    <a class="text-success" href="#action" role="label" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Action<span class="caret"></span></a>
+                    <ul class="dropdown-menu ">
+                        <li><a class="action-admin">Make Admin</a></li>
+                        <li><a class="action-admin">Ban</a></li>
+                        <li><a class="action-admin">Restore Account</a></li>
+                        <li><a class="action-admin">Contact User</a></li>
+                        <li><a class="action-admin">Generate Report Card</a></li>
+                    </ul>
+                </td>
             </tr>
             @endforeach
         </tbody>
