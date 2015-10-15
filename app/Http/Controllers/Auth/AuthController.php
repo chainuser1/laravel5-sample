@@ -61,7 +61,7 @@ class AuthController extends Controller {
         $this->account->login_count=0;
         $this->account->save();
         $this->auth->login($this->user);
-        return redirect('/dash-board');
+        return redirect('/login');
     }
 
     /**
