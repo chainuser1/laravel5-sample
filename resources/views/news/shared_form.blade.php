@@ -12,7 +12,7 @@
                 <input type="text" name="title"  class="input-lg form-control"
                    value="{!!$story->title!!}"    placeholder="Enter the title of your news"/><br>
                 <label class="" for="content">Content</label>
-                <textarea class="form-control input-lg text-justify" name="content" rows="7"  style="max-width: 700px;max-height: 400px;" value="">{!!htmlspecialchars($story->content)!!}</textarea><br>
+                <textarea class="form-control input-lg text-justify" name="content" rows="7"  style="max-width: 700px;max-height: 400px;" value="">{!!htmlspecialchars_decode($story->content)!!}</textarea><br>
                 <label>Date Published: </label><br>
                 <input type="text" class="input-lg datetimepicker"  name="created_at" value="{!!$story->created_at!!}"/>
             @else

@@ -1,6 +1,6 @@
 @extends('news.news')
 @section('admin-only')
-<p class="col-sm-2 pull-left cron mCustomScrollbar content" data-mcs-theme="dark" id="rss"></p>
+<!--<p class="col-sm-2 pull-left cron mCustomScrollbar content" data-mcs-theme="dark" id="rss"></p>-->
 <div class="container col-md-7 container-2">
   @foreach($article as $story)
     <div class="panel-heading">
@@ -27,6 +27,6 @@
   @endforeach
 
 </div>
-<p class="col-sm-2 pull-left cron mCustomScrollbar content" data-mcs-theme="dark" id="rss_apple"></p>
+<!--<p class="col-sm-2 pull-left cron mCustomScrollbar content" data-mcs-theme="dark" id="rss_apple"></p>-->
 
 @stop

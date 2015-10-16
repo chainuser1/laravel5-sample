@@ -98,6 +98,7 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
+
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())
                     <li class="dropdown">

@@ -13,19 +13,22 @@ class News extends Model
     public function scopeCreatedAt($query){
         $query->where('created_at','<=',Carbon::now())->orderBy('created_at','DESC');
     }
-    public function setTitle($title){
+    public function setTitleAttribute($title){
         $this->attributes['title']=ucwords($title);
     }
-    public function setCreatedAt($date){
-        $this->attributes['created_at']= Carbon::createFromFormat('Y-m-d H:i:s', $date);
+    public function setCreatedAtAttribute($date){
+        $this->attributes['created_at']= Carbon::parse($date);
     }
+//    public function setSlugAttribute($value){
+//        $this->attributes['slug']=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$value));
+//    }
     public function scopeUnpublished($query){
         $query->where('created_at','>',Carbon::now())->orderBy('created_at','DESC');
     }
 
-//    public function setContent($content){
-//        $this->attributes['content']=News::getConnection()->getPdo()->quote($content);
-//    }
+    public function setContentAttribute($content){
+        $this->attributes['content']=htmlentities($content);
+    }
     public function scopeSearchByTitle($query,$title){
         return $query->where('title','LIKE','%'.$title.'%')->latest('created_at');
     }

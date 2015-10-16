@@ -12,6 +12,11 @@
 <!--               <h1 class="h1 alert-warning myGlower rightt" style=" position: fixed; z-index: 12345; box-shadow: 4px 3px 2px 3px; margin-top:1px">News Center</h1>-->
                @include('header')
                <div class="cont">
+                   <div class="myWrapper">
+                       <div>
+
+                       </div>
+                   </div>
                    <p class="alert" style="max-height: 5px;"></p>
                    @yield('admin-only')
                    @if(isset($error))
@@ -22,12 +27,29 @@
                    {!! HTML::script('js/backstretch.js') !!}
                    {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
                    {!! HTML::script('js/jquery_ui.js') !!}
+                  {!!HTML::script('js/jquery.easy-ticker.min.js')!!}
                    <script>
                        $.noConflict();
 
                        !function($){
                            $(function(){
                                $('[data-toggle="tooltip"]').tooltip('toggle');
+                               $(".myWrapper").easyTicker({
+                                   direction: 'up',
+                                   easing: 'swing',
+                                   speed: 'slow',
+                                   interval: 2000,
+                                   height: 'auto',
+                                   visible: 0,
+                                   mousePause: 1,
+                                   controls: {
+                                       up: '',
+                                       down: '',
+                                       toggle: '',
+                                       playText: 'Play',
+                                       stopText: 'Stop'
+                                   }
+                               });
                                $.ajaxSetup({
                                    headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
                                });
@@ -62,7 +84,7 @@
                                    var created_at=$("input[name=created_at]").val();
                                    content=content.replace(/(\n)+/g, '<br>');
                                    var _token=$('input[name=_token]').val();
-                                   var slug=news_title.toLowerCase().replace(/([\^\!@\+#\$%^\,\.\'\"&*\s]){1,}/g,"-");
+//                                   var slug=news_title.toLowerCase().replace(/([\^\!@\+#\$%^\,\.\'\"&*\s]){1,}/g,"-");
                                    //create our slug
                                    if(action==="/news/store"){
 
@@ -73,7 +95,6 @@
                                            type: "POST",
                                            data:{
                                                title: news_title,
-                                               slug: slug,
                                                content: content,
                                                created_at: created_at,
                                                _token: _token
@@ -86,6 +107,7 @@
                                                        $(".alert").removeClass("alert-danger");
                                                    }
                                                    $(".alert").addClass("alert-success").text(data).fadeIn(2000).fadeOut(7000);
+                                                   window.location.href='{!!URL::to("/news")!!}';
                                                }
                                                //if there are errors in validation
                                                else if(typeof data==="object"){
@@ -97,7 +119,9 @@
                                                    for(var i=data.length-1; i>0; i--){
                                                        $(".alert").text(data[i]+$(".alert").text()).fadeIn(2000).fadeOut(7000);
                                                    }
+
                                                }
+
                                            }
                                        });
 
@@ -111,7 +135,6 @@
                                            data:{
                                                title: news_title,
                                                id: id,
-                                               slug: slug,
                                                content: content,
                                                created_at: created_at,
                                                _token: _token
@@ -124,6 +147,7 @@
                                                            $(".alert").removeClass("alert-danger");
                                                        }
                                                        $(".alert").addClass("alert-success").text(data).fadeIn(2000).fadeOut(7000);
+                                                       window.location.href='{!!URL::to("/news")!!}';
                                                    }
                                                    //if there are errors in validation
                                                    else if(typeof data==="object"){
@@ -135,7 +159,9 @@
                                                        for(var i=data.length-1; i>0; i--){
                                                            $(".alert").text(data[i]+$(".alert").text()).fadeIn(2000).fadeOut(7000);
                                                        }
+
                                                    }
+
                                                    //
                                                });
                                    }
@@ -154,12 +180,12 @@
                                                window.location="{!!URL::to('/news')!!}";
                                            });
                                })
-                               function getRss(){
-                                   $("#rss").load('/news/rss');
-                               }
-                               function getRssApple(){
-                                   $("#rss_apple").load('/news/rss/apple');
-                               }
+//                               function getRss(){
+//                                   $("#rss").load('/news/rss');
+//                               }
+//                               function getRssApple(){
+//                                   $("#rss_apple").load('/news/rss/apple');
+//                               }
                                window.setInterval(getRss,10000*6);
                                window.setInterval(getRssApple,10000*6);
                            });

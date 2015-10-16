@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\News;
+use App\News as News;
 use Carbon;
 use Illuminate\Http\Request;
 use Validator;
@@ -56,15 +56,14 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function store(Request $req, News $table)
+    public function store(Request $req)
     {
 
              if($req->ajax()){
                  if(strcmp(trim(Session::get('type')),'admin')==0){
                      $title=htmlentities($req->input('title'));
-                     $slug=$req->input('slug');
-                     $title='\''.ucwords($title).'\'';
-                     $content='\''.htmlentities($req->input('content')).'\'';
+                     $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
+                     $content=$req->input('content');
                      $created_at=$req->input('created_at');
                      $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
                      $validator=Validator::make($array,[
@@ -77,11 +76,7 @@ class NewsController extends Controller
                          $errors=$validator->messages();
                          return  Response::json($errors->all());
                      }
-                     $table->title=$req->input('title');
-                     $table->slug=$req->input('slug');
-                     $table->content=$req->input('content');
-                     $table->created_at=strtotime($req->input('created_at'));
-                     $table->save();
+                     News::create($array);
                      return  "Your news was successfully saved.";
                  }
                  else
@@ -139,9 +134,8 @@ class NewsController extends Controller
                 if(strcmp(trim(Session::get('type')),'admin')==0){
                     $title=htmlentities($req->input('title'));
                     $id=$req->input('id');
-                    $slug=$req->input('slug');
-                    $title='\''.ucwords($title).'\'';
-                    $content='\''.htmlentities($req->input('content')).'\'';
+                    $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
+                    $content=$req->input('content');
                     $created_at=$req->input('created_at');
 
                     $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
@@ -157,9 +151,9 @@ class NewsController extends Controller
                     }
                     $table=News::findOrNew($id);
                     $table->title=$req->input('title');
-                    $table->slug=$req->input('slug');
-                    $table->content=$req->input('content');
-                    $table->created_at=strtotime($req->input('created_at'));
+                    $table->slug=$slug;
+                    $table->content=$content;
+                    $table->created_at=$created_at;
                     $table->save();
                     return  "Your news was successfully saved.";
                 }
@@ -259,17 +253,19 @@ class NewsController extends Controller
 
 //get and output "<item>" elements
         $x=$xmlDoc->getElementsByTagName('item');
-        for ($i=0; $i<=5; $i++) {
-            $item_title=$x->item($i)->getElementsByTagName('title')
-                ->item(0)->childNodes->item(0)->nodeValue;
-            $item_link=$x->item($i)->getElementsByTagName('link')
-                ->item(0)->childNodes->item(0)->nodeValue;
-            $item_desc=$x->item($i)->getElementsByTagName('description')
-                ->item(0)->childNodes->item(0)->nodeValue;
-            echo ("<p class=\"alert-info\"><a class=\"btn-link\" href='" . $item_link
-                . "'>" . $item_title . "</a></p>");
-            echo ("<br>");
-            echo ("<p class=\"col-sm-2\>".$item_desc . "</p>");
-        }
+
+//        for ($i=0; $i<=5; $i++) {
+//            $item_title=$x->item($i)->getElementsByTagName('title')
+//                ->item(0)->childNodes->item(0)->nodeValue;
+//            $item_link=$x->item($i)->getElementsByTagName('link')
+//                ->item(0)->childNodes->item(0)->nodeValue;
+//            $item_desc=$x->item($i)->getElementsByTagName('description')
+//                ->item(0)->childNodes->item(0)->nodeValue;
+//            echo ("<p class=\"alert-info\"><a class=\"btn-link\" href='" . $item_link
+//                . "'>" . $item_title . "</a></p>");
+//            echo ("<br>");
+//            echo ("<p class=\"col-sm-2\>".$item_desc . "</p>");
+//        }
+        return $x;
     }
 }

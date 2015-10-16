@@ -17,6 +17,7 @@
             </head>
             <body>
                 @include('header')
+
                 <div class="cont">
 
                     <div class="container">
@@ -35,6 +36,7 @@
                     {!! HTML::script('js/backstretch.js') !!}
                     {!!HTML::script('js/picedit.js')!!}
                     {!!HTML::script('datetimepicker-master/jquery.datetimepicker.js')!!}
+
                 </div>
                     <script>
                         !function($){
@@ -86,6 +88,7 @@
                                             break;
                                     }
                                 });
+
 
                             });
                         }(jQuery);
