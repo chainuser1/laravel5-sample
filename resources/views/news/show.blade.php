@@ -6,7 +6,7 @@
     <div class="panel-heading">
         <h1 class="shadow-text title">{!!$story->title!!}</h1>
         <input type="hidden" name="_id" value="{!!$story->id!!}"/>
-        <h5 class="h5 text-primary">{!!$story->created_at->diffForHumans()!!}
+        <h5 class="h5 text-primary"><span class="badge">By: {!!$story->author!!}</span>   {!!    $story->created_at->diffForHumans()!!}
             &nbsp;
             @if(Auth::check())
                     <a class="text-success" href="{!!URL::to('/news/'.$story->slug.'/edit')!!}">Edit</a>

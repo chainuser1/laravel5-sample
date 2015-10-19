@@ -44,7 +44,7 @@ class NewsController extends Controller
     public function search(News $news, Request $req){
         try{
             $search=$req->input('search');
-            $feed=$news->searchByTitle($search)->paginate(4);
+            $feed=$news->searchByTitle($search)->paginate(3);
             return view('news.search',compact('feed'))->with(['search'=>$search]);
         }
         catch(QueryException $e){
@@ -60,7 +60,7 @@ class NewsController extends Controller
     {
 
              if($req->ajax()){
-                 if(strcmp(trim(Session::get('type')),'admin')==0){
+//                 if(strcmp(trim(Session::get('type')),'admin')==0){
                      $title=htmlentities($req->input('title'));
                      $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
                      $content=$req->input('content');
@@ -76,13 +76,20 @@ class NewsController extends Controller
                          $errors=$validator->messages();
                          return  Response::json($errors->all());
                      }
-                     News::create($array);
-                     return  "Your news was successfully saved.";
-                 }
-                 else
-                     return "You are not allowed for this transaction. ";
-
-              }
+                     $author='';
+                     if(Session::get('lname')!=null && Session::get('fname')!=null){
+                         $author=Session::get('lname').', '.Session::get('fname');
+                         $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'author'=>$author,'created_at'=>$created_at);
+                         News::create($array);
+                         return  "Your news was successfully saved.";
+                     }
+                     else
+                         return redirect('/profile/create');
+ //                }
+//                 else
+//                     return "You are not allowed for this transaction. ";
+//
+            }
 
     }
 
@@ -131,7 +138,7 @@ class NewsController extends Controller
     {
 
             if($req->ajax()){
-                if(strcmp(trim(Session::get('type')),'admin')==0){
+//                if(strcmp(trim(Session::get('type')),'admin')==0){
                     $title=htmlentities($req->input('title'));
                     $id=$req->input('id');
                     $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
@@ -156,9 +163,9 @@ class NewsController extends Controller
                     $table->created_at=$created_at;
                     $table->save();
                     return  "Your news was successfully saved.";
-                }
-                else
-                    return 'Your not allowed to make this transaction.';
+//                }
+//                else
+//                    return 'Your not allowed to make this transaction.';
             }
 
     }
@@ -173,13 +180,13 @@ class NewsController extends Controller
     {
 
             if($req->ajax()){
-                if(strcmp(trim(Session::get('type')),'admin')==0){
+//                if(strcmp(trim(Session::get('type')),'admin')==0){
                     $id=$req->input('id');
                     $row=News::where('id','=',$id)->delete();
                     return (string)$row;
-                }
-                else
-                    return 'You are not allowed to make this transaction.';
+//                }
+ //               else
+ //                   return 'You are not allowed to make this transaction.';
             }
 
     }

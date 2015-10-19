@@ -17,6 +17,7 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content');
+            $table->string('author',70);
             $table->timestamps('created_at');
             $table->unique('slug');
         });

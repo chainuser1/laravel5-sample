@@ -7,7 +7,7 @@ use Carbon;
 class News extends Model
 {
     protected $table="news";
-    protected $fillable=['title','slug','content','created_at'];
+    protected $fillable=['title','slug','content','author','created_at'];
     protected $hidden=['_token'];
     protected $dates=['created_at'];
     public function scopeCreatedAt($query){
@@ -30,7 +30,7 @@ class News extends Model
         $this->attributes['content']=htmlentities($content);
     }
     public function scopeSearchByTitle($query,$title){
-        return $query->where('title','LIKE','%'.$title.'%')->latest('created_at');
+        return $query->where('title','LIKE',"%$title%")->latest('created_at');
     }
     public function searchBySlug($value){
         return News::where('slug','=',$value)->get();

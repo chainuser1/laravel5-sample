@@ -7,7 +7,7 @@
       @if(isset($search))
            <a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a>
       @else
-      <br><br><a class="title" href="#">{!!$story->title!!}</a><br>
+      <br><br><a class="title" href="#">{!!$story->title!!}</a><span class="badge-1">New</span><br>
       @endif
       <p class="text-justify text-warning">
           <?php
