@@ -14,14 +14,14 @@ class News extends Model
         $query->where('created_at','<=',Carbon::now())->orderBy('created_at','DESC');
     }
     public function setTitleAttribute($title){
-        $this->attributes['title']=ucwords($title);
+        $this->attributes['title']=strtolower($title);
     }
     public function setCreatedAtAttribute($date){
         $this->attributes['created_at']= Carbon::parse($date);
     }
-//    public function setSlugAttribute($value){
-//        $this->attributes['slug']=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$value));
-//    }
+    public function setSlugAttribute($value){
+        $this->attributes['slug']=strtolower(preg_replace('/[\s\$\.\+\'\"\?]+/','-',$value));
+    }
     public function scopeUnpublished($query){
         $query->where('created_at','>',Carbon::now())->orderBy('created_at','DESC');
     }
@@ -30,10 +30,11 @@ class News extends Model
         $this->attributes['content']=htmlentities($content);
     }
     public function scopeSearchByTitle($query,$title){
-        return $query->where('title','LIKE',"%$title%")->latest('created_at');
+        $title=strtolower($title);
+        return $query->whereRaw('title like ?',array("%$title%"));
     }
-    public function searchBySlug($value){
-        return News::where('slug','=',$value)->get();
+    public function scopeSearchBySlug($query, $slug){
+        return $query->where('slug','=',$slug)->get();
     }
 
 }

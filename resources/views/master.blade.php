@@ -9,11 +9,8 @@
                 @include('style')
                 @yield('title')
                 <title>MICP Arena:
-
                     {!!Session::get('email')!!}
-
                 </title>
-
             </head>
             <body>
                 @include('header')

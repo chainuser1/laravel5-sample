@@ -4,7 +4,7 @@
 <div class="container col-md-7 container-2">
   @foreach($article as $story)
     <div class="panel-heading">
-        <h1 class="shadow-text title">{!!$story->title!!}</h1>
+        <h1 class="shadow-text title">{!!ucwords($story->title)!!}</h1>
         <input type="hidden" name="_id" value="{!!$story->id!!}"/>
         <h5 class="h5 text-primary"><span class="badge">By: {!!$story->author!!}</span>   {!!    $story->created_at->diffForHumans()!!}
             &nbsp;

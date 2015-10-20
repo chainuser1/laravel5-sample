@@ -5,9 +5,9 @@
       @foreach($feed->all() as $story)
       <br><br>
       @if(isset($search))
-           <a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",$story->title)!!}</a>
+           <a class="title" href="#">{!!preg_replace("/(".$search.")+/i","<span class=\"text-warning\">\\0</span>",ucwords($story->title))!!}</a><span class="badge-1">New</span></a>
       @else
-      <br><br><a class="title" href="#">{!!$story->title!!}</a><span class="badge-1">New</span><br>
+      <br><br><a class="title" href="#">{!!ucwords($story->title)!!}</a><span class="badge-1">New</span><br>
       @endif
       <p class="text-justify text-warning">
           <?php

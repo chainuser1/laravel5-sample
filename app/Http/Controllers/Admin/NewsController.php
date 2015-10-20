@@ -61,8 +61,8 @@ class NewsController extends Controller
 
              if($req->ajax()){
 //                 if(strcmp(trim(Session::get('type')),'admin')==0){
-                     $title=htmlentities($req->input('title'));
-                     $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
+                     $title=$req->input('title');
+                     $slug=strtolower(preg_replace('/[\s\$\.\+\'\"\?]+/','-',$req->input('title')));
                      $content=$req->input('content');
                      $created_at=$req->input('created_at');
                      $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'created_at'=>$created_at);
@@ -79,7 +79,7 @@ class NewsController extends Controller
                      $author='';
                      if(Session::get('lname')!=null && Session::get('fname')!=null){
                          $author=Session::get('lname').', '.Session::get('fname');
-                         $array=array('title'=>$title,'slug'=>$slug,'content'=>$content,'author'=>$author,'created_at'=>$created_at);
+                         $array=array('title'=>$title,'slug'=>$title,'content'=>$content,'author'=>$author,'created_at'=>$created_at);
                          News::create($array);
                          return  "Your news was successfully saved.";
                      }
@@ -139,9 +139,9 @@ class NewsController extends Controller
 
             if($req->ajax()){
 //                if(strcmp(trim(Session::get('type')),'admin')==0){
-                    $title=htmlentities($req->input('title'));
+                    $title=$req->input('title');
                     $id=$req->input('id');
-                    $slug=strtolower(preg_replace('/[\s\$\.\+\'\"]+/','-',$req->input('title')));
+                    $slug=strtolower(preg_replace('/[\s\$\.\+\'\"\?]+/','-',$req->input('title')));
                     $content=$req->input('content');
                     $created_at=$req->input('created_at');
 
@@ -157,8 +157,8 @@ class NewsController extends Controller
                         return  Response::json($errors->all());
                     }
                     $table=News::findOrNew($id);
-                    $table->title=$req->input('title');
-                    $table->slug=$slug;
+                    $table->title=$title;
+                    $table->slug=$title;
                     $table->content=$content;
                     $table->created_at=$created_at;
                     $table->save();
