@@ -59,16 +59,18 @@ class ProfileController extends Controller
                 $errors=$validator->messages();
                 return  Response::json($errors->all());
             }
-            $extension = $file->getClientOriginalExtension();
-            $mime=$file->getClientMimeType();
-            $filename=md5(Session::get('email')).'.'.$extension;
-            Storage::disk('local')->put($filename,File::get($file));
+
             $profile=new Profile;
             try{
+                $extension = $file->getClientOriginalExtension();
+                $mime=$file->getClientMimeType();
+                $filename=md5(Session::get('email')).'.'.$extension;
+
                 $newProf=$profile->create(['email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
                     'birthday'=>$birthday,'address'=>$address,'about_me'=>$about_me,'prof_pic'=>$filename,'mime'=>$mime]);
                    Session::put('lname',$lname);
                    Session::put('fname',$fname);
+                Storage::disk('local')->put($filename,File::get($file));
                 return 'Your Profile has been created.';
             }catch(\Exception $e)
             {
