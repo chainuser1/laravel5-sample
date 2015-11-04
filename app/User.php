@@ -32,4 +32,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token','login_count'];
 
+    /**
+     * a user can have many news
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function news(){
+        return $this->hasMany('App\News');
+    }
 }

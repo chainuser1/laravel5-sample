@@ -4,7 +4,8 @@
         <h3 class="title">{!!$title!!}</h3>
     </div>
     <div class="modal-body">
-        <div class="form-group  ">
+        <div class="form-group">
+
             <input type="hidden" value="{!!$action!!}" name="action"/>
             <input type="hidden" name="_token" value="{!!csrf_token()!!}"/>
             @if(isset($story))

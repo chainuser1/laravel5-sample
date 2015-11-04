@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('login_count',false,false);
             $table->rememberToken();
             $table->timestamps(false);
+
         });
     }
 

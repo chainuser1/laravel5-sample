@@ -39,8 +39,8 @@ class ProfileController extends Controller
             $mname=$req->input('mname');
             $lname=$req->input('lname');
             $birthday=$req->input('birthday');
-            $address='\''.$req->input('address').'\'';
-            $about_me='\''.$req->input('about_me').'\'';
+            $address=$req->input('address');
+            $about_me=$req->input('about_me');
             $file=$req->file('prof_pic');
 
             $data=array('email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
@@ -60,11 +60,12 @@ class ProfileController extends Controller
                 return  Response::json($errors->all());
             }
 
-            $profile=new Profile;
-            try{
+                $profile=new Profile;
                 $extension = $file->getClientOriginalExtension();
                 $mime=$file->getClientMimeType();
                 $filename=md5(Session::get('email')).'.'.$extension;
+            try{
+
 
                 $newProf=$profile->create(['email'=>$email,'title'=>$title,'fname'=>$fname,'mname'=>$mname,'lname'=>$lname,
                     'birthday'=>$birthday,'address'=>$address,'about_me'=>$about_me,'prof_pic'=>$filename,'mime'=>$mime]);

@@ -18,4 +18,13 @@ class Profile extends Model
     public function setCreatedAtAttribute($date){
         $this->attributes['created_at']=Carbon::createFromFormat('Y-m-d H:i:s',$date);
     }
+    public function setFnameAttribute($value){
+        $this->attributes['fname']=ucwords(strtolower($value));
+    }
+    public function setLnameAttribute($value){
+        $this->attributes['lname']=ucwords(strtolower($value));
+    }
+    public function setMnameAttribute($value){
+        $this->attributes['mname']=ucwords(strtolower($value));
+    }
 }

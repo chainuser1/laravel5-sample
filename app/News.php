@@ -7,7 +7,7 @@ use Carbon;
 class News extends Model
 {
     protected $table="news";
-    protected $fillable=['title','slug','content','author','created_at'];
+    protected $fillable=['user_id','title','slug','content','author','created_at'];
     protected $hidden=['_token'];
     protected $dates=['created_at'];
     public function scopeCreatedAt($query){
@@ -35,6 +35,9 @@ class News extends Model
     }
     public function scopeSearchBySlug($query, $slug){
         return $query->where('slug','=',$slug)->get();
+    }
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 
 }

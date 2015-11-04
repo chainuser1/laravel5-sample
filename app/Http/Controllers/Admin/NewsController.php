@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\News as News;
+use App\User;
 use Carbon;
 use Illuminate\Http\Request;
 use Validator;
@@ -20,11 +21,11 @@ class NewsController extends Controller
     {
         //->get()
         $news=new News;
-        $feed=$news->createdAt()->paginate(4);
+        $feed=$news->createdAt()->paginate(2);
         if(!is_null($feed))
             return view('news.search',compact('feed'));
         else
-            return redirect('/news')->with(array('error'=>'There are no news published'));
+            return redirect('/news/search')->with(array('error'=>'There are no news published'));
     }
 
     /**
@@ -44,7 +45,7 @@ class NewsController extends Controller
     public function search(News $news, Request $req){
         try{
             $search=$req->input('search');
-            $feed=$news->searchByTitle($search)->paginate(3);
+            $feed=$news->searchByTitle($search)->paginate(2);
             return view('news.search',compact('feed'))->with(['search'=>$search]);
         }
         catch(QueryException $e){
@@ -77,14 +78,14 @@ class NewsController extends Controller
                          return  Response::json($errors->all());
                      }
                      $author='';
-                     if(Session::get('lname')!=null && Session::get('fname')!=null){
-                         $author=Session::get('lname').', '.Session::get('fname');
-                         $array=array('title'=>$title,'slug'=>$title,'content'=>$content,'author'=>$author,'created_at'=>$created_at);
+//                     if(Session::get('lname')!=null && Session::get('fname')!=null){
+//                         $author=Session::get('lname').', '.Session::get('fname');
+                         $array=array('user_id'=>Session::get('id'),'title'=>$title,'slug'=>$title,'content'=>$content,'created_at'=>$created_at);
                          News::create($array);
                          return  "Your news was successfully saved.";
-                     }
-                     else
-                         return redirect('/profile/create');
+
+//                     else
+//                         return redirect('/profile/create');
  //                }
 //                 else
 //                     return "You are not allowed for this transaction. ";
@@ -189,6 +190,10 @@ class NewsController extends Controller
  //                   return 'You are not allowed to make this transaction.';
             }
 
+    }
+    public function viewYourNews(User $user){
+        $feed=$user->findOrNew(Session::get('id'))->news()->paginate(3);
+        return view('news.search',compact('feed'));
     }
     /**
      * View all unpublished news

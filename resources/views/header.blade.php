@@ -88,6 +88,9 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!!URL::to('/news/create')!!}">Create News</a></li>
                                 <li><a href="{!!URL::to('/news/unpublished')!!}">View all unpublished news</a></li>
+                                @if(Auth::check() && Session::get('id')!=null)
+                                <li><a href="{!!URL::to('news/viewyournews')!!}">View Your News</a></li>
+                                @endif
                             </ul>
                         </li>
                     </ul>

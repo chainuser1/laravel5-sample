@@ -94,6 +94,7 @@ class AuthController extends Controller {
             $login_count=$this->account->login_count;
             $this->account->login_count=$login_count+1;
             $this->account->save();
+            Session::put('id',$this->account->id);
             if((string)$userLogin==null){//if the user has no profile yet
                 return redirect('/profile/create');
             }
