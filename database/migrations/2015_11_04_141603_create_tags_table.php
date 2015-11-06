@@ -17,14 +17,8 @@ class CreateTagsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-//pivot table
-        Schema::create('news_tag',function(Blueprint $table){
-            $table->integer('news_id')->unsigned()->index();
-            $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
-            $table->integer('tag_id')->unsigned()->index();
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
-            $table->timestamps();
-        });
+
+
     }
 
     /**
@@ -35,6 +29,6 @@ class CreateTagsTable extends Migration
     public function down()
     {
         Schema::drop('tags');
-        Schema::drop('news_tag');
+
     }
 }

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a6278e3-099d-4d74-9ece-d78b013e5c5c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_11_04_141603_create_tags_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_11_04_141603_create_tags_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/News.php" afterPath="$PROJECT_DIR$/app/News.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tags.php" afterPath="$PROJECT_DIR$/app/Tags.php" />
     </list>
     <ignored path="laravel5-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015_11_04_141603_create_tags_table.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_04_141603_create_tags_table.php">
+      <file leaf-file-name="2015_11_04_155950_create_news_tags_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_04_155950_create_news_tags_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="8" selection-start="442" selection-end="442" vertical-scroll-proportion="0.5912654" vertical-offset="99" max-vertical-offset="1485">
+            <state line="19" column="33" selection-start="646" selection-end="646" vertical-scroll-proportion="0.593505" vertical-offset="64" max-vertical-offset="1254">
               <folding />
             </state>
           </provider>
@@ -80,8 +82,9 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_07_23_072829_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/Tags.php" />
         <option value="$PROJECT_DIR$/app/News.php" />
+        <option value="$PROJECT_DIR$/app/Tags.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_04_155950_create_news_tags_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_11_04_141603_create_tags_table.php" />
       </list>
     </option>
@@ -508,7 +511,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1671875" sideWeight="0.6707989" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2171875" sideWeight="0.6707989" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292011" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -542,21 +545,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/elixir/ingredients/route-scan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/errors/503.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="22" selection-start="228" selection-end="228" vertical-scroll-proportion="0.23415978" vertical-offset="0" max-vertical-offset="726" />
@@ -677,14 +665,11 @@
         <state line="22" column="47" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.6837294" vertical-offset="0" max-vertical-offset="714" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_08_26_091814_create_profile_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="616" selection-end="616" vertical-scroll-proportion="0.5113636" vertical-offset="198" max-vertical-offset="1551" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="282" selection-end="282" vertical-scroll-proportion="0.20454545" vertical-offset="0" max-vertical-offset="29997" />
+        <state line="13" column="6" selection-start="282" selection-end="282" vertical-scroll-proportion="0.20454545" vertical-offset="0" max-vertical-offset="29997">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/create_profile.blade.php">
@@ -717,11 +702,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="918" selection-end="918" vertical-scroll-proportion="0.7782755" vertical-offset="163" max-vertical-offset="1155" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="5" selection-start="3626" selection-end="3627" vertical-scroll-proportion="0.7782755" vertical-offset="3496" max-vertical-offset="4488" />
@@ -752,11 +732,6 @@
         <state line="7" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="1254" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="47" selection-start="6666" selection-end="6666" vertical-scroll-proportion="0.44344905" vertical-offset="5709" max-vertical-offset="9240" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="81" selection-start="2545" selection-end="2545" vertical-scroll-proportion="0.556551" vertical-offset="988" max-vertical-offset="2178" />
@@ -776,7 +751,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_07_23_072829_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.65562916" vertical-offset="99" max-vertical-offset="1353">
+        <state line="19" column="26" selection-start="512" selection-end="512" vertical-scroll-proportion="0.16225165" vertical-offset="447" max-vertical-offset="1353">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_07_23_073305_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_08_26_091814_create_profile_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="34" selection-start="616" selection-end="616" vertical-scroll-proportion="0.55431134" vertical-offset="198" max-vertical-offset="1551">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1163" column="20" selection-start="33551" selection-end="33551" vertical-scroll-proportion="0.0" vertical-offset="38181" max-vertical-offset="41283">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="47" selection-start="6666" selection-end="6666" vertical-scroll-proportion="0.3325868" vertical-offset="5808" max-vertical-offset="9240">
           <folding />
         </state>
       </provider>
@@ -788,23 +791,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tags.php">
+    <entry file="file://$PROJECT_DIR$/app/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="176" selection-end="176" vertical-scroll-proportion="0.3642384" vertical-offset="0" max-vertical-offset="906">
+        <state line="27" column="28" selection-start="918" selection-end="918" vertical-scroll-proportion="0.7782755" vertical-offset="163" max-vertical-offset="1155">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="24" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.66741323" vertical-offset="757" max-vertical-offset="1650">
+        <state line="52" column="51" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.88913774" vertical-offset="889" max-vertical-offset="1980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tags.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="1" selection-start="90" selection-end="90" vertical-scroll-proportion="0.25867862" vertical-offset="0" max-vertical-offset="893">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_04_141603_create_tags_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="442" selection-end="442" vertical-scroll-proportion="0.5912654" vertical-offset="99" max-vertical-offset="1485">
+        <state line="19" column="0" selection-start="420" selection-end="420" vertical-scroll-proportion="0.6651736" vertical-offset="0" max-vertical-offset="1287">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_04_155950_create_news_tags_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="33" selection-start="646" selection-end="646" vertical-scroll-proportion="0.593505" vertical-offset="64" max-vertical-offset="1254">
           <folding />
         </state>
       </provider>

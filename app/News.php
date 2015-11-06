@@ -36,10 +36,20 @@ class News extends Model
     public function scopeSearchBySlug($query, $slug){
         return $query->where('slug','=',$slug)->get();
     }
+
+    /**
+     * A news may belong to a user
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * A news can have many tags
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function tags(){
-        return $this->belongsToMany('App\Tags');
+        return $this->belongsToMany('App\Tags')->withTimestamps();
     }
 }
